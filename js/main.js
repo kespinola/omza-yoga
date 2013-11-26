@@ -80,7 +80,7 @@
 
 	function node_html (on, type, label) {
 		return ''
-		+'<div class="node node-'+ type + (on ? ' on' : '') + '">'
+		+'<div class="node node-'+ type + (on ? ' on' : ' off') + '">'
 		+'<span>'+label+'</span>'
 		+'</div>';
 	}
@@ -151,7 +151,6 @@
 		+	slider_html(c.attr_strength*10, 'strength', 'Strength')
 		+	slider_html(c.attr_spirit*10, 'spirit', 'Spirtuality')
 		+	slider_html(c.attr_flex*10, 'flex', 'Flexibility')
-		+	slider_html(c.attr_balance*10, 'balance', 'Balance')
 		+	slider_html(c.attr_tempo*10, 'tempo', 'Tempo')
 		+'</div>'
 		+'<div class="detail-right">'

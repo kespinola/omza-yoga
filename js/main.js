@@ -27,7 +27,9 @@
 			$body.removeClass('mode-'+mode);
 		}
 		if (!path || path === '/') {
+			
 			mode = ROUTE_HOME;
+
 		} 
 		// Studio
 		else if (/s\//.test(path)) {
@@ -35,6 +37,7 @@
 			$('.studio-img').css('backgroundImage', 'url(img/'+arg.toLowerCase()+'.jpg)');
 			$('.studio-head h3').text(arg);
 			filterData();
+			
 		}
 		// Teacher
 		else if (/t\//.test(path)) {
@@ -44,12 +47,14 @@
 			$('.studio-img').css('backgroundImage', 'url('+img+')');
 			$('.studio-head h3').text(cls.teacher_name);
 			filterData();
+		$('.detail-nodes').css("display", "inline");
 		}
 		// Place
 		else if (/p\//.test(path)) {
 			mode = ROUTE_PLACE;
 			$('.studio-head h3').text('All Classes');
 			filterData();
+			$('.detail-nodes').css("display", "inline");
 		}
 		// Class
 		else if (/c\//.test(path)) {
@@ -73,11 +78,14 @@
 		+	'<div class="slider-bg">'
 		+		'<div class="slider-l">'+label+'</div>'
 		+		'<div class="slider-i t02">'
-		+			'<div class="slider-l">'+label+'</div>'
+		+		'<div class="slider-l">'+label+'</div>'
 		+		'</div>'
 		+	'</div>'
 		+'</div>';
 	}
+
+
+
 
 	function node_html (on, type, label) {
 		return ''
@@ -160,7 +168,7 @@
 		+'</div>'
 		+'</div>'
 
-		+'<div class="detail-nodes nodes">'
+		+'<div class="nodes">'
 			
 		+	node_html(c.node_meditation, 'meditation', 'Meditation')
 		+	node_html(c.node_chanting, 'chanting', 'Chanting')

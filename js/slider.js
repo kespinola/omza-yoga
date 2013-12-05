@@ -9,6 +9,7 @@
 			$this = $(this),
 			$bg = $this.find('.slider-bg'),
 			$inner = $this.find('.slider-i');
+		
 
 			// No double-slider
 			if ($this.data('omza-slider')) {

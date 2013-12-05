@@ -297,7 +297,7 @@ h2, h3, h4, p, li {
  */
 .header {
   background-color: #f9f9f9;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 2px solid #e4e4e4                    ;
   height: 60px;
   padding: 8px 16px 12px 8px;
   position: fixed;
@@ -741,7 +741,7 @@ margin-left: 25%; }
   background-size: contain; }
 
 .slider-strength .slider-i {
-  background-color: #FAB372; }
+  background-color: #D3C7BD; }
 .slider-strength .slider-img {
   background-image: url(../img/attr-strength.png); }
 
@@ -789,6 +789,26 @@ margin-left: 25%; }
   width: 50%; }
   .slider-i.full {
     -webkit-border-radius: 3px;
+    border-radius: 3px; 
+
+  }
+
+.slider-btn {
+  
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  width: 50%;
+  background-image:url('../img/slider-btn.png');
+  background-repeat: no-repeat;
+  position:fixed;
+  z-index: 1;
+
+   }
+
+  .slider-btn.full {
+    -webkit-border-radius: 3px;
     border-radius: 3px; }
 
 .slider-l {
@@ -803,8 +823,6 @@ margin-left: 25%; }
 .slider-i .slider-l {
   color: #f0f0f0; }
 
-.nodes {
-  margin-top: 30px; }
 
 .node {
   width: 75px;
@@ -820,7 +838,9 @@ margin-left: 25%; }
   margin-right: 16px;
   cursor: pointer;
    }
-
+.detail-nodes{
+  display:none;
+}
   .node span {
     margin-top: 76px;
     display: block;
@@ -831,7 +851,8 @@ margin-left: 25%; }
   margin-top: 30px; }
   .pane1 .node:hover, .pane1 .node.on {
     opacity: 1;
-    border: 5px solid #dddddd; }
+    border: 5px solid #dddddd;
+    background-color:#f9f9f9; }
 
 .node-meditation {
   background-image: url(../img/node-meditation.png); }
@@ -847,6 +868,12 @@ margin-left: 25%; }
 
 .node-music {
   background-image: url(../img/node-music.png); }
+  .node-spirit {
+  background-image: url(../img/node-spirit.png); }
+  .node-beginner {
+  background-image: url(../img/node-beginner.png); }
+  .node-core {
+  background-image: url(../img/node-core.png); }
 
 .node-music span {
   white-space: nowrap;
@@ -859,7 +886,8 @@ margin-left: 25%; }
   opacity: 0.4; }
   .detail-wrap .node.on {
     opacity: 1;
-    border: 5px solid #dddddd; }
+    border: 5px solid #dddddd;
+    background-color:#f9f9f9; }
     .detail-wrap .node.off{
       display:none;
     }

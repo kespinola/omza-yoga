@@ -260,7 +260,7 @@ textarea {
   user-select: none; }
 
 /******
- * OHMZA
+ * OMZA
  ******/
 body {
   background-color: #fff6ee; }
@@ -305,6 +305,8 @@ h2, h3, h4, p, li {
   top: 0;
   width: 100%; }
 
+
+
 .logo {
   position: relative;
   display: block;
@@ -313,20 +315,40 @@ h2, h3, h4, p, li {
   width: 142px;
   height: 42px;
   text-indent: -9001px;
-  background-image: url(../img/omza-logo.png); }
+  background-image: url(../img/omza-logo.png);
+background-repeat: no-repeat;
+   }
+
  
 
 @media all and (-webkit-min-device-pixel-ratio: 1.5) {
   .logo {
     background-image: url('../img/omza-logo@2x.png');
     background-size: 142px 42px;
+    background-repeat: no-repeat;
   }
 }
 
+  
 .mode-1 .logo {
   left: 50%;
   margin-left: -70px; }
 
+
+@media (max-width: 700px){
+  .logo{
+  background-image: url('../img/omza-icon.png');
+  background-size: 42px 42px;
+  background-repeat: no-repeat;
+  width: 42px;
+  height: 42px;
+
+  }
+  .mode-1 .logo{
+  left: 0%;
+  margin-left: 0px;
+  }
+}
 .subhead {
   position: absolute;
   top: 10px;
@@ -387,7 +409,6 @@ h2, h3, h4, p, li {
   white-space: normal;
   padding-bottom: 20px;
   overflow-y: auto;
-  padding: 0 20px;
   width: 100%;
   max-width: 100%;
   text-align: left;
@@ -437,14 +458,13 @@ h2, h3, h4, p, li {
   top: 0;
   left: 0; }
 
-.header h3 {
-  margin: 4px 0 0; }
+
+
 
 .pane0 {
   padding-top: 0; }
 
-.pane h1, .pane h2, .pane h3, .pane h4 {
-  margin: 0; }
+
 
 .pane1-head {
   margin-bottom: 16px;
@@ -522,7 +542,7 @@ h2, h3, h4, p, li {
 
 .class-right h3 {
   margin:40px 0 0 9px;
-  font-size: 20px;
+  font-size: 1.25em;
   width: 97%;
   font-weight: 300; 
 }
@@ -593,10 +613,18 @@ margin-left: 25%; }
 .class-rating {
   background: #f0f0f0;
   height: 20px;
-  width: 60%;
+  width: 90px;
   margin: 12px 0 0 70px;
   position: relative;
-  border-radius: 2px; }
+  border-radius: 2px; 
+  left: 75px;
+  bottom: 29px;
+}
+@media all min-width(500px){
+  .class-rating{
+    width: 113px;
+  }
+}
   .class-rating:before {
     width: 30px;
     height: 30px;
@@ -619,11 +647,12 @@ margin-left: 25%; }
   opacity: 0.8; }
 
 .pane2 {
-  text-align: center; }
+  text-align: center;
+  z-index: 0; }
 
 .detail {
   display: inline-block;
-  margin: 100px 0 20px;
+  margin: 43px 0 20px;
   width: 100%; }
 
 .detail-wrap {
@@ -644,7 +673,9 @@ margin-left: 25%; }
 
 .detail-teacher .detail-opt {
   float: left; }
-
+.detail-top{
+  height: 110px;
+}
 .detail-opt {
   text-align: left;
   margin-bottom: 10px;
@@ -661,6 +692,9 @@ margin-left: 25%; }
 .detail-left {
   width: 100%; }
 
+.detail-title{
+  font-size: 2em;
+}
 .detail-time {
   font-size: 1.5em;}
 .detail-studio{
@@ -668,6 +702,7 @@ margin-left: 25%; }
   width: 100%;
   
 }
+
 .detail-reg .btn {
   margin-top: 40px; }
   .detail-reg .btn .glyphicon {
@@ -712,7 +747,7 @@ margin-left: 25%; }
   float: none;
   display: inline-block; }
   .mode-1 .slider:first-child {
-    margin-left: 0; }
+    margin-left: 3%; }
 .mode-1 .node {
   display: inline-block;
   float: none; }
@@ -823,6 +858,9 @@ margin-left: 25%; }
 .slider-i .slider-l {
   color: #f0f0f0; }
 
+.slider-flex{
+  margin-left: 2%;
+}
 
 .node {
   width: 75px;
@@ -836,6 +874,7 @@ margin-left: 25%; }
   font-family: 'Josefin Sans', sans-serif;
   float: left;
   margin-right: 16px;
+  margin-top: 35px;
   cursor: pointer;
    }
 .detail-nodes{
@@ -892,11 +931,40 @@ margin-left: 25%; }
       display:none;
     }
 
+/*Detail Class View Styling*/
+
 .detail-clear {
   clear: both;
   overflow: hidden;
   padding-bottom: 10px; }
 
+
+  .teacher-img{
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #e4e4e4;
+    border-radius: 100px;
+  }
+.teacher-name{
+  display:inline-block;
+  position: relative;
+  font-size: 2em;
+  left: 65px;
+  bottom: 99px;
+}
+.omza-fit-detail{
+  background: #f0f0f0;
+height: 20px;
+width: 40%;
+display: inline-block;
+position: relative;
+border-radius: 2px;
+bottom: 64px;
+left: 40px;
+margin:0px;
+}
 .detail-nodes {
   clear: both;
   width: 100%;
@@ -910,7 +978,11 @@ margin-left: 25%; }
   text-decoration: underline;
   margin-top: 6px;
   color: #94887b; }
-
+.nodes{
+  position:relative;
+  left: 4%;
+  bottom: 20px;
+}
 /**
  * Media Queries
  */
@@ -954,7 +1026,7 @@ margin-left: 25%; }
     top: 0; }
 
   .detail {
-    width: auto; }
+    width: 75%; }
 
   .detail-left {
     float: left;
@@ -979,8 +1051,14 @@ margin-left: 25%; }
   .detail-opt {
     float: none;
     margin-right: 0; } }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1150px) {
   .class-list li {
     width: 31%;
     max-width: none;
-    float: left; } }
+    float: left; }
+  .teacher-img{
+    margin-left:10%;
+  }
+  .detail {
+    width: 50%; }
+     }

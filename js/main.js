@@ -116,15 +116,15 @@
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
+			+		'<div class="class-rating" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
 			+	'</div>'
 			+	'<div class="class-right">'
 			+		'<h3>'+this.class_name+'</h3>'
-			+		'<div class="class-rating" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
 
 			+	'</div>'
 			+	'<div class="class-date">'
 			+		'<div class="class-day">'+this.class_day+'</div>'
-			+		'<div class="class-time">'+this.class_time+'</div>'
+			+		'<div class="class-time">'+this.class_start+'</div>'
 			+	'</div>'
 
 			+'</li>';
@@ -151,40 +151,52 @@
 	}
 
 	function load_class(c) {
+		var classList = $('.class-list').empty();
 		var $detail = $('.detail').empty();
 		image = c.teacher_image ? 'img/t/'+c.teacher_image+ '.jpg' : 'img/omza-thumbnail.png';
 		var html = ''
+	
 		+'<h1 class="detail-title">'+c.class_name+'</h1>'
+		+'<div class="class-description">'+c.class_description+'</div>'
 		+'<div class="detail-wrap">'
 		+'<div class="detail-clear">'
 		+'<div class="detail-top">'
-		+	'<div class="detail-time">'+c.class_day+' at '+c.class_time+' for '+c.class_duration+' min</div>'
-			
+		+	'<div class="teacher-info">'
+		+		'<div class="teacher-img" style="background-image:url('+image+')"></div>'
+		+		'<h3 class="teacher-name hook-teacher" data-id="'+c.class_id+'">'+c.teacher_name+'</h3>'
+		+		'<div class="class-rating omza-fit-detail" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
+		+	'</div>'
 		+'</div>'
+
 		+'<div class="detail-left">'
 		+	slider_html(c.attr_flex*10, 'flex', 'Flexibility')
 		+	slider_html(c.attr_strength*10, 'strength', 'Strength')
 		+	slider_html(c.attr_tempo*10, 'tempo', 'Tempo')
 		+'</div>'
-		+'</div>'
-
 		+'<div class="nodes">'
-			
+			+	node_html(c.node_stand, 'beginner', 'Beginner')
+			+	node_html(c.node_heated, 'heated', 'Heated')
+			+	node_html(c.node_healing, 'healing', 'Injuries')
+			+	node_html(c.node_spirit, 'spirit', 'Spirituality')
 		+	node_html(c.node_meditation, 'meditation', 'Meditation')
 		+	node_html(c.node_chanting, 'chanting', 'Chanting')
-		+	node_html(c.node_heated, 'heated', 'Heated')
-		+	node_html(c.node_healing, 'healing', 'Injuries')
 		+	node_html(c.node_music, 'music', 'Live Music')
+		+	node_html(c.node_core, 'core', 'Core')
 		+	node_html(c.node_stand, 'stand', 'Inversions')
 		+'</div>'
+		+'</div>'
+
 		+'<div class="detail-reg">'
 		+	'<button type="button" class="btn btn-primary btn-detail-reg btn-large t02">'
 		+		'<span class="glyphicon glyphicon-ok t02"></span><span class="text">Register for class</span>'
 		+	'</button>'
 		+'</div>'
-		+'</div>';
-		$('.studio-head h3').text(c.teacher_name);
-		$('.studio-img').css('background-image','url('+image+')');
+		+'</div>'
+		;
+		$('.studio-head h3').css('display','none');
+		$(".teacher-img").css('background-image','url('+image+')');
+		$(".studio-img").css('background-image','url(img/studio-'+c.studio_id+'.png)');
+		$(".class-rating-i").css('width','30%');
 		$detail.html(html);
 	}
 

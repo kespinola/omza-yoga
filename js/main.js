@@ -55,6 +55,7 @@
 			$('.studio-head h3').text('All Classes');
 			filterData();
 			$('.detail-nodes').css("display", "inline");
+			$('.studio-img').css('backgroundImage', 'url(img/omza-icon.png)');
 		}
 		// Class
 		else if (/c\//.test(path)) {
@@ -116,7 +117,7 @@
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
-			+		'<div class="class-rating" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
+			//+	'<div class="class-rating" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
 			+	'</div>'
 			+	'<div class="class-right">'
 			+		'<h3>'+this.class_name+'</h3>'
@@ -157,17 +158,17 @@
 		var html = ''
 	
 		+'<h1 class="detail-title">'+c.class_name+'</h1>'
+		+'<hr>'
 		+'<div class="class-description">'+c.class_description+'</div>'
 		+'<div class="detail-wrap">'
 		+'<div class="detail-clear">'
 		+'<div class="detail-top">'
 		+	'<div class="teacher-info">'
 		+		'<div class="teacher-img" style="background-image:url('+image+')"></div>'
-		+		'<h3 class="teacher-name hook-teacher" data-id="'+c.class_id+'">'+c.teacher_name+'</h3>'
-		+		'<div class="class-rating omza-fit-detail" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
+		+		'<div class="teacher-name"><span class="sub-title">with </span><h3 class="hook-teacher" data-id="'+c.class_id+'">'+c.teacher_name+'</h3></div>'
+		//+		'<div class="class-rating omza-fit-detail" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
 		+	'</div>'
 		+'</div>'
-
 		+'<div class="detail-left">'
 		+	slider_html(c.attr_flex*10, 'flex', 'Flexibility')
 		+	slider_html(c.attr_strength*10, 'strength', 'Strength')
@@ -176,7 +177,7 @@
 		+'<div class="nodes">'
 			+	node_html(c.node_stand, 'beginner', 'Beginner')
 			+	node_html(c.node_heated, 'heated', 'Heated')
-			+	node_html(c.node_healing, 'healing', 'Injuries')
+			+	node_html(c.node_healing, 'injuries', 'Injuries')
 			+	node_html(c.node_spirit, 'spirit', 'Spirituality')
 		+	node_html(c.node_meditation, 'meditation', 'Meditation')
 		+	node_html(c.node_chanting, 'chanting', 'Chanting')
@@ -187,9 +188,9 @@
 		+'</div>'
 
 		+'<div class="detail-reg">'
-		+	'<button type="button" class="btn btn-primary btn-detail-reg btn-large t02">'
-		+		'<span class="glyphicon glyphicon-ok t02"></span><span class="text">Register for class</span>'
-		+	'</button>'
+		// +	'<button type="button" class="btn btn-primary btn-detail-reg btn-large t02">'
+		// +		'<span class="glyphicon glyphicon-ok t02"></span><span class="text">Register for class</span>'
+		// +	'</button>'
 		+'</div>'
 		+'</div>'
 		;
@@ -212,7 +213,7 @@
 		});
 
 		// Get node values
-		$.each(['meditation','chanting','heated','healing','stand'], function(i,e,j){
+		$.each(['meditation','chanting','heated','injuries','stand','core','spirit','beginner'], function(i,e,j){
 			j = $('.pane1 .node-'+e);
 			if (j.hasClass('on')) nodes[e] = 1;
 		});

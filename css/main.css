@@ -266,7 +266,7 @@ body {
   background-color: #fff6ee; }
 
 h1{
-  font-family: 'Allerta', sans-serif;
+  font-family: 'Josefin-San', sans-serif;
     font-weight: 100; }
 h2, h3, h4, p, li {
     font-family: 'Josefin-San', sans-serif;
@@ -275,7 +275,7 @@ h2, h3, h4, p, li {
 .btn-primary {
   background-color: #ACBD73;
   border-color: #ACBD73;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Allerta', sans-serif;
   transition: all 0.2s; }
   .btn-primary:hover, .btn-primary:focus {
     outline: none;
@@ -652,11 +652,15 @@ margin-left: 25%; }
 
 .detail {
   display: inline-block;
-  margin: 43px 0 20px;
-  width: 100%; }
+  margin-top: 40px;
+  
+  width: 97%; }
 
 .detail-wrap {
-  margin-top: 16px; }
+  margin-top: 5%;
+  background-color: #EBEBEB;
+  border-radius: 7px 7px 0px 0px;
+  ; }
 
 .detail-icon {
   width: 40px;
@@ -674,7 +678,7 @@ margin-left: 25%; }
 .detail-teacher .detail-opt {
   float: left; }
 .detail-top{
-  height: 110px;
+  height: 105px;
 }
 .detail-opt {
   text-align: left;
@@ -689,11 +693,11 @@ margin-left: 25%; }
     font-size: 13px;
     line-height: 70%; }
 
-.detail-left {
-  width: 100%; }
+
 
 .detail-title{
-  font-size: 2em;
+  font-size: 2.5em;
+  font-family: 'Allerta', sans-serif;
 }
 .detail-time {
   font-size: 1.5em;}
@@ -803,7 +807,7 @@ margin-left: 25%; }
 .slider-bg {
   background-color: #fff;
   border-radius: 3px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Allerta', sans-serif;
   height: 30px;
   margin-left: 85px;
   position: relative; }
@@ -847,12 +851,12 @@ margin-left: 25%; }
     border-radius: 3px; }
 
 .slider-l {
-  line-height: 34px;
+  line-height: 28px;
   color: #999;
   position: absolute;
   top: 0;
   left: 12px;
-  font-size: 21px;
+  font-size: 18px;
   letter-spacing: 1px; }
 
 .slider-i .slider-l {
@@ -871,7 +875,7 @@ margin-left: 25%; }
   transition: all 0.2s;
   background-color: transparent;
   background-repeat: no-repeat;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Allerta', sans-serif;
   float: left;
   margin-right: 16px;
   margin-top: 35px;
@@ -883,7 +887,8 @@ margin-left: 25%; }
   .node span {
     margin-top: 76px;
     display: block;
-    font-size: 18px; }
+    font-size: 12px;
+     }
 
 .pane1 .node {
   opacity: 0.6;
@@ -916,7 +921,7 @@ margin-left: 25%; }
 
 .node-music span {
   white-space: nowrap;
-  font-size: 17px; }
+   }
 
 .node-stand {
   background-image: url(../img/node-stand.png); }
@@ -938,21 +943,53 @@ margin-left: 25%; }
   overflow: hidden;
   padding-bottom: 10px; }
 
+.detail-left{
+  margin-left: auto;
+   margin-right: auto;
+  margin-top: 1%;
+  width: 90%;
+  padding: 1%;
 
+}
+.class-description{
+  font-size: 1.5em;
+}
+.teacher-info{
+  background-color: #D5BBA3;
+border-bottom: 2px solid #baa48f;
+border-radius: 7px 7px 0px 0px;
+  width: 100%;
+  height: inherit;
+  position:relative;
+  float: left;
+  display: block;
+
+}
   .teacher-img{
     background-size: 100px 100px;
-    background-repeat: no-repeat;
-    width: 100px;
-    height: 100px;
-    border: 5px solid #e4e4e4;
-    border-radius: 100px;
+background-repeat: no-repeat;
+width: 85px;
+height: 85px;
+border: 5px solid #BAA490;
+border-radius: 100px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 1%;
   }
 .teacher-name{
-  display:inline-block;
-  position: relative;
-  font-size: 2em;
-  left: 65px;
-  bottom: 99px;
+display: inline-block;
+position: relative;
+font-size: 1.2em;
+margin-top: 0px;
+margin-left: 26%;
+bottom: 20px;
+}
+.hook-teacher{
+  display: inline;
+  color:#94887b;
+}
+.teacher-info .hook-teacher{
+  color: #ebebeb;
 }
 .omza-fit-detail{
   background: #f0f0f0;
@@ -1000,7 +1037,7 @@ margin:0px;
   .mode-1 .slider {
     margin-left: 20px; }
   .mode-1 .sub-pane1 h1 {
-    font-size: 45px;
+    font-size: 4em;
     color: #94887b; }
   .mode-1 .sub-pane1 h4 {
     font-size: 24px;
@@ -1026,12 +1063,16 @@ margin:0px;
     top: 0; }
 
   .detail {
-    width: 75%; }
+    width: 80%; }
 
   .detail-left {
     float: left;
     display: inline-block;
-    width: 300px; }
+    width: 55%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+  }
 
   .detail-right {
     float: left;
@@ -1056,9 +1097,7 @@ margin:0px;
     width: 31%;
     max-width: none;
     float: left; }
-  .teacher-img{
-    margin-left:10%;
-  }
+
   .detail {
-    width: 50%; }
+    width: 57%; }
      }

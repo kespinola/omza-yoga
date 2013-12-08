@@ -154,21 +154,25 @@
 	function load_class(c) {
 		var classList = $('.class-list').empty();
 		var $detail = $('.detail').empty();
+	
 		image = c.teacher_image ? 'img/t/'+c.teacher_image+ '.jpg' : 'img/omza-thumbnail.png';
+		class_header = c.class_description ? '<h3 class="description-head"><i class="fa fa-book"></i><span class="description-title">Class Description</span><i class="fa fa-caret-left label-end"></i></h3>' : '';
 		var html = ''
 	
-		+'<h1 class="detail-title">'+c.class_name+'</h1>'
-		+'<hr>'
-		+'<div class="class-description">'+c.class_description+'</div>'
 		+'<div class="detail-wrap">'
 		+'<div class="detail-clear">'
 		+'<div class="detail-top">'
 		+	'<div class="teacher-info">'
-		+		'<div class="teacher-img" style="background-image:url('+image+')"></div>'
+
+		+		'<i class="fa fa-chevron-left back-btn" onCLick="history.back()"></i>'
+		+		'<h1 class="detail-title">'+c.class_name+'</h1>'
+		+		'<div class="hook-teacher" data-id="'+c.class_id+'"><div class="teacher-img t02" style="background-image:url('+image+')"></div></div>'
 		+		'<div class="teacher-name"><span class="sub-title">with </span><h3 class="hook-teacher" data-id="'+c.class_id+'">'+c.teacher_name+'</h3></div>'
 		//+		'<div class="class-rating omza-fit-detail" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
 		+	'</div>'
 		+'</div>'
+
+		+'<div class="omza-stats">'
 		+'<div class="detail-left">'
 		+	slider_html(c.attr_flex*10, 'flex', 'Flexibility')
 		+	slider_html(c.attr_strength*10, 'strength', 'Strength')
@@ -186,12 +190,16 @@
 		+	node_html(c.node_stand, 'stand', 'Inversions')
 		+'</div>'
 		+'</div>'
+		+'</div>'
 
 		+'<div class="detail-reg">'
 		// +	'<button type="button" class="btn btn-primary btn-detail-reg btn-large t02">'
 		// +		'<span class="glyphicon glyphicon-ok t02"></span><span class="text">Register for class</span>'
 		// +	'</button>'
 		+'</div>'
+		+'<div class="class-info">'+class_header+'</div>'
+		+'<p class="class-describe">'+c.class_description+'</p>';
+		+'<i class="fa fa-chevron-left"></i>'
 		+'</div>'
 		;
 		$('.studio-head h3').css('display','none');

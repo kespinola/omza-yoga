@@ -395,7 +395,8 @@ background-repeat: no-repeat;
   white-space: nowrap;
   position: relative;
   max-width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: 50px; }
 
 .content-inner {
   position: relative;
@@ -495,7 +496,7 @@ background-repeat: no-repeat;
   width: 330px; }
 
 .sub-pane2 {
-  padding-top: 100px;
+  padding-top: 63px;
   box-sizing: border-box;
   width: 100%;
   padding-left: 16px; }
@@ -650,11 +651,6 @@ margin-left: 25%; }
   text-align: center;
   z-index: 0; }
 
-.detail {
-  display: inline-block;
-  margin-top: 40px;
-  
-  width: 97%; }
 
 .detail-wrap {
   margin-top: 5%;
@@ -694,10 +690,15 @@ margin-left: 25%; }
     line-height: 70%; }
 
 
-
+.omza-stats{
+  margin-top: 45px;
+}
 .detail-title{
-  font-size: 2.5em;
+  font-size: 1em;
   font-family: 'Allerta', sans-serif;
+  margin-top: 19px;
+  position: relative;
+  right: 18px;
 }
 .detail-time {
   font-size: 1.5em;}
@@ -723,9 +724,29 @@ margin-left: 25%; }
 .mode-1 .sub-pane1 {
   display: block;
   width: 100%;
-  
   margin: auto;
    }
+
+.label-end{
+  font-size: 69px;
+  position: relative;
+  bottom: 47px;
+  color: #ebebeb;
+  left: 239px;
+  bottom: 47px;
+}
+.back-btn{
+  float: left;
+position: relative;
+top: 30%;
+margin-left: 14px;
+font-size: 48px;
+cursor: pointer;
+transition: all .02s ease-in;
+}
+.back-btn:hover{
+  color:#C0AE9E;
+}
    @media (min-width: 750px){
     .mode-1 .sub-pane1{
       width: 80%;
@@ -946,13 +967,28 @@ margin-left: 25%; }
 .detail-left{
   margin-left: auto;
    margin-right: auto;
-  margin-top: 1%;
+  margin-top: 2%;
   width: 90%;
   padding: 1%;
 
 }
-.class-description{
+.class-describe{
   font-size: 1.5em;
+  width: 80%;
+  margin-top: 2%;
+  padding-left: 47px;
+  padding-bottom: 2%;
+  text-align: left;
+}
+.description-head .fa-book{
+  font-size: 30px;
+  margin-right: 9px;
+  color: #BAA48F;
+}
+.description-title{
+  font-size: 22px;
+  position: relative;
+  bottom: 3px;
 }
 .teacher-info{
   background-color: #D5BBA3;
@@ -970,26 +1006,28 @@ border-radius: 7px 7px 0px 0px;
 background-repeat: no-repeat;
 width: 85px;
 height: 85px;
-border: 5px solid #BAA490;
+border: 6px solid #BAA490;
 border-radius: 100px;
 margin-left: auto;
 margin-right: auto;
-margin-top: 1%;
+margin-top: 30px;
   }
+.teacher-img:hover{
+  border: 4px solid #C7D694;
+}
 .teacher-name{
 display: inline-block;
 position: relative;
-font-size: 1.2em;
-margin-top: 0px;
-margin-left: 26%;
-bottom: 20px;
+font-size: 1em;
+bottom: 110px;
 }
 .hook-teacher{
   display: inline;
   color:#94887b;
+  cursor: pointer;
 }
 .teacher-info .hook-teacher{
-  color: #ebebeb;
+  color: #f9f9f9;
 }
 .omza-fit-detail{
   background: #f0f0f0;
@@ -1020,9 +1058,72 @@ margin:0px;
   left: 4%;
   bottom: 20px;
 }
+
+.description-head {
+background: #acbd73;
+padding: 3px 8px;
+width: 283px;
+position: relative;
+color: #e4e4e4;
+height: 37px;
+padding-top: 3px;
+padding-left: 20px;
+font-size: 1em;
+font-weight: bold;
+text-align: left;
+ }
+
+.description-head:after, .description-head:before {
+  top: 100%;
+  right: 0;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none; }
+
+.description-head:after {
+border-color: rgba(255, 255, 255, 0);
+border-top-color: #90A352;
+border-width: 6px;
+border-right-color: #90A352;
+right: 271px;
+}
+
+.detail {
+  display: inline-block;
+  
+  
+  width: 92%; }
+
+  
+  .description-head{
+    right: 12px;
+  }
+
 /**
  * Media Queries
  */
+ @media only screen and (min-width: 500px){
+  .detail-title{
+    font-size: 2em;
+    margin-top: 6px;
+  }
+
+ }
+ @media screen and (max-width:400px){
+    .description-head{
+      right: 4%;
+    }
+    .node{
+      width: 65px;
+      height: 65px;
+    }
+    .class-describe{
+      font-size: 18px;
+    }
+ }
 @media only screen and (min-width: 720px) {
   .content {
     max-width: none; }

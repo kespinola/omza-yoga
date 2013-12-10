@@ -15,6 +15,7 @@
 
 	function init() {
 		switch_mode();
+		$('.filter-btn').css('hidden');
 	}
 
 	function switch_mode() {
@@ -29,6 +30,7 @@
 		if (!path || path === '/') {
 			
 			mode = ROUTE_HOME;
+			reset_filter();
 
 		} 
 		// Studio
@@ -36,6 +38,7 @@
 			mode = ROUTE_STUDIO;
 			$('.studio-img').css('backgroundImage', 'url(img/'+arg.toLowerCase()+'.jpg)');
 			$('.studio-head h3').text(arg);
+			load_filter();
 			filterData();
 			
 		}
@@ -46,15 +49,15 @@
 			var img = cls.teacher_image ? 'img/t/'+cls.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
 			$('.studio-img').css('backgroundImage', 'url('+img+')');
 			$('.studio-head h3').text(cls.teacher_name);
+			load_filter();
 			filterData();
-		$('.detail-nodes').css("display", "inline");
 		}
 		// Place
 		else if (/p\//.test(path)) {
 			mode = ROUTE_PLACE;
 			$('.studio-head h3').text('All Classes');
+			load_filter();
 			filterData();
-			$('.detail-nodes').css("display", "inline");
 			$('.studio-img').css('backgroundImage', 'url(img/omza-icon.png)');
 		}
 		// Class
@@ -85,15 +88,25 @@
 		+'</div>';
 	}
 
+	function load_filter(){
+		$('.filter-btn').css('display','block');
+		$('.detail-nodes').css("display", "inline");
+		$('.sliders, .nodes').css('width','250px');
+		$('.node').css('width','65px').css('height','65px');
+	};
 
-
-
+	function reset_filter(){
+		$('.sliders, .nodes').css('width','100%');
+		$('.filter-btn').css('display','none').removeClass('left-shift-filter');
+		$('.sub-pane1').removeClass('hide-filter');
+		$('.sliders, .nodes').removeClass('hidden');
+	};
 	function node_html (on, type, label) {
 		return ''
 		+'<div class="node node-'+ type + (on ? ' on' : ' off') + '">'
 		+'<span>'+label+'</span>'
 		+'</div>';
-	}
+	};
 
 	function reset () {
 		$('.pane1 .node').removeClass('on');
@@ -142,6 +155,7 @@
 		}
 		classList.html(html);
 		classList.find('.class-rating').each(ratings);
+		$(".filter-btn").removeClass('hidden');
 	}
 
 	function detail_opt(val, sub) {
@@ -206,6 +220,7 @@
 		$(".teacher-img").css('background-image','url('+image+')');
 		$(".studio-img").css('background-image','url(img/studio-'+c.studio_id+'.png)');
 		$(".class-rating-i").css('width','30%');
+		$(".filter-btn").addClass('hidden');
 		$detail.html(html);
 	}
 
@@ -315,6 +330,15 @@
 
 	$doc.on('click', '.btn-find', function () {
 		window.location.hash = '#p/Santa-Barbara';
+	});
+
+	$doc.on('click', '.filter-btn',function(){
+		$('.sub-pane1').toggleClass('hide-filter');
+		$('.sliders, .nodes').toggleClass('hidden');
+		$('.filter-btn').toggleClass('left-shift-filter');
+		$('.sub-pane2').toggleClass('no-shift-right');
+
+
 	});
 
 	function ratings() {

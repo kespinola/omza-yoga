@@ -86,6 +86,7 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 .t10 {
   transition: 1s;
   -webkit-transition: 1s;
@@ -100,6 +101,10 @@ textarea {
   transition: .2s;
   -webkit-transition: .2s;
   -moz-transition: .2s; }
+
+.no-left-padding{
+  padding-left: 0px !important;
+}
 
 /*
  * Image replacement
@@ -116,6 +121,10 @@ textarea {
   display: block;
   width: 0;
   height: 150%; }
+
+.show{
+  display: block;
+  })
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
@@ -150,6 +159,9 @@ textarea {
   position: static;
   width: auto; }
 
+.no-shift-right{
+  padding-left: 7% !important;
+}
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
@@ -459,9 +471,31 @@ background-repeat: no-repeat;
   top: 0;
   left: 0; }
 
+.filter-btn{
+  font-size: 31px;
+position: fixed;
+padding: 6px;
+width: 48px;
+height: 80vh;
+border-bottom-right-radius: 10px;
+border-top-right-radius: 10px;
+left: 290px;
+float: left;
+top: 100px;
+background-color: #D5BBA3;
 
+display: none;
+}
+.filter-btn:hover{
+  background-color:#DFC9B6;
+}
+.left-shift-filter{
+  left: 0px;
+}
+.hide-filter{
+  width: 40px!important;
 
-
+}
 .pane0 {
   padding-top: 0; }
 
@@ -493,18 +527,27 @@ background-repeat: no-repeat;
   width: 100%;
   text-align: center;
   padding-bottom: 20px;
-  width: 330px; }
+  width: 330px;
+  background-color: #ebebeb;
+  height: 80vh !important;
+   }
 
 .sub-pane2 {
   padding-top: 63px;
+  padding-left: 365px;
   box-sizing: border-box;
   width: 100%;
-  padding-left: 16px; }
+   }
+   @media screen and (max-width: 719px){
+    .sub-pane2{
+      padding-left: 20px;
+    }
+   }
 
 .class-wrap {
   overflow-y: auto;
   max-height: 100%;
-  padding-right: 20px; }
+  padding-left: 2%; }
 
 .class-list {
   margin: 0;
@@ -516,13 +559,14 @@ background-repeat: no-repeat;
     display: block;
     height: 40px;
     padding: 12px 16px;
-    margin-right: 16px;
-    margin-bottom: 16px;
+    display: inline-block;
     background: #fff;
+    width: 230px;
+    margin-top: 15px;
+    margin-right: 20px;
+    text-align: center;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    width: 100%;
-    max-width: 500px;
     min-height: 150px;
     position: relative;
     cursor: pointer; }
@@ -708,6 +752,7 @@ margin-left: 25%; }
   
 }
 
+
 .detail-reg .btn {
   margin-top: 40px; }
   .detail-reg .btn .glyphicon {
@@ -724,7 +769,7 @@ margin-left: 25%; }
 .mode-1 .sub-pane1 {
   display: block;
   width: 100%;
-  margin: auto;
+  margin: auto; 
    }
 
 .label-end{
@@ -733,7 +778,7 @@ margin-left: 25%; }
   bottom: 47px;
   color: #ebebeb;
   left: 239px;
-  bottom: 47px;
+  bottom: 48px;
 }
 .back-btn{
   float: left;
@@ -750,6 +795,11 @@ transition: all .02s ease-in;
    @media (min-width: 750px){
     .mode-1 .sub-pane1{
       width: 80%;
+    }
+   }
+   @media (min-width:500px)}{
+    .sub-pane2{
+      padding-left: 30px;
     }
    }
    @media (min-width: 800px){
@@ -912,7 +962,7 @@ transition: all .02s ease-in;
      }
 
 .pane1 .node {
-  opacity: 0.6;
+  
   margin-top: 30px; }
   .pane1 .node:hover, .pane1 .node.on {
     opacity: 1;
@@ -1151,7 +1201,8 @@ right: 271px;
     position: relative;
     z-index: 6;
     overflow-x: hidden;
-    padding-left: 20px;
+    padding-left: 1%;
+    border-radius: 6px;
     box-sizing: border-box; }
 
   .pane1 .btn-find {
@@ -1159,7 +1210,6 @@ right: 271px;
 
   .sub-pane2 {
     position: absolute;
-    padding-left: 350px;
     left: 0;
     top: 0; }
 
@@ -1195,8 +1245,7 @@ right: 271px;
     margin-right: 0; } }
 @media only screen and (min-width: 1150px) {
   .class-list li {
-    width: 31%;
-    max-width: none;
+    
     float: left; }
 
   .detail {

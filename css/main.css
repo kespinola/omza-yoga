@@ -477,8 +477,8 @@ position: fixed;
 padding: 6px;
 width: 48px;
 height: 80vh;
-border-bottom-right-radius: 10px;
-border-top-right-radius: 10px;
+border-bottom-right-radius: 6px;
+border-top-right-radius: 6px;
 left: 290px;
 float: left;
 top: 100px;
@@ -525,6 +525,7 @@ display: none;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
+  border-radius: 10px;
   text-align: center;
   padding-bottom: 20px;
   width: 330px;
@@ -1202,7 +1203,6 @@ right: 271px;
     z-index: 6;
     overflow-x: hidden;
     padding-left: 1%;
-    border-radius: 6px;
     box-sizing: border-box; }
 
   .pane1 .btn-find {

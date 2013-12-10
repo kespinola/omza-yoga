@@ -332,7 +332,7 @@
 		window.location.hash = '#p/Santa-Barbara';
 	});
 
-	$doc.on('click', '.filter-btn',function(){
+	$doc.on('click touchend', '.filter-btn',function(){
 		$('.sub-pane1').toggleClass('hide-filter');
 		$('.sliders, .nodes').toggleClass('hidden');
 		$('.filter-btn').toggleClass('left-shift-filter');

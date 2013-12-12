@@ -91,12 +91,20 @@
 	function load_filter(){
 		$('.filter-btn').css('display','block');
 		$('.detail-nodes').css("display", "inline");
-		$('.sliders, .nodes').css('width','250px');
+		$('.sliders, .nodes, .week').css('width','250px');
 		$('.node').css('width','65px').css('height','65px');
+	};
+	function day_of_week(id){
+		var days = [ "Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday", "Sunday"];
+		return days[id];
+	};
+	function day_node(id){
+		var days = [ "mon","tues","wed","thur", "fri","sat", "sun"];
+		return days[id];
 	};
 
 	function reset_filter(){
-		$('.sliders, .nodes').css('width','100%');
+		$('.sliders, .nodes, .week').css('width','100%');
 		$('.filter-btn').css('display','none').removeClass('left-shift-filter');
 		$('.sub-pane1').removeClass('hide-filter');
 		$('.sliders, .nodes').removeClass('hidden');
@@ -136,8 +144,8 @@
 			+		'<h3>'+this.class_name+'</h3>'
 
 			+	'</div>'
-			+	'<div class="class-date">'
-			+		'<div class="class-day">'+this.class_day+'</div>'
+			+	'<div class="class-date node-'+day_node(this.class_day)+'">'
+			+		'<div class="class-day">'+day_of_week(this.class_day)+'</div>'
 			+		'<div class="class-time">'+this.class_start+'</div>'
 			+	'</div>'
 
@@ -195,7 +203,7 @@
 		+'<div class="nodes">'
 			+	node_html(c.node_stand, 'beginner', 'Beginner')
 			+	node_html(c.node_heated, 'heated', 'Heated')
-			+	node_html(c.node_healing, 'injuries', 'Injuries')
+			+	node_html(c.node_injuries, 'injuries', 'Injuries')
 			+	node_html(c.node_spirit, 'spirit', 'Spirituality')
 		+	node_html(c.node_meditation, 'meditation', 'Meditation')
 		+	node_html(c.node_chanting, 'chanting', 'Chanting')
@@ -225,7 +233,7 @@
 	}
 
 	function filterData () {
-		var results = [], attrs = {}, nodes = {}, num = 0;
+		var results = [], attrs = {}, nodes = {}, days ={}, num = 0;
 
 		// Get slider settings
 		$.each(['strength','spirit','flex','balance','tempo'], function(i,e,j){
@@ -241,6 +249,11 @@
 			if (j.hasClass('on')) nodes[e] = 1;
 		});
 
+		$.each(['mon','tues','wed','thur','fri','sat','sun'], function(i,e,j){
+			j = $('.pane1 .node-'+e);
+			if (j.hasClass('on')) days[e] = 1;
+		});
+
 		$.each(classes, function(i){
 			this.class_id = i;
 
@@ -253,14 +266,18 @@
 					return;
 				}
 			}
-
+		for(var k in days){
+				if(!this['node_'+k]){
+					return;
+				}
+			}
 			// Filter results based on nodes
 			for (var k in nodes) {
 				if (!this['node_'+k]) {
 					return;
 				}
 			}
-
+			
 			// Filter results based on sliders
 			for (k in attrs) {
 				if (attrs.hasOwnProperty(k)) {
@@ -269,6 +286,11 @@
 						return;
 					}
 				}
+
+			// //Filter by day of week
+			// for (k in days){
+			// 	if (!this)
+			// }
 			}
 
 			results.push(this);
@@ -289,7 +311,7 @@
 		$body.addClass('mode-2');
 	});
 
-	$doc.on('click', '.node', function(){
+	$doc.on('click', '.node, .day-btn', function(){
 		$(this).toggleClass('on');
 		$doc.trigger('filter');
 	});

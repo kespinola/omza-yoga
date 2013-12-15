@@ -36,8 +36,10 @@
 		// Studio
 		else if (/s\//.test(path)) {
 			mode = ROUTE_STUDIO;
-			$('.studio-img').css('backgroundImage', 'url(img/'+arg.toLowerCase()+'.jpg)');
-			$('.studio-head h3').text(arg);
+			var cls = classes[+arg];
+			$('.studio-img').css('backgroundImage', 'url(img/studio-'+cls.studio_id+'.png)');
+			$('.studio-head h3').text(cls.studio_name);
+			$('.hook-studio').css('display','none');
 			load_filter();
 			filterData();
 			
@@ -130,11 +132,16 @@
 
 	function load_classes (classes) {
 		var classList = $('.class-list').empty();
-		var html = '',image;
+		var html = '',image, studio_image;
 		$.each(classes, function(i){
 			image = this.teacher_image ? 'img/t/'+this.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
+			studio_image = this.studio_id ? 'img/studio-'+this.studio_id+'.png' : 'img/omza-thumbnail.png';
 			html += ''
 			+'<li class="class-li hook-class" data-id="'+this.class_id+'">'
+			+	'<div class="hook-studio" data-id="'+this.class_id+'">'
+			+		'<div class="studio-border t02"><div class="studio-thumb" style="background-image:url('+studio_image+')"></div></div>'
+			+		'<div class="studio-name"><p>'+this.studio_name+'</p></div>'
+			+	'</div>'
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
@@ -142,13 +149,12 @@
 			+	'</div>'
 			+	'<div class="class-right">'
 			+		'<h3>'+this.class_name+'</h3>'
-
 			+	'</div>'
-			+	'<div class="class-date node-'+day_node(this.class_day)+'">'
+
+			+	'<div class="class-date day-'+this.class_day+'">'
 			+		'<div class="class-day">'+day_of_week(this.class_day)+'</div>'
 			+		'<div class="class-time">'+this.class_start+'</div>'
 			+	'</div>'
-
 			+'</li>';
 			if (i >= 35) {
 				return false;
@@ -177,7 +183,7 @@
 		var classList = $('.class-list').empty();
 		var $detail = $('.detail').empty();
 	
-		image = c.teacher_image ? 'img/t/'+c.teacher_image+ '.jpg' : 'img/omza-thumbnail.png';
+		image = c.teacher_image ? 'img/t/'+c.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
 		class_header = c.class_description ? '<h3 class="description-head"><i class="fa fa-book"></i><span class="description-title">Class Description</span><i class="fa fa-caret-left label-end"></i></h3>' : '';
 		var html = ''
 	
@@ -249,8 +255,8 @@
 			if (j.hasClass('on')) nodes[e] = 1;
 		});
 
-		$.each(['mon','tues','wed','thur','fri','sat','sun'], function(i,e,j){
-			j = $('.pane1 .node-'+e);
+		$.each(['0','1','2','3','4','5','6'], function(i,e,j){
+			j = $('.pane1 .day-'+e);
 			if (j.hasClass('on')) days[e] = 1;
 		});
 
@@ -259,18 +265,22 @@
 
 			// Filter resutls based on hash
 			if (arg) {
-				if (mode === ROUTE_STUDIO && this.studio_name !== arg) {
+				if (mode === ROUTE_STUDIO && this.studio_name !== classes[+arg].studio_name) {
 					return;
 				}
 				if (mode === ROUTE_TEACHER && this.teacher_name !== classes[+arg].teacher_name) {
 					return;
 				}
 			}
-		for(var k in days){
-				if(!this['node_'+k]){
-					return;
+			//Filter by multiple Days
+
+			for(k in days){
+					if(!this['day_'+k] ){
+						return;
+					}
 				}
-			}
+
+
 			// Filter results based on nodes
 			for (var k in nodes) {
 				if (!this['node_'+k]) {
@@ -328,6 +338,19 @@
 		switch_mode();
 	});
 
+	$doc.on('click', '.hook-studio', function(){
+		var 
+		$this = $(this),
+		id = +$this.data('id'),
+		cls = classes[id];
+
+		var nice_name = cls.studio_name.replace(/[^a-zA-Z0-9\-]+/g,'-');
+
+		window.location.hash = '#s/'+id+'/'+nice_name;
+		e.stopPropagation();
+		switch_mode();
+	});
+
 	$doc.on('click', '.hook-teacher', function(e){
 		var 
 		$this = $(this),
@@ -346,9 +369,7 @@
 		$(this).toggleClass('btn-primary btn-success').find('.text').text(s ? 'Register for class' : 'Registered');
 	});
 
-	$doc.on('click', '.subhead-i', function () {
-		window.history.back();
-	});
+	
 
 	$doc.on('click', '.btn-find', function () {
 		window.location.hash = '#p/Santa-Barbara';

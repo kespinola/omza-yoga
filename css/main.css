@@ -387,9 +387,8 @@ background-repeat: no-repeat;
 
 .subhead-i {
   display: inline-block;
-  cursor: pointer; }
-  .subhead-i:hover {
-    opacity: 0.85; }
+  }
+  
 
 .studio-img {
   background-size: cover;
@@ -489,6 +488,7 @@ left: 290px;
 float: left;
 top: 100px;
 background-color: #D5BBA3;
+cursor: pointer;
 
 display: none;
 }
@@ -590,10 +590,14 @@ font-weight: bold;
     text-align: center;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    min-height: 150px;
+    height: 220px;
     position: relative;
     cursor: pointer; }
-
+.studio-name{
+  position: relative;
+  margin-top: 5px;
+  text-align: center;
+}
     
 
 .class-left {
@@ -612,6 +616,8 @@ font-weight: bold;
   font-size: 1.25em;
   width: 97%;
   font-weight: 300; 
+  position: relative;
+  bottom: 200px;
 }
 
 .class-icon {
@@ -622,7 +628,7 @@ font-weight: bold;
   border: 6px solid #e4e4e4;
   transition: all 0.2s; }
 
-  .class-list li:hover .class-icon{
+  .class-list li .class-icon:hover{
     border:4px solid #C7D694;
   }
 
@@ -668,90 +674,90 @@ margin-left: 25%; }
   border-width: 6px;
   margin-left: -6px; }
 
-.class-date.node-mon{
+.class-date.day-0{
   background-color: #F8A7A7;
 }
-.class-date.node-mon:hover{
+.class-date.day-0:hover{
   background: #F1B6B6 !important;  
 }
-.class-date.node-tues{
+.class-date.day-1{
   background: #FFC291;
 }
-.class-date.node-tues:hover{
+.class-date.day-1:hover{
   background: #FACFAC !important;
 }
-.class-date.node-wed{
+.class-date.day-2{
   background-color: #E6E67A;
 }
-.class-date.node-wed:hover{
+.class-date.day-2:hover{
   background-color: #F4F5B5 !important;
 }
-.class-date.node-thur{
+.class-date.day-3{
   background-color: #99D8A6;
 }
-.class-date.node-thur:hover{
+.class-date.day-3:hover{
   background-color: #9DE6AC !important;
 }
-.class-date.node-fri{
+.class-date.day-4{
   background-color: #8BC3E9;
 }
-.class-date.node-fri:hover {
+.class-date.day-4:hover {
   background-color: #9CD2F7 !important;
 }
-.class-date.node-sat{
+.class-date.day-5{
   background-color:#97A3D5;
 }
-.class-date.node-sun{
+.class-date.day-6{
   background-color: #D3A7E2;
 }
-.node-mon.day-btn{
+.day-0.day-btn{
   border: 3px solid #F8A7A7;
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
 }
-.node-mon.day-btn:hover, .node-mon.day-btn.on{
+.day-0.day-btn:hover, .day-0.day-btn.on{
   background-color: #F8A7A7;
   border: 3px solid #F7F7F7;
 }
-.node-tues.day-btn{
+.day-1.day-btn{
   border: 3px solid #FFC291;
 }
-.node-tues.day-btn:hover, .node-tues.day-btn.on{
+.day-1.day-btn:hover, .day-1.day-btn.on{
   background-color: #FFC291;
   border: 3px solid #F7F7F7;
 }
-.node-wed.day-btn{
+.day-2.day-btn{
   border: 3px solid #F4F5B5;
 }
-.node-wed.day-btn:hover, .node-wed.day-btn.on{
+.day-2.day-btn:hover, .day-2.day-btn.on{
   background-color: #F4F5B5;
   border: 3px solid #F7F7F7;
 }
-.node-thur.day-btn{
+.day-3.day-btn{
   border: 3px solid #99D8A6;
 }
-.node-thur.day-btn:hover, .node-thur.day-btn.on{
+.day-3.day-btn:hover, .day-3.day-btn.on{
   background-color: #99D8A6;
   border: 3px solid #F7F7F7;
 }
-.node-fri.day-btn{
+.day-4.day-btn{
   border: 3px solid #8BC3E9;
 }
-.node-fri.day-btn:hover, .node-fri.day-btn.on{
+.day-4.day-btn:hover, .day-4.day-btn.on{
   background-color: #8BC3E9;
   border: 3px solid #F7F7F7;
 }
-.node-sat.day-btn{
+.day-5.day-btn{
   border: 3px solid #97A3D5;
 }
-.node-sat.day-btn:hover, .node-sat.day-btn.on{
+.day-5.day-btn:hover, .day-5.day-btn.on{
   background-color: #97A3D5;
   border: 3px solid #F7F7F7;
 }
-.node-sun.day-btn{
+.day-6.day-btn{
   border: 3px solid #D3A7E2;
 }
-.node-sun.day-btn:hover, .node-sun.day-btn.on{
+.day-6.day-btn:hover, .day-6.day-btn.on{
   background-color: #D3A7E2;
   border: 3px solid #F7F7F7;
 }
@@ -1027,6 +1033,31 @@ transition: all .02s ease-in;
 
    }
 
+.class-li .hook-studio{
+    position: relative;
+display: inline-block;
+margin-top: 120px;
+  }
+.studio-border{
+ border-radius: 100px;
+border: 4px solid #e4e4e4;
+background-color: #FFF6EB;
+width: 57px;
+height: 57px;
+
+
+}
+.studio-border:hover{
+  border: 2px solid #D5BBA3;
+}
+.studio-thumb{
+  background-size: 50px 50px;
+  text-align: center;
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
   .slider-btn.full {
     -webkit-border-radius: 3px;
     border-radius: 3px; }

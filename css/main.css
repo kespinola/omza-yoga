@@ -139,6 +139,7 @@ textarea {
   display: none !important;
   visibility: hidden; }
 
+
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
@@ -152,6 +153,16 @@ textarea {
   position: absolute;
   width: 1px; }
 
+.inline-block{
+  display: inline-block !important;
+}
+
+/*
+  Shift up for Show Hide Calander
+*/
+.shift-down{
+  bottom: 0px !important;
+}
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
@@ -310,6 +321,27 @@ h2, h3, h4, p, li {
   font-weight: 300;
   width: 100%; }
 
+.right-shift{
+  right: 19px;
+}
+  .btn-default{
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    color: #94887b;
+    border-color: #e4e4e4;
+    font-family: 'Allerta', sans-serif;
+  }
+
+.time-btns{
+  margin: 8px 0px 8px 0px;
+width: 275px;
+bottom: 15px;
+}
+.btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default.on{
+  color: #D5BBA3;
+  border-color:#D8D8D8;
+  background-color: #ebebeb;
+}
 /**
  * PAGE STRUCTURE
  */
@@ -481,7 +513,7 @@ background-repeat: no-repeat;
 position: fixed;
 padding: 6px;
 width: 48px;
-height: 80vh;
+height: 83vh;
 border-bottom-right-radius: 6px;
 border-top-right-radius: 6px;
 left: 290px;
@@ -515,7 +547,7 @@ display: none;
   display: block; }
 
 .pane1 .btn-large {
-  margin-top: 30px; }
+  margin-top: 10px; }
 
 .sub-pane {
   display: inline-block;
@@ -526,22 +558,25 @@ display: none;
 
 .sub-pane1 {
   display: none;
-  padding: 20px;
-  padding-top: 30px;
+  padding-top: 10px;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   width: 100%;
   border-radius: 10px;
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   width: 330px;
-  background-color: #ebebeb;
-  height: 80vh !important;
+  background-color: #f3f3f3;
+  height: 83vh !important;
    }
-
+@media (min-width:500px){
+  .mode-1 .sub-pane1{
+    overflow-y: hidden;
+  }
+}
   .day-btn{
-    width: 55px;
-  height: 55px;
+    width: 60px;
+  height: 60px;
   display: inline-block;
   border-radius: 100px;
   border: 3px solid #dddddd;
@@ -549,12 +584,31 @@ display: none;
   cursor: pointer;
   }
   .day-btn span{
- margin-top: 10px;
+ margin-top: 14px;
 display: block;
 font-size: 18px;
 font-weight: bold;
   }
+.class-features{
+  background-color: #f3f3f3;
+  position:relative;
+  bottom:246px;
+  width: 281px;
+  height: 260px;
+}
+.mode-1 .class-features{
+  width: 100%;
+}
+@media all and (min-width:492px){
+  .mode-1 .class-features{
+    bottom: 180px;
+  }
+}
+@media all and (min-width:965px){
+    .mode-1 .class-features{
 
+  }
+}
 .sub-pane2 {
   padding-top: 63px;
   padding-left: 365px;
@@ -677,33 +731,23 @@ margin-left: 25%; }
 .class-date.day-0{
   background-color: #F8A7A7;
 }
-.class-date.day-0:hover{
-  background: #F1B6B6 !important;  
-}
+
 .class-date.day-1{
   background: #FFC291;
 }
-.class-date.day-1:hover{
-  background: #FACFAC !important;
-}
+
 .class-date.day-2{
   background-color: #E6E67A;
 }
-.class-date.day-2:hover{
-  background-color: #F4F5B5 !important;
-}
+
 .class-date.day-3{
   background-color: #99D8A6;
 }
-.class-date.day-3:hover{
-  background-color: #9DE6AC !important;
-}
+
 .class-date.day-4{
   background-color: #8BC3E9;
 }
-.class-date.day-4:hover {
-  background-color: #9CD2F7 !important;
-}
+
 .class-date.day-5{
   background-color:#97A3D5;
 }
@@ -786,6 +830,8 @@ margin-left: 25%; }
     width: 113px;
   }
 }
+
+
   .class-rating:before {
     width: 30px;
     height: 30px;
@@ -810,8 +856,48 @@ margin-left: 25%; }
 .pane2 {
   text-align: center;
   z-index: 0; }
+.pane2 .node, .pane2 .slider, .pane2 .js-slider .slider-bg{
+  cursor: default;
+}
 
+.pane2 .class-date{
+  width: 90px;
+  top: 27px;
+  height: 68px;
+  right: 2%;
 
+}
+@media (min-width:450px){
+  .pane2 .class-date{
+    right: 3%;
+    top: 45px;
+    width: 120px;
+  }
+}
+@media (min-width:720px){
+  .pane2 .class-date{
+    right: 9.45%;
+    width: 160px;
+    top: 55px;
+  }
+}
+@media (min-width:1150px){
+  .pane2 .class-date{
+    right: 21.1%;
+    width: 180px;
+  }
+}
+.pane2 .class-date:after{
+  border-top-color:#d5bba3;
+  border-right-color:#d5bba3;
+}
+
+@media (min-width: 550px){
+  .pane2 .nodes{
+    width: 100%;
+    position: relative;
+  }
+}
 .detail-wrap {
   margin-top: 5%;
   background-color: #EBEBEB;
@@ -888,6 +974,8 @@ margin-left: 25%; }
   margin: auto; 
    }
 
+
+
 .label-end{
   font-size: 69px;
   position: relative;
@@ -930,15 +1018,14 @@ transition: all .02s ease-in;
 .mode-1 .pane1 .btn-find {
   display: inline-block;
   width: auto;
-  min-width: 300px; }
+  width: 280px; }
 .mode-1 .slider {
   
   float: center;
   width: 100%;
   float: none;
   display: inline-block; }
-  .mode-1 .slider:first-child {
-    margin-left: 3%; }
+
 .mode-1 .node {
   display: inline-block;
   float: none; }
@@ -946,23 +1033,92 @@ transition: all .02s ease-in;
   clear: both;
   overflow: hidden;
   text-align: center;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  width: 75%; }
 
+.sliders{
+  margin-top: 10px;
+}
+
+.mode-1 .week{
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 31px;
+  position: relative;
+}
+.week{
+  width: 260px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  bottom: 30px;
+}
+/*Show and Hide Calendar*/
+
+.large-round-btn{
+  height: 75px;
+  width: 75px;
+  position: relative;
+  border-radius: 100px;
+
+}
+.calendar-btn{
+  
+  margin-bottom: 15px;
+  right: 25px;
+
+}
+.mode-1 .calendar-btn{
+  right: 0px;
+}
+.calendar-btn:focus, .calendar-btn:active{
+  outline: none;
+
+}
+.calendar-btn .fa-calendar{
+  font-size: 40px;
+}
+.calendar-wrapper{
+  background-color: #fafafa;
+  position: relative;
+  width: 281px;
+  text-align: center;
+  padding: 10px;
+  float: center;
+}
+.mode-1 .calendar-wrapper{
+  width: 100%;
+}
+
+.sub-pane1{
+  width:282px;
+}
+.calander-caret{
+position: relative;
+bottom: 42px;
+font-size: 53px;
+color: #fafafa;
+z-index: 100;
+}
 /**
  * SLIDERS
  */
 .slider {
   position: relative;
-  height: 65px;
-  padding-top: 24px;
+  height: 51px;
+  padding-top: 12px;
+  margin-top: 5px;
    }
 
 .slider-img {
   position: absolute;
   left: 0;
   top: 0;
-  width: 75px;
-  height: 75px;
+  width: 55px;
+  height: 55px;
   background-color: transparent;
   background-size: contain; }
 
@@ -995,7 +1151,7 @@ transition: all .02s ease-in;
   background-color: #fff;
   border-radius: 3px;
   font-family: 'Allerta', sans-serif;
-  height: 30px;
+  height: 28px;
   margin-left: 85px;
   position: relative; }
 
@@ -1008,7 +1164,7 @@ transition: all .02s ease-in;
 .slider-i {
   -webkit-border-radius: 3px 0px 0px 3px;
   border-radius: 3px 0px 0px 3px;
-  height: 30px;
+  height: 28px;
   position: relative;
   overflow: hidden;
   max-width: 100%;
@@ -1078,9 +1234,10 @@ height: 57px;
   margin-left: 2%;
 }
 
+
 .node {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   background-size: contain;
   border: 2.5px solid #dddddd;
   border-radius: 100px;
@@ -1097,17 +1254,18 @@ height: 57px;
   display:none;
 }
   .node span {
-    margin-top: 76px;
+    margin-top: 70px;
     display: block;
     font-size: 12px;
      }
 
 .pane1 .node {
   
-  margin-top: 30px; }
+  margin-top: 40px;
+  margin-right:25px; }
   .pane1 .node:hover, .pane1 .node.on {
     opacity: 1;
-    border: 5px solid #dddddd;
+    border: 3px solid #dddddd;
     background-color:#f9f9f9; }
 
 .node-meditation {
@@ -1246,8 +1404,9 @@ margin:0px;
   color: #94887b; }
 .nodes{
   position:relative;
-  left: 4%;
-  bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  bottom: 18px;
 }
 
 .description-head {
@@ -1326,8 +1485,7 @@ right: 271px;
   .no-fil.mode-1 .slider-bg, .no-fil.mode-1 .node {
     opacity: 1; }
 
-  .mode-1 .slider {
-    margin-left: 20px; }
+
   .mode-1 .sub-pane1 h1 {
     font-size: 4em;
     color: #94887b; }
@@ -1341,8 +1499,7 @@ right: 271px;
     width: 330px;
     position: relative;
     z-index: 6;
-    overflow-x: hidden;
-    padding-left: 1%;
+    overflow:hidden; 
     box-sizing: border-box; }
 
   .pane1 .btn-find {

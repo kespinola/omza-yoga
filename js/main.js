@@ -39,7 +39,6 @@
 			var cls = classes[+arg];
 			$('.studio-img').css('backgroundImage', 'url(img/studio-'+cls.studio_id+'.png)');
 			$('.studio-head h3').text(cls.studio_name);
-			$('.hook-studio').css('display','none');
 			load_filter();
 			filterData();
 			
@@ -93,8 +92,9 @@
 	function load_filter(){
 		$('.filter-btn').css('display','block');
 		$('.detail-nodes').css("display", "inline");
-		$('.sliders, .nodes, .week').css('width','250px');
-		$('.node').css('width','65px').css('height','65px');
+		$('.time-btns').addClass('inline-block');
+		$('.sliders').css('width','260px');
+
 	};
 	function day_of_week(id){
 		var days = [ "Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday", "Sunday"];
@@ -106,10 +106,13 @@
 	};
 
 	function reset_filter(){
-		$('.sliders, .nodes, .week').css('width','100%');
+		$('.nodes, .week').css('width','100%');
+		$('.sliders').css('width','75%');
 		$('.filter-btn').css('display','none').removeClass('left-shift-filter');
 		$('.sub-pane1').removeClass('hide-filter');
 		$('.sliders, .nodes').removeClass('hidden');
+		$('.time-btns').removeClass('inline-block');
+		console.log("reset filter complete");
 	};
 	function node_html (on, type, label) {
 		return ''
@@ -117,9 +120,25 @@
 		+'<span>'+label+'</span>'
 		+'</div>';
 	};
+	function clear_times(){
+		$.each(['morning','afternoon','night'], function(i,e,j){
+			j = $('.node-'+e);
+			j.removeClass('on');
+
+		})
+
+	};
+
+	function clear_days(){
+		for(var i=0;i<7;i++){
+			$('.day-'+i).removeClass('on');
+		}
+	};
 
 	function reset () {
 		$('.pane1 .node').removeClass('on');
+		clear_times();
+		clear_days();
 		var $sliders = $('.pane1 .js-slider');
 		$sliders.find('.slider-i').data('pct',50);
 		$sliders.find('.slider-bg').click();
@@ -189,6 +208,7 @@
 	
 		+'<div class="detail-wrap">'
 		+'<div class="detail-clear">'
+
 		+'<div class="detail-top">'
 		+	'<div class="teacher-info">'
 
@@ -197,9 +217,13 @@
 		+		'<div class="hook-teacher" data-id="'+c.class_id+'"><div class="teacher-img t02" style="background-image:url('+image+')"></div></div>'
 		+		'<div class="teacher-name"><span class="sub-title">with </span><h3 class="hook-teacher" data-id="'+c.class_id+'">'+c.teacher_name+'</h3></div>'
 		//+		'<div class="class-rating omza-fit-detail" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
+
+		+	'</div>'
+				+	'<div class="class-date day-'+c.class_day+'">'
+		+		'<div class="class-day">'+day_of_week(c.class_day)+'</div>'
+		+		'<div class="class-time">'+c.class_start+' - '+c.class_end+'</div>'
 		+	'</div>'
 		+'</div>'
-
 		+'<div class="omza-stats">'
 		+'<div class="detail-left">'
 		+	slider_html(c.attr_flex*10, 'flex', 'Flexibility')
@@ -250,7 +274,7 @@
 		});
 
 		// Get node values
-		$.each(['meditation','chanting','heated','injuries','stand','core','spirit','beginner'], function(i,e,j){
+		$.each(['meditation','chanting','heated','injuries','stand','core','spirit','beginner','morning','afternoon','night'], function(i,e,j){
 			j = $('.pane1 .node-'+e);
 			if (j.hasClass('on')) nodes[e] = 1;
 		});
@@ -311,7 +335,6 @@
 		});
 		load_classes(results);
 	}
-
 	$doc.on('filter', window.debounce(function(){
 		$body.removeClass('no-fil');
 		filterData();
@@ -321,7 +344,23 @@
 		$body.addClass('mode-2');
 	});
 
-	$doc.on('click', '.node, .day-btn', function(){
+	$doc.on('click', '.node', function(){
+		$(this).toggleClass('on');
+		$doc.trigger('filter');
+	});
+
+	$doc.on('click', '.time-btn', function(){
+		clear_times();
+		$(this).toggleClass('on');
+		$doc.trigger('filter');
+	});
+
+	$doc.on('click touchend', '.calendar-btn', function(){
+		$('.class-features').toggleClass('shift-down')
+	});
+
+	$doc.on('click', '.day-btn', function(){
+		clear_days();
 		$(this).toggleClass('on');
 		$doc.trigger('filter');
 	});
@@ -377,7 +416,7 @@
 
 	$doc.on('click touchend', '.filter-btn',function(){
 		$('.sub-pane1').toggleClass('hide-filter');
-		$('.sliders, .nodes').toggleClass('hidden');
+		$('.sliders, .nodes, .time-btns, .calendar-wrapper, .calendar-btn, .class-features').toggleClass('hidden');
 		$('.filter-btn').toggleClass('left-shift-filter');
 		$('.sub-pane2').toggleClass('no-shift-right');
 

@@ -355,7 +355,7 @@
 		$doc.trigger('filter');
 	});
 
-	$doc.on('click touchend', '.calendar-btn', function(){
+	$doc.on('click', '.calendar-btn', function(){
 		$('.class-features').toggleClass('shift-down')
 	});
 

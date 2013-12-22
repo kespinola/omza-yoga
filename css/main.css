@@ -546,9 +546,6 @@ display: none;
 .mode-1 .pane1-head {
   display: block; }
 
-.pane1 .btn-large {
-  margin-top: 10px; }
-
 .sub-pane {
   display: inline-block;
   vertical-align: top; }
@@ -592,7 +589,7 @@ font-weight: bold;
 .class-features{
   background-color: #f3f3f3;
   position:relative;
-  bottom:246px;
+  bottom:255px;
   width: 281px;
   height: 260px;
 }
@@ -601,7 +598,7 @@ font-weight: bold;
 }
 @media all and (min-width:492px){
   .mode-1 .class-features{
-    bottom: 180px;
+    bottom: 190px;
   }
 }
 @media all and (min-width:965px){
@@ -1241,7 +1238,7 @@ height: 57px;
   background-size: contain;
   border: 2.5px solid #dddddd;
   border-radius: 100px;
-  transition: all 0.2s;
+  transition: all 0.5s;
   background-color: transparent;
   background-repeat: no-repeat;
   font-family: 'Allerta', sans-serif;
@@ -1261,12 +1258,12 @@ height: 57px;
 
 .pane1 .node {
   
-  margin-top: 40px;
+  margin-top: 33px;
   margin-right:25px; }
   .pane1 .node:hover, .pane1 .node.on {
     opacity: 1;
-    border: 3px solid #dddddd;
-    background-color:#f9f9f9; }
+ border: 3.5px solid #BAA48F;
+background-color: #FFFFFF;}
 
 .node-meditation {
   background-image: url(../img/node-meditation.png); }
@@ -1297,11 +1294,11 @@ height: 57px;
   background-image: url(../img/node-stand.png); }
 
 .detail-wrap .node {
-  opacity: 0.4; }
+  opacity: 0.3; }
   .detail-wrap .node.on {
     opacity: 1;
-    border: 5px solid #dddddd;
-    background-color:#f9f9f9; }
+border: 3.5px solid #BAA48F;
+background-color: #FFFFFF; }
     .detail-wrap .node.off{
       display:none;
     }
@@ -1406,7 +1403,7 @@ margin:0px;
   position:relative;
   margin-right: auto;
   margin-left: auto;
-  bottom: 18px;
+  bottom: 28px;
 }
 
 .description-head {
@@ -1515,11 +1512,11 @@ right: 271px;
 
   .detail-left {
     float: left;
-    display: inline-block;
-    width: 55%; 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1%;
+display: inline-block;
+width: 49%;
+margin-left: auto;
+margin-right: 10%;
+margin-top: 1%;
   }
 
   .detail-right {

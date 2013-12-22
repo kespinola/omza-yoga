@@ -56,7 +56,7 @@
 		// Place
 		else if (/p\//.test(path)) {
 			mode = ROUTE_PLACE;
-			$('.studio-head h3').text('All Classes');
+			$('.studio-head h3').text('Santa Barbara Yoga');
 			load_filter();
 			filterData();
 			$('.studio-img').css('backgroundImage', 'url(img/omza-icon.png)');
@@ -359,12 +359,15 @@
 		$('.class-features').toggleClass('shift-down')
 	});
 
+$doc.on('click', '.calender-wrapper', function(){
+		$('.class-features').removeClass('shift-down')
+	});	
+
 	$doc.on('click', '.day-btn', function(){
 		clear_days();
 		$(this).toggleClass('on');
 		$doc.trigger('filter');
 	});
-
 	$doc.on('click', '.hook-class', function(){
 		var 
 		$this = $(this),

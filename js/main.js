@@ -222,6 +222,7 @@
 				+	'<div class="class-date day-'+c.class_day+'">'
 		+		'<div class="class-day">'+day_of_week(c.class_day)+'</div>'
 		+		'<div class="class-time">'+c.class_start+' - '+c.class_end+'</div>'
+		+		'<p class="room-name">'+c.room_name+'</p>'
 		+	'</div>'
 		+'</div>'
 		+'<div class="omza-stats">'

@@ -38,7 +38,7 @@
 			mode = ROUTE_STUDIO;
 			var cls = classes[+arg];
 			$('.studio-img').css('backgroundImage', 'url(img/studio-'+cls.studio_id+'.png)');
-			$('.studio-head h3').text(cls.studio_name);
+			$('.studio-head h3').text(cls.studio_name+' Yoga Studio');
 			load_filter();
 			filterData();
 			
@@ -359,7 +359,8 @@
 		$('.class-features').toggleClass('shift-down')
 	});
 
-$doc.on('click', '.calender-wrapper', function(){
+
+	$doc.on('mouseleave', '.calendar-wrapper', function(){
 		$('.class-features').removeClass('shift-down')
 	});	
 

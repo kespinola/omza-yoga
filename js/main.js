@@ -91,7 +91,7 @@
 
 	function load_filter(){
 		$('.filter-btn').css('display','block');
-		$('.detail-nodes').css("display", "inline");
+		$('.detail-nodes').css("display", "inline").removeClass('hidden');
 		$('.time-btns').addClass('inline-block');
 		$('.sliders').css('width','260px');
 

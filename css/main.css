@@ -1173,19 +1173,24 @@ z-index: 100;
   }
 
 .slider-btn {
-  
-  height: 35px;
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-  width: 50%;
-  background-image:url('../img/slider-btn.png');
+  background-image: url('../img/slider-btn.png');
   background-repeat: no-repeat;
-  position:fixed;
-  z-index: 1;
-
+  width: 37px;
+  height: 37px;
+  position: fixed;
+  z-index: 30;
+  left: 56%;
    }
-
+   
+   .slider-btn-1{
+    top: 52.5vh;
+   }
+   .slider-btn-2{
+    top: 60.5%;
+   }
+   .slider-btn-3{
+    top: 69%;
+   }
 .class-li .hook-studio{
     position: relative;
 display: inline-block;
@@ -1346,6 +1351,18 @@ border-radius: 7px 7px 0px 0px;
   float: left;
   display: block;
 
+}
+.btn-schedule{
+  margin-right: 3%;
+  margin-top: 27px;
+  display: inline-block;
+  width: 300px;
+  float: right;
+
+}
+.btn-schedule a{
+  color: #fff;
+  text-decoration: none;
 }
   .teacher-img{
     background-size: 100px 100px;

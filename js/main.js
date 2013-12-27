@@ -110,9 +110,10 @@
 		$('.sliders').css('width','75%');
 		$('.filter-btn').css('display','none').removeClass('left-shift-filter');
 		$('.sub-pane1').removeClass('hide-filter');
-		$('.sliders, .nodes').removeClass('hidden');
+		$('.sliders, .nodes, .class-features, .calendar-wrapper, .time-btns, .calendar-btn').removeClass('hidden');
 		$('.time-btns').removeClass('inline-block');
-		console.log("reset filter complete");
+		$('.detail-nodes').addClass('hidden');
+
 	};
 	function node_html (on, type, label) {
 		return ''
@@ -243,6 +244,7 @@
 		+	node_html(c.node_stand, 'stand', 'Inversions')
 		+'</div>'
 		+'</div>'
+		+'<div class="btn btn-primary btn-large btn-schedule"><a href="#schedule">Schedule Class</a></div>'
 		+'</div>'
 
 		+'<div class="detail-reg">'

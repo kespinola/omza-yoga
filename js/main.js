@@ -162,6 +162,7 @@
 			+		'<div class="studio-border t02"><div class="studio-thumb" style="background-image:url('+studio_image+')"></div></div>'
 			+		'<div class="studio-name"><p>'+this.studio_name+'</p></div>'
 			+	'</div>'
+			+'<div class="btn btn-primary btn-schedule btn-small"><a href="#schedule">Schedule Class</a></div>'
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'

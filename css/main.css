@@ -316,10 +316,15 @@ h2, h3, h4, p, li {
     background-color: #ACBD73;
   border-color: #ACBD73;; }
 
+.btn-small{
+  width: 150px;
+  margin-top: 0px !important;
+}
+
 .btn-large {
   font-size: 24px;
   font-weight: 300;
-  width: 100%; }
+  width: 300px; }
 
 .right-shift{
   right: 19px;
@@ -641,7 +646,7 @@ font-weight: bold;
     text-align: center;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    height: 220px;
+    height: 275px;
     position: relative;
     cursor: pointer; }
 .studio-name{
@@ -668,7 +673,7 @@ font-weight: bold;
   width: 97%;
   font-weight: 300; 
   position: relative;
-  bottom: 200px;
+  bottom: 210px;
 }
 
 .class-icon {
@@ -684,7 +689,7 @@ font-weight: bold;
   }
 
 .class-sub {
-  font-size: 19px;
+  font-size: 14px;
 line-height: 120%;
 margin-top: 11px;
 text-align: center;
@@ -1356,9 +1361,12 @@ border-radius: 7px 7px 0px 0px;
   margin-right: 3%;
   margin-top: 27px;
   display: inline-block;
-  width: 300px;
+  
   float: right;
 
+}
+.btn-schedule.btn-small{
+  margin-right: 25px;
 }
 .btn-schedule a{
   color: #fff;

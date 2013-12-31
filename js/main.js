@@ -90,10 +90,10 @@
 	}
 
 	function load_filter(){
-		$('.filter-btn').css('display','block');
 		$('.detail-nodes').css("display", "inline").removeClass('hidden');
 		$('.time-btns').addClass('inline-block');
 		$('.sliders').css('width','260px');
+		$('.filter-btn').css('display','block');
 
 	};
 	function day_of_week(id){
@@ -162,6 +162,7 @@
 			+		'<div class="studio-border t02"><div class="studio-thumb" style="background-image:url('+studio_image+')"></div></div>'
 			+		'<div class="studio-name"><p>'+this.studio_name+'</p></div>'
 			+	'</div>'
+			+'<hr class="divide-class t02">'
 			+'<div class="btn btn-primary btn-schedule btn-small"><a href="#schedule">Schedule Class</a></div>'
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
@@ -357,6 +358,11 @@
 		clear_times();
 		$(this).toggleClass('on');
 		$doc.trigger('filter');
+	});
+	$doc.on('mouseenter mouseleave', '.hook-studio', function(){
+		$(this).on('','.divide-class', function(){
+			$(this).toggleClass('hover-divide');
+		})
 	});
 
 	$doc.on('click', '.calendar-btn', function(){

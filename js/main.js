@@ -66,6 +66,7 @@
 			mode = ROUTE_CLASS;
 			var c = classes[+arg];
 			load_class(c);
+			$('.filter-btn').addClass('left-shift-filter');
 		}
 		else {
 			filterData();

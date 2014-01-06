@@ -669,7 +669,7 @@ font-weight: bold;
 
 .class-right h3 {
   margin:40px 0 0 9px;
-  font-size: 1.25em;
+  font-size: 15px;
   width: 97%;
   font-weight: 300; 
   position: relative;
@@ -824,8 +824,8 @@ margin-left: 25%; }
   margin: 12px 0 0 70px;
   position: relative;
   border-radius: 2px; 
-  left: 75px;
-  bottom: 29px;
+  left: 44px;
+  bottom: 33px;
 }
 @media all min-width(500px){
   .class-rating{

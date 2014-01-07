@@ -164,7 +164,7 @@
 			+		'<div class="studio-name"><p>'+this.studio_name+'</p></div>'
 			+	'</div>'
 			+'<hr class="divide-class t02">'
-			+'<div class="btn btn-primary btn-schedule btn-small"><a href="#schedule" onclick="_gaq.push([‘_trackEvent’, ‘link’,’click-schedule’, ’Schedule’])">Schedule Class</a></div>'
+			+'<div class="btn btn-primary btn-schedule btn-small"><a href="#schedule" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
@@ -247,7 +247,7 @@
 		+	node_html(c.node_stand, 'stand', 'Inversions')
 		+'</div>'
 		+'</div>'
-		+'<div class="btn btn-primary btn-large btn-schedule"><a href="#schedule" onclick="_gaq.push([‘_trackEvent’, ‘link’,’click-schedule’, ’Schedule’])">Schedule Class</a></div>'
+		+'<div class="btn btn-primary btn-large btn-schedule"><a href="#schedule" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
 		+'</div>'
 
 		+'<div class="detail-reg">'

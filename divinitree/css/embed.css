@@ -1,0 +1,16 @@
+.header{
+	border-bottom: none;
+	background-color: #fff6ee;
+}
+
+.filter-btn{
+	width: 48px;
+	top: 49px;
+	left: 282px;
+}
+.left-shift-filter{
+	left: 0px !important;
+}
+.hide-filter{
+	width: 48px !important;
+}

@@ -102,7 +102,7 @@
 		return days[id];
 	};
 	function day_node(id){
-		var days = [ "mon","tues","wed","thur", "fri","sat", "sun"];
+		var days = [ "Mon","Tues","Wed","Thu", "Fri","Sat", "Sun"];
 		return days[id];
 	};
 
@@ -155,7 +155,7 @@
 		var classList = $('.class-list').empty();
 		var html = '',image, studio_image;
 		$.each(classes, function(i){
-			image = this.teacher_image ? './img/t/'+this.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
+			image = this.teacher_image ? 'img/t/'+this.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
 			studio_image = this.studio_id ? 'img/studio-'+this.studio_id+'.png' : 'img/omza-thumbnail.png';
 			html += ''
 			+'<li class="class-li hook-class" data-id="'+this.class_id+'">'
@@ -164,7 +164,7 @@
 			+		'<div class="studio-name"><p>'+this.studio_name+'</p></div>'
 			+	'</div>'
 			+'<hr class="divide-class t02">'
-			+'<div class="btn btn-primary btn-schedule btn-small"><a href="#schedule" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
+			+'<div class="btn btn-primary btn-schedule btn-small"><a href="http://sb.divinitree.com/schedule/register/#'+day_node(this.class_day)+'" tagrget="_blank" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
@@ -247,7 +247,7 @@
 		+	node_html(c.node_stand, 'stand', 'Inversions')
 		+'</div>'
 		+'</div>'
-		+'<div class="btn btn-primary btn-large btn-schedule"><a href="#schedule" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
+		+'<div class="btn btn-primary btn-large btn-schedule"><a href="http://sb.divinitree.com/schedule/register/#'+day_of_week(c.class_day)+'" target="_blank" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
 		+'</div>'
 
 		+'<div class="detail-reg">'

@@ -297,7 +297,7 @@ body {
 h1{
   font-family: 'Josefin-San', sans-serif;
     font-weight: 100; }
-h2, h3, h4, p, li {
+h2, h3, h4, p, li, a {
     font-family: 'Josefin-San', sans-serif;
     font-weight: 100;
 }
@@ -360,7 +360,28 @@ bottom: 15px;
   top: 0;
   width: 100%; }
 
+.active{
+  color: #dddddd !important;
+}
 
+.nav-links{
+  float: right;
+  position: relative;
+  bottom: 35px;
+}
+
+.nav-links a{
+  color: #bbbbbb;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px; 
+  padding-right: 5px;
+}
+
+
+.nav-links a:hover{
+  color: #dddddd;
+}
 
 .logo {
   position: relative;

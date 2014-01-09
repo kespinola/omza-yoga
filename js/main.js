@@ -37,7 +37,7 @@
 		else if (/s\//.test(path)) {
 			mode = ROUTE_STUDIO;
 			var cls = classes[+arg];
-			$('.studio-img').css('backgroundImage', 'url(img/studio-'+cls.studio_id+'.png)');
+			$('.studio-img').css('backgroundImage', 'url(./img/studio-'+cls.studio_id+'.png)');
 			$('.studio-head h3').text(cls.studio_name+' Yoga Studio');
 			load_filter();
 			filterData();
@@ -47,7 +47,7 @@
 		else if (/t\//.test(path)) {
 			mode = ROUTE_TEACHER;
 			var cls = classes[+arg];
-			var img = cls.teacher_image ? 'img/t/'+cls.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
+			var img = cls.teacher_image ? './img/t/'+cls.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
 			$('.studio-img').css('backgroundImage', 'url('+img+')');
 			$('.studio-head h3').text(cls.teacher_name);
 			load_filter();
@@ -155,7 +155,7 @@
 		var classList = $('.class-list').empty();
 		var html = '',image, studio_image;
 		$.each(classes, function(i){
-			image = this.teacher_image ? 'img/t/'+this.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
+			image = this.teacher_image ? './img/t/'+this.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
 			studio_image = this.studio_id ? 'img/studio-'+this.studio_id+'.png' : 'img/omza-thumbnail.png';
 			html += ''
 			+'<li class="class-li hook-class" data-id="'+this.class_id+'">'

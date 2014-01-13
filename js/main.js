@@ -346,11 +346,11 @@
 		filterData();
 	}, 200));
 
-	$doc.on('click touchend', '.home-search-btn', function(){
+	$doc.on('click', '.home-search-btn', function(){
 		$body.addClass('mode-2');
 	});
 
-	$doc.on('click touchend', '.node', function(){
+	$doc.on('click', '.node', function(){
 		$(this).toggleClass('on');
 		$doc.trigger('filter');
 	});

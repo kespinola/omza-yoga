@@ -140,7 +140,7 @@
                     </div>
 
                     <!-- Class List -->
-                    <div class="sub-pane sub-pane2">
+                    <div class="sub-pane sub-pane2 t03">
                         <div class="class-wrap">
                             <ul class="class-list">
                             </ul>

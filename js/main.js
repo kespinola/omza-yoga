@@ -214,7 +214,7 @@
 		+'<div class="detail-clear">'
 
 		+'<div class="detail-top">'
-		+	'<div class="teacher-info">'
+		+	'<div class="header-info">'
 
 		+		'<i class="fa fa-chevron-left back-btn" onCLick="history.back()"></i>'
 		+		'<h1 class="detail-title">'+c.class_name+'</h1>'
@@ -346,16 +346,16 @@
 		filterData();
 	}, 200));
 
-	$doc.on('click', '.home-search-btn', function(){
+	$doc.on('click touchend', '.home-search-btn', function(){
 		$body.addClass('mode-2');
 	});
 
-	$doc.on('click', '.node', function(){
+	$doc.on('click touchend', '.node', function(){
 		$(this).toggleClass('on');
 		$doc.trigger('filter');
 	});
 
-	$doc.on('click', '.time-btn', function(){
+	$doc.on('click touchend', '.time-btn', function(){
 		clear_times();
 		$(this).toggleClass('on');
 		$doc.trigger('filter');

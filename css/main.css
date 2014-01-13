@@ -213,6 +213,14 @@ textarea {
 .clearfix {
   *zoom: 1; }
 
+
+  /*Border for Pictures*/
+
+  .pic-border{
+    border: 4px solid #e4e4e4;
+    border-radius: 25px;
+  }
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -297,9 +305,16 @@ body {
 h1{
   font-family: 'Josefin-San', sans-serif;
     font-weight: 100; }
+h1{
+  font-size: 45px;
+}
 h2, h3, h4, p, li, a {
     font-family: 'Josefin-San', sans-serif;
     font-weight: 100;
+}
+
+h2{
+  font-size: 40px;
 }
 .btn-primary {
   background-color: #ACBD73;
@@ -557,7 +572,7 @@ display: none;
   left: 0px;
 }
 .hide-filter{
-  width: 40px!important;
+  width: 56px!important;
 
 }
 .pane0 {
@@ -577,7 +592,7 @@ display: none;
   vertical-align: top; }
 
 .pane1 {
-  padding: 0; }
+  padding-top: 50px; }
 
 .sub-pane1 {
   display: none;
@@ -616,8 +631,9 @@ font-weight: bold;
   background-color: #f3f3f3;
   position:relative;
   bottom:255px;
-  width: 281px;
+  width: 290px;
   height: 260px;
+  padding-left: 4%;
 }
 .mode-1 .class-features{
   width: 100%;
@@ -633,10 +649,13 @@ font-weight: bold;
   }
 }
 .sub-pane2 {
-  padding-top: 63px;
   padding-left: 365px;
   box-sizing: border-box;
   width: 100%;
+   }
+
+   .sub-title{
+    color: #e4e4e4;
    }
    @media screen and (max-width: 719px){
     .sub-pane2{
@@ -661,7 +680,7 @@ font-weight: bold;
     padding: 12px 16px;
     display: inline-block;
     background: #fff;
-    width: 230px;
+    width: 199px;
     margin-top: 15px;
     margin-right: 20px;
     text-align: center;
@@ -681,7 +700,7 @@ font-weight: bold;
   width: 60px;
   position: absolute;
   text-align: center;
-  top: 16px;
+  top: 40px;
   left: 16px; }
 
 .class-right {
@@ -698,12 +717,12 @@ font-weight: bold;
 }
 
 .class-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 100px;
-  background-size: cover;
-  border: 6px solid #e4e4e4;
-  transition: all 0.2s; }
+  width: 65px;
+height: 65px;
+border-radius: 100px;
+background-size: cover;
+border: 5px solid #e4e4e4;
+transition: all 0.3s; }
 
   .class-list li .class-icon:hover{
     border:4px solid #C7D694;
@@ -715,7 +734,7 @@ line-height: 120%;
 margin-top: 11px;
 text-align: center;
 position: relative;
-margin-left: 25%; }
+margin-left: 3px; }
 
 .class-date {
   background: #e4e4e4;
@@ -1037,7 +1056,7 @@ transition: all .02s ease-in;
       }
    }
   .mode-1 .sub-pane1 h1 {
-    font-size: 40px; }
+    font-size: 35px; }
 .mode-1 .sub-pane2 {
   display: none; }
 .mode-1 .pane1 .btn-find {
@@ -1109,7 +1128,7 @@ transition: all .02s ease-in;
 .calendar-wrapper{
   background-color: #fafafa;
   position: relative;
-  width: 281px;
+  width: 290px;
   text-align: center;
   padding: 10px;
   float: center;
@@ -1222,7 +1241,7 @@ z-index: 100;
 .class-li .hook-studio{
     position: relative;
 display: inline-block;
-margin-top: 120px;
+margin-top: 125px;
 z-index: 1;
   }
 .studio-border{
@@ -1388,7 +1407,7 @@ background-color: #FFFFFF; }
   bottom: 3px;
   color: #fff;
 }
-.teacher-info{
+.header-info{
   background-color: #D5BBA3;
 border-bottom: 2px solid #baa48f;
 border-radius: 7px 7px 0px 0px;
@@ -1399,6 +1418,9 @@ border-radius: 7px 7px 0px 0px;
   display: block;
 
 }
+.info-header{
+  margin-left: 4%;
+}
 .btn-schedule{
   display: inline-block;
   position: relative;
@@ -1407,7 +1429,7 @@ border-radius: 7px 7px 0px 0px;
 
 }
 .btn-schedule.btn-small{
-  margin-right: 25px;
+  margin-right: 9px;
 }
 .btn-schedule a{
   color: #fff;
@@ -1523,6 +1545,62 @@ right: 271px;
     right: 12px;
   }
 
+/*About Us Element Stylings*/
+
+.about-page .row{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.about-page p{
+  font-size: 1.3em;
+}
+
+.about-page .detail-wrap{
+  margin-top: 85px;
+}
+
+.about-page .mission-section{
+  padding-top: 100px;
+}
+
+.circle-background{
+  height: 150px;
+  width: 150px;
+  background-color: #C7D694;
+  border-radius: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid #ACBD73;
+
+}
+
+.circle-background .fa{
+  color: #f9f9f9;
+  font-size: 90px;
+  margin-top: 35px;
+  margin-left: 30px;
+}
+
+.value-section h3{
+  text-align: center;
+  font-size: 30px;
+}
+.about-page h2{
+  text-align: center;
+}
+.about-page hr{
+  width: 80%;
+  border-top: 2px solid #D5BBA3;
+  margin-left: 11%;
+}
+
+.founder-pic{
+  border: 5px solid #Ddd;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /**
  * Media Queries
  */
@@ -1565,7 +1643,7 @@ right: 271px;
 
 
   .mode-1 .sub-pane1 h1 {
-    font-size: 4em;
+    font-size: 2.75em;
     color: #94887b; }
   .mode-1 .sub-pane1 h4 {
     font-size: 24px;
@@ -1574,7 +1652,7 @@ right: 271px;
 
   .sub-pane1 {
     display: inline-block;
-    width: 330px;
+    width: 346px;
     position: relative;
     z-index: 6;
     overflow:hidden; 
@@ -1585,7 +1663,8 @@ right: 271px;
   .sub-pane2 {
     position: absolute;
     left: 0;
-    top: 0; }
+    top: 0;
+    padding-top: 50px; }
 
   .detail {
     width: 80%; }

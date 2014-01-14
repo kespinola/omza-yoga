@@ -23,6 +23,13 @@ body {
   font-weight: 300;
   letter-spacing: 1px; }
 
+.semi-bold{
+  font-weight: 700 !important;
+}
+
+.bold{
+  font-weight: 800 !important;
+}
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -218,7 +225,7 @@ textarea {
 
   .pic-border{
     border: 4px solid #e4e4e4;
-    border-radius: 25px;
+    border-radius: 7px;
   }
 
 /* ==========================================================================
@@ -1389,7 +1396,7 @@ background-color: #FFFFFF; }
 
 }
 .class-describe{
-  font-size: 1.5em;
+  font-size: 1.25em;
   width: 80%;
   margin-top: 2%;
   padding-left: 47px;
@@ -1553,7 +1560,8 @@ right: 271px;
 }
 
 .about-page p{
-  font-size: 1.3em;
+  font-size: 1.35em;
+  line-height: 35px;
 }
 
 .about-page .detail-wrap{
@@ -1588,19 +1596,74 @@ right: 271px;
 }
 .about-page h2{
   text-align: center;
+  font-weight: 500;
+}
+.about-page h1{
+  font-weight: 800;
 }
 .about-page hr{
   width: 80%;
   border-top: 2px solid #D5BBA3;
   margin-left: 11%;
 }
-
+.our-team h3, .how-section h3{
+  font-weight: 400;
+  color: #bbbbbb;
+  text-align: left;
+}
 .founder-pic{
   border: 5px solid #Ddd;
   margin-left: auto;
   margin-right: auto;
 }
 
+.company-description{
+  text-align: center;
+}
+
+/*
+Contact Page Styling
+*/
+
+#contact_name, #contact_email, #contact_message{
+  border: none;
+border-radius: 3px;
+width: 47%;
+height: 50px;
+transition: all .2s ease-in-out;
+}
+
+#contact_message:focus, #contact_name:focus, #contact_email:focus{
+  outline: none;
+  border: 3px solid #C7D694;
+}
+#contact_message{
+  width: 75%;
+border: none;
+border-radius: 3px;
+height: 299px;
+color: #D5BBA3;
+}
+
+input{
+  color: #D5BBA3;
+}
+
+.attr-list{
+  list-style-type: none;
+}
+
+.attr-list img{
+  width: 120px;
+  background-color: #f9f9f9;
+  border-radius: 100px;
+  border: 6px solid #ddd;
+  padding: 9px;
+  margin-top: 30px;
+}
+#contact-form{
+  margin-top: 25px;
+}
 /**
  * Media Queries
  */

@@ -236,10 +236,10 @@
 		+	slider_html(c.attr_tempo*10, 'tempo', 'Tempo')
 		+'</div>'
 		+'<div class="nodes">'
-			+	node_html(c.node_stand, 'beginner', 'Beginner')
-			+	node_html(c.node_heated, 'heated', 'Heated')
-			+	node_html(c.node_injuries, 'injuries', 'Injuries')
-			+	node_html(c.node_spirit, 'spirit', 'Spirituality')
+		+	node_html(c.node_stand, 'beginner', 'Beginner')
+		+	node_html(c.node_heated, 'heated', 'Heated')
+		+	node_html(c.node_injuries, 'injuries', 'Injuries')
+		+	node_html(c.node_spirit, 'spirit', 'Spirituality')
 		+	node_html(c.node_meditation, 'meditation', 'Meditation')
 		+	node_html(c.node_chanting, 'chanting', 'Chanting')
 		+	node_html(c.node_music, 'music', 'Live Music')
@@ -427,10 +427,9 @@
 
 	$doc.on('click', '.btn-find', function () {
 		window.location.hash = '#p/Santa-Barbara';
-		$('.sub-pane2').removeClass('no-shift-right');
 	});
 
-	$doc.on('click touchend', '.filter-btn',function(){
+	$doc.on('click touchend', '.filter-btn, .hook-class',function(){
 		$('.sub-pane1').toggleClass('hide-filter');
 		$('.sliders, .nodes, .time-btns, .calendar-wrapper, .calendar-btn, .class-features').toggleClass('hidden');
 		$('.filter-btn').toggleClass('left-shift-filter');

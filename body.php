@@ -35,34 +35,34 @@
                     <div class="calendar-wrapper t03">
                         <i class="fa fa-caret-up calander-caret"></i>
                         <div class="week">
-                            <div class="day-0 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Day', 'Filter by days', 'Clicked Monday',, false]);">
+                            <div class="day-0 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter', 'Monday','0');">
                                 <span>Mon</span>
                             </div>
-                            <div class="day-1 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Day', 'Filter by days', 'Clicked Tuesday',, false]);">
+                            <div class="day-1 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Tuesday','0']);">
                                 <span>Tues</span>
                             </div>
-                            <div class="day-2 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Day', 'Filter by days', 'Clicked Wednesday',, false]);">
+                            <div class="day-2 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Wednesday','0']);">
                                 <span>Wed</span>
                             </div>
-                            <div class="day-3 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Day', 'Filter by days', 'Clicked Thursday',, false]);">
+                            <div class="day-3 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Thursday','0']);">
                                 <span>Thur</span>
                             </div>
-                            <div class="day-4 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Day', 'Filter by days', 'Clicked Friday',, false]);">
+                            <div class="day-4 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Friday','0']);">
                                 <span>Fri</span>
                             </div>
-                            <div class="day-5 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Day', 'Filter by days', 'Clicked Saturday',, false]);">
+                            <div class="day-5 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Saturday','0']);">
                                 <span>Sat</span>
                             </div>
-                            <div class="day-6 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Day', 'Filter by days', 'Clicked Sunday',, false]);">
+                            <div class="day-6 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Sunday','0']);">
                                 <span>Sun</span>
                             </div>
                         </div>
 
 
                         <div class="time-btns btn-group">
-                          <button type="button" class="time-btn node-morning btn btn-default" onClick="_gaq.push(['_trackEvent', 'Time', 'Filter by times', 'Clicked Morning',, false]);">Morning</button>
-                          <button type="button" class="time-btn node-afternoon btn btn-default" onClick="_gaq.push(['_trackEvent', 'Time', 'Filter by times', 'Clicked Afternoon',, false]);">Afternoon</button>
-                          <button type="button" class="time-btn node-night btn btn-default" onClick="_gaq.push(['_trackEvent', 'Time', 'Filter by times', 'Clicked Night',, false]);">Night</button>
+                          <button type="button" class="time-btn node-morning btn btn-default" onClick="_gaq.push(['_trackEvent', 'Times', 'Filter', 'Morning','0']);">Morning</button>
+                          <button type="button" class="time-btn node-afternoon btn btn-default" onClick="_gaq.push(['_trackEvent', 'Times', 'Filter', 'Afternoon','0']);">Afternoon</button>
+                          <button type="button" class="time-btn node-night btn btn-default" onClick="_gaq.push(['_trackEvent', 'Times', 'Filter', 'Night','0']);">Night</button>
                         </div>
                     </div>
                     <div class="class-features t03">
@@ -103,33 +103,33 @@
                             </div>
 
                             <div class="nodes">
-                                <div class="node t02 js-node node-beginner" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Beginner',, false]);">
+                                <div class="node t02 js-node node-beginner" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Beginner',, false]);">
                                     <span>Beginner</span>
                                 </div>
-                                <div class="node t02 js-node node-heated" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Heated',, false]);">
+                                <div class="node t02 js-node node-heated" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Heated',, false]);">
                                     <span>Heated</span>
                                 </div>
-                                <div class="node t02 js-node node-injuries" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Injuries',, false]);">
+                                <div class="node t02 js-node node-injuries" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Injuries',, false]);">
                                     <span>Injuries</span>
                                 </div>
 
-                                <div class="node t02 js-node node-spirit" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Spirit',, false]);">
+                                <div class="node t02 js-node node-spirit" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Spirit',, false]);">
                                     <span>Spirituality</span>
                                 </div>
                                 <div class="detail-nodes">
-                                    <div class="node t02 js-node node-core" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Core',, false]);">
+                                    <div class="node t02 js-node node-core" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Core',, false]);">
                                         <span>Core</span>
                                     </div>
-                                    <div class="node t02 js-node node-meditation" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Meditate',, false]);">
+                                    <div class="node t02 js-node node-meditation" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Meditate',, false]);">
                                         <span>Meditation</span>
                                     </div>
-                                    <div class="node t02 js-node node-music" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Live Music',, false]);">
+                                    <div class="node t02 js-node node-music" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Live Music',, false]);">
                                         <span class="music-label">Live Music</span>
                                     </div>
-                                    <div class="node t02 js-node node-stand" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Inversions',, false]);">
+                                    <div class="node t02 js-node node-stand" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Inversions',, false]);">
                                         <span>Inversions</span>
                                     </div>
-                                    <div class="node t02 js-node node-chanting" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Clicked Chanting',, false]);">
+                                    <div class="node t02 js-node node-chanting" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Chanting',, false]);">
                                         <span>Chanting</span>
                                     </div>
 

@@ -15,7 +15,7 @@
 
 			<div class="col-md-10 pull-right">
 
-					<img src="img/meditate-ocean.jpg" class="img-responsive pic-border" alt="Meditate ocean"></img>
+					<img src="img/meditate-ocean.png" class="img-responsive pic-border" alt="Meditate ocean"></img>
 
 			</div>
 
@@ -24,7 +24,7 @@
 		<div class="row company-description">
 			<div class="col-md-9 col-md-offset-1">
 				<h2>Omza is your yoga guide.</h2>
-				<p>Omza helps you find local yoga classes. Search for classes by strength, tempo, and flexibility. Filter classes with 9 diffrent yoga features: beginner, heated, injuries, core, spirituality, inversions, chanting, meditation, and live music.</p>
+				<p class="about-short-description">Finding a yoga class should be easy! <br>Omza guides you to the class that is right for you. </p>
 			</div>
 		</div>
 
@@ -77,7 +77,7 @@
 								</div>
 								<div class="col-md-9 col-md-offset-1 pull-right">
 									<h4 class="semi-bold">Strength</h4>
-									<p>Leave the bar empty if your looking to not move a muscle. A full bar means you're looking to hold a majority of your body weight for extended period of time.</p>
+									<p>For a class that will challenge and build strength, slide the bar up. For more restorative and gentle lower the bar. Ask yourself, “How strong would I like my practice to be today?”</p>
 								</div>
 							</div>
 
@@ -87,7 +87,7 @@
 								</div>
 								<div class="col-md-9 col-md-offset-1 pull-right">
 									<h4 class="semi-bold">Flexibility</h4>
-									<p>Are you a knot or stiff as a board? Adjust the flexibility slider to your level.</p>
+									<p>All yoga challenges our flexibility, be it mind or body. The lower the bar the less strain on the muscles. Ask yourself “How much would I like to stretch my muscles today?” </p>
 								</div>
 							</div>
 
@@ -97,7 +97,7 @@
 								</div>
 								<div class="col-md-9 col-md-offset-1 pull-right">
 									<h4 class="semi-bold">Tempo</h4>
-									<p>Many yoga practices are a moving meditation. Find a tempo of class that allows you to leave your head.</p>
+									<p>For a fast paced class, move the bar up. Smooth and easy, move it down. Ask yourself, “What pace sounds good today?”</p>
 								</div>
 							</div>
 						
@@ -116,15 +116,17 @@
 					<img src="img/kyle-espinola-pic.png" class="img-responsive img-circle founder-pic" alt="Kyle Omza founder picture"></img>
 					<h3>Kyle Espinola</h3>
 					<h4 class="semi-bold">Product & Co-Founder</h4>
-					<p>I started practicing yoga 5 years ago in order to better my balance and strength for surfing. Today the benefits of yoga for me go far beyond surfing. My yoga practice helps me find clarity and resilance. Omza is my chance to give back to yoga. I believe yoga is essential for your personal wellness. I hope you'll find your yoga class using Omza.</p>
+					<p>I started practicing yoga 5 years ago in order to better my balance and strength for surfing. Today the benefits of yoga for me go far beyond surfing. My yoga practice helps me find clarity and resilance. Omza is my chance to give back to yoga. I believe yoga is essential for your personal wellness.</p> 
+					<p>I hope you'll find your yoga class using Omza.</p>
 				</div>
 
 
 				<div class="col-md-6">
 					<img src="img/chyla-walsh-pic.png" class="img-responsive img-circle founder-pic" alt="Chyla Omza founder picture"></img>
 					<h3>Chyla Walsh</h3>
-					<h4 class="semi-bold">People & Co-Founder</h4>
-					<p>Nameste yogis! I'm a yoga instructor who wants nothing more than to better the practice of my students. I created Omza, so new yogis could experience the power of yogi during their first class. May you find love and light in your practice friends.</p>
+					<h4 class="semi-bold">CEO & Co-Founder</h4>
+					<p>I've been teaching yoga across the US for the last 3 years. A year ago I moved to Santa Barbara. Her curiosity created great conversation with Carlen Young, Divinitree studio owner. Carlen expresses frustration with helping new students connect with their class. During Santa Barbara Start Up Weekend, OMZA was born to help yoga. I am so excited to be starting this venture in the amazing Santa Barbara community. I truly believe OMZA will help so many new yogis find a class that will connect deeper to their practice.</p>
+					<p>I am manifesting OMZA to be a way for students to connect to their practice, their teachers and their Self.</p>
 				</div>
 
 			</div>	

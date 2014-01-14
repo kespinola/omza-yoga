@@ -11,7 +11,14 @@
 			<h1 class="info-header">Contact Us</h1>
 		</div>
 		<div class="row">
-			<div class="col-med-10">
+
+			<div class="col-md-5">
+				<img src="./img/chyla-kyle-photo.jpg" attr="Kyle and Chyla photo" class="pic-border img-responsive contact-img"></img>
+				<h2>Drop us a line!<h2>
+			</div>
+
+
+			<div class="col-md-7 pull-left">
 				<form id="contact-form" class="contact-form" action="#">
             	<p class="contact-name">
             		<input id="contact_name" type="text" placeholder="Full Name" value="" name="name" />
@@ -23,14 +30,15 @@
                 	<textarea id="contact_message" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
                 </p>
                 <p class="contact-submit">
-                	<a id="contact-submit" class="submit btn btn-primary btn-large" href="#">Send Your Email</a>
+                	<a id="contact-submit" class="submit btn btn-primary btn-large" href="#"><i class="fa fa-envelope"></i> Send Message</a>
                 </p>
                 
-                <div id="response">
+                	<div id="response">
                 
-                </div>
-            </form>
+                	</div>
+            	</form>
 			</div>
+
 		</div>
 	</div>
 	</div>

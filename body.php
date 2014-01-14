@@ -103,33 +103,33 @@
                             </div>
 
                             <div class="nodes">
-                                <div class="node t02 js-node node-beginner" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Beginner',, false]);">
+                                <div class="node t02 js-node node-beginner" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Beginner',, false]);">
                                     <span>Beginner</span>
                                 </div>
-                                <div class="node t02 js-node node-heated" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Heated',, false]);">
+                                <div class="node t02 js-node node-heated" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Heated',, false]);">
                                     <span>Heated</span>
                                 </div>
-                                <div class="node t02 js-node node-injuries" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Injuries',, false]);">
+                                <div class="node t02 js-node node-injuries" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Injuries',, false]);">
                                     <span>Injuries</span>
                                 </div>
 
-                                <div class="node t02 js-node node-spirit" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Spirit',, false]);">
+                                <div class="node t02 js-node node-spirit" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Spirit',, false]);">
                                     <span>Spirituality</span>
                                 </div>
                                 <div class="detail-nodes">
-                                    <div class="node t02 js-node node-core" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Core',, false]);">
+                                    <div class="node t02 js-node node-core" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Core',, false]);">
                                         <span>Core</span>
                                     </div>
-                                    <div class="node t02 js-node node-meditation" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Meditate',, false]);">
+                                    <div class="node t02 js-node node-meditation" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Meditate',, false]);">
                                         <span>Meditation</span>
                                     </div>
-                                    <div class="node t02 js-node node-music" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Live Music',, false]);">
+                                    <div class="node t02 js-node node-music" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Live Music',, false]);">
                                         <span class="music-label">Live Music</span>
                                     </div>
-                                    <div class="node t02 js-node node-stand" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Inversions',, false]);">
+                                    <div class="node t02 js-node node-stand" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Inversions',, false]);">
                                         <span>Inversions</span>
                                     </div>
-                                    <div class="node t02 js-node node-chanting" onClick="_gaq.push(['_trackEvent', 'Node', 'Filter by attributes', 'Chanting',, false]);">
+                                    <div class="node t02 js-node node-chanting" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Chanting',, false]);">
                                         <span>Chanting</span>
                                     </div>
 

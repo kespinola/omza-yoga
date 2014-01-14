@@ -3,14 +3,10 @@
 	background-color: #fff6ee;
 }
 
-/*.filter-btn{
-	width: 48px;
-	top: 49px;
-	left: 282px;
+.pane1{
+	padding-top: 50px;
 }
-.left-shift-filter{
-	left: 0px !important;
+
+.sub-pane2{
+	padding-top: 0px !important;
 }
-.hide-filter{
-	width: 48px !important;
-}*/

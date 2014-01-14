@@ -427,6 +427,7 @@
 
 	$doc.on('click', '.btn-find', function () {
 		window.location.hash = '#p/Santa-Barbara';
+		$('.sub-pane2').removeClass('no-shift-right');
 	});
 
 	$doc.on('click touchend', '.filter-btn, .hook-class',function(){

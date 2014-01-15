@@ -5,7 +5,7 @@
 <?php
     include_once('nav-header.php');
 ?>
-<div class="container center-block about-page">
+<div class="container center-block about-page extra-page">
 	<div class="detail-wrap">
 		<div class="header-info">
 			<h1 class="info-header">About Us</h1>
@@ -24,7 +24,7 @@
 		<div class="row company-description">
 			<div class="col-md-9 col-md-offset-1">
 				<h2>OMZA is your yoga guide.</h2>
-				<p class="about-short-description">Finding a yoga class should be easy! <br>OMZA guides you to the class that is right for you. </p>
+				<p class="extra-short-description">Finding a yoga class just got easier. <br>OMZA guides you to the class that is right for you. </p>
 			</div>
 		</div>
 
@@ -33,36 +33,6 @@
 
 		<div class="value-section row">
 
-
-
-
-
-			<!-- <h2>Our Values</h2>
-			<hr>
-
-			<div class="col-md-4">
-				<div class="circle-background">
-					<i class="fa fa-heart"></i>
-				</div>
-				<h3>Passion</h3>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-			</div>
-
-			<div class="col-md-4">
-				<div class="circle-background">
-					<i class="fa fa-leaf"></i>
-				</div>
-				<h3>Wellness</h3>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-			</div>
-
-			<div class="col-md-4">
-				<div class="circle-background">
-					<i class="fa fa-user"></i>
-				</div>
-				<h3>You</h3>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-			</div> -->
 
 			<div class="how-section">
 				<h2 >How it Works</h2>
@@ -119,7 +89,7 @@
 					<img src="img/kyle-espinola-pic.png" class="img-responsive img-circle founder-pic" alt="Kyle Omza founder picture"></img>
 					<h3>Kyle Espinola</h3>
 					<h4 class="semi-bold">Product & Co-Founder</h4>
-					<p>I started practicing yoga 5 years ago in order to better my balance and strength for surfing. Today the benefits of yoga for me go far beyond surfing. My yoga practice helps me find clarity and resilience. OMZA is my chance to give back to yoga.</p> 
+					<p>I am a recent graduate of UCSB. I started practicing yoga 5 years ago in order to better my balance and strength for surfing. Today the benefits of yoga for me go far beyond surfing. My yoga practice helps me find clarity and resilience. OMZA is my chance to give back to yoga.</p> 
 					<p>I believe yoga is essential for your personal wellness. I hope you'll find your yoga class using OMZA.</p>
 				</div>
 

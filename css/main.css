@@ -378,7 +378,7 @@ bottom: 15px;
   height: 60px;
   padding: 8px 16px 12px 8px;
   position: fixed;
-  z-index: 2;
+  z-index: 30;
   top: 0;
   width: 100%; }
 
@@ -406,6 +406,10 @@ bottom: 15px;
   padding-right: 5px;
 }
 
+.studio-page .col-md-8{
+  padding-left: 0px;
+  padding-right: 0px
+}
 
 .nav-links a:hover{
   color: #dddddd;
@@ -1560,24 +1564,31 @@ right: 271px;
 
 /*About Us Element Stylings*/
 
-.about-page .row{
+.about-page .row, .extra-page .row{
   padding-left: 5%;
   padding-right: 5%;
 }
 
-.about-page p{
+.extra-page p{
   font-size: 1.35em;
   line-height: 35px;
 }
 
-.about-page .detail-wrap{
+.extra-page .detail-wrap{
   margin-top: 85px;
+  margin-bottom: 35px;
 }
 
 .about-page .mission-section{
   padding-top: 100px;
 }
 
+.studio-page .detail-wrap{
+  margin-top: 100px;
+}
+.top-space{
+  margin-top: 45px;
+}
 .circle-background{
   height: 150px;
   width: 150px;
@@ -1589,7 +1600,7 @@ right: 271px;
 
 }
 
-.about-short-description{
+.extra-short-description{
 font-size: 1.75em !important;
 line-height: 47px;
 font-weight: 400;
@@ -1603,18 +1614,18 @@ color: #AFAEAE;
   margin-left: 30px;
 }
 
-.value-section h3{
+.value-section h3, .extra-page h3{
   text-align: center;
   font-size: 30px;
 }
-.about-page h2{
+.about-page h2, .extra-page h2{
   text-align: center;
   font-weight: 500;
 }
-.about-page h1{
+.extra-page h1{
   font-weight: 800;
 }
-.about-page hr{
+.about-page hr, .extra-page hr{
   width: 80%;
   border-top: 2px solid #D5BBA3;
   margin-left: 11%;
@@ -1634,6 +1645,35 @@ color: #AFAEAE;
   text-align: center;
 }
 
+/*Studio Page Styling*/
+
+.studio-page .fa-mobile{
+  margin-top: 10px;
+  margin-left: 43px;
+  font-size: 125px;
+}
+
+.studio-page .fa-tint{
+  font-size: 110px;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+
+.studio-page .fa-tachometer{
+  font-size: 100px;
+  margin-top: 13px;
+  margin-left: 23px
+}
+.carousel-indicators .active{
+  width: 20px;
+  height: 20px;
+  background-color: #d5bba3;
+}
+.carousel-indicators li{
+  width: 20px;
+  height: 20px;
+  border: 2px solid #baa48f;
+}
 /*
 Contact Page Styling
 */

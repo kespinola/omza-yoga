@@ -5,7 +5,7 @@
 <?php
     include_once('nav-header.php');
 ?>
-<div class="container center-block about-page">
+<div class="container center-block extra-page">
 	<div class="detail-wrap">
 		<div class="header-info">
 			<h1 class="info-header">Contact Us</h1>

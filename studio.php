@@ -64,7 +64,7 @@
 			<div class="col-md-10 col-md-offset-1">
 				<h2>Yoga studios see how we can help.</h2>
 				<p class="extra-short-description">OMZA is teaming up with local Santa Barbara studios. <br>We create custom schedule widgets for your studio's website.</p>
-				<a class="submit btn btn-primary btn-large" href="/contact.php"><i class="fa fa-envelope"></i> Contact Us</a>
+				<a class="submit btn btn-primary btn-large" href="/contact"><i class="fa fa-envelope"></i> Contact Us</a>
 			</div>
 		</div>
 

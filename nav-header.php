@@ -1,5 +1,5 @@
   <div class="header">
-       <a href="/index.php" class="logo t05">OMZA</a>
+       <a href="/" class="logo t05">OMZA</a>
         <div class="nav-links">
  		    <a href="/about" class="t03">About Us</a>
  		 	<a href="/studio" class=" studio-link t03">Studios</a>

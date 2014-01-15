@@ -88,7 +88,7 @@
 				</div>
 				<h3>Custom Colors</h3>
 				<p>OMZA colors change to match your site.</p>
-				<p>The color scheme of your websites is an important piece of your brand. Therefore, our design team alters the color scheme of each widget to match perfectly with your site.</p>
+				<p>The color scheme of your website is an important piece of your brand. Therefore, our design team alters the color properties of each widget to match perfectly with your site.</p>
 			</div>
 
 			<div class="col-md-4">
@@ -97,7 +97,7 @@
 				</div>
 				<h3>Student Analytics</h3>
 				<p>OMZA sends you reports on user engagement.</p>
-				<p>OMZA tracks the features, days, and classes people click. Our people team will send you a report of your student's interactions with your schedule widget each month.</p>
+				<p>OMZA tracks the attributes, features, days, and classes people click. Our people team will send you a report of your student's interactions with your schedule widget each month.</p>
 			</div> 
 		</div>
 

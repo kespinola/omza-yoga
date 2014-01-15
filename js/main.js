@@ -164,7 +164,7 @@
 			+		'<div class="studio-name"><p>'+this.studio_name+'</p></div>'
 			+	'</div>'
 			+'<hr class="divide-class t02">'
-			+'<div class="btn btn-primary btn-schedule btn-small"><a href="http://sb.divinitree.com/schedule/register/#'+day_node(this.class_day)+'" tagrget="_blank" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
+			+'<div class="btn btn-primary btn-schedule btn-small"><a href="http://sb.divinitree.com/schedule/register/#'+day_node(this.class_day)+'" target="_blank" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'

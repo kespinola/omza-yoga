@@ -119,7 +119,7 @@
 					<img src="img/kyle-espinola-pic.png" class="img-responsive img-circle founder-pic" alt="Kyle Omza founder picture"></img>
 					<h3>Kyle Espinola</h3>
 					<h4 class="semi-bold">Product & Co-Founder</h4>
-					<p>I started practicing yoga 5 years ago in order to better my balance and strength for surfing. Today the benefits of yoga for me go far beyond surfing. My yoga practice helps me find clarity and resilance. OMZA is my chance to give back to yoga.</p> 
+					<p>I started practicing yoga 5 years ago in order to better my balance and strength for surfing. Today the benefits of yoga for me go far beyond surfing. My yoga practice helps me find clarity and resilience. OMZA is my chance to give back to yoga.</p> 
 					<p>I believe yoga is essential for your personal wellness. I hope you'll find your yoga class using OMZA.</p>
 				</div>
 

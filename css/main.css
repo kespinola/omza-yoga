@@ -393,6 +393,12 @@ bottom: 15px;
 }
 
 .nav-links a{
+  border-right: 1px solid #e4e4e4;
+}
+.contact-link{
+  border-right: none !important;
+}
+.nav-links a{
   color: #bbbbbb;
   text-decoration: none;
   font-weight: 500;

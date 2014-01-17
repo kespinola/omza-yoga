@@ -10,3 +10,18 @@
 .sub-pane2{
 	padding-top: 0px !important;
 }
+
+.logo{
+left: 85px;
+position: relative;
+bottom: 23px;
+}
+
+.mode-1 .logo{
+	left: 80px;
+	margin-left: 0px;
+}
+.span-text{
+	font-weight: 400;
+	color: #ddd;
+}

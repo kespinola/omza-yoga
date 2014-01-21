@@ -392,6 +392,8 @@
 		switch_mode();
 	});
 
+
+
 	$doc.on('click', '.hook-studio', function(){
 		var 
 		$this = $(this),

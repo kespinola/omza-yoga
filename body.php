@@ -1,7 +1,4 @@
-
-
-
-            <div class="content">
+ <div class="content">
 
             <div class="content-inner">
 
@@ -35,34 +32,34 @@
                     <div class="calendar-wrapper t03">
                         <i class="fa fa-caret-up calander-caret"></i>
                         <div class="week">
-                            <div class="day-0 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter', 'Monday','0');">
+                            <div class="day-0 day-btn t03" onClick="ga('send', 'event', 'day', 'click', 'Monday');">
                                 <span>Mon</span>
                             </div>
-                            <div class="day-1 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Tuesday','0']);">
+                            <div class="day-1 day-btn t03" onClick="ga('send', 'event', 'day', 'click','Tuesday');">
                                 <span>Tues</span>
                             </div>
-                            <div class="day-2 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Wednesday','0']);">
+                            <div class="day-2 day-btn t03" onClick="ga('send', 'event', 'day' ,'click', 'Wednesday');">
                                 <span>Wed</span>
                             </div>
-                            <div class="day-3 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Thursday','0']);">
+                            <div class="day-3 day-btn t03" onClick="ga('send', 'event', 'day' ,'click', 'Thursday');">
                                 <span>Thur</span>
                             </div>
-                            <div class="day-4 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Friday','0']);">
+                            <div class="day-4 day-btn t03" onClick="ga('send', 'event', 'day','click', 'Friday');">
                                 <span>Fri</span>
                             </div>
-                            <div class="day-5 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Saturday','0']);">
+                            <div class="day-5 day-btn t03" onClick="ga('send', 'event', 'day','click', 'Saturday');">
                                 <span>Sat</span>
                             </div>
-                            <div class="day-6 day-btn t03" onClick="_gaq.push(['_trackEvent', 'Days', 'Filter'  , 'Sunday','0']);">
+                            <div class="day-6 day-btn t03" onClick="ga('send', 'event', 'day','click', 'Sunday');">
                                 <span>Sun</span>
                             </div>
                         </div>
 
 
                         <div class="time-btns btn-group">
-                          <button type="button" class="time-btn node-morning btn btn-default" onClick="_gaq.push(['_trackEvent', 'Times', 'Filter', 'Morning','0']);">Morning</button>
-                          <button type="button" class="time-btn node-afternoon btn btn-default" onClick="_gaq.push(['_trackEvent', 'Times', 'Filter', 'Afternoon','0']);">Afternoon</button>
-                          <button type="button" class="time-btn node-night btn btn-default" onClick="_gaq.push(['_trackEvent', 'Times', 'Filter', 'Night','0']);">Night</button>
+                          <button type="button" class="time-btn node-morning btn btn-default" onClick="ga('send', 'event', 'time', 'click', 'Morning');">Morning</button>
+                          <button type="button" class="time-btn node-afternoon btn btn-default" onClick="ga('send', 'event', 'time', 'click', 'Afternoon');">Afternoon</button>
+                          <button type="button" class="time-btn node-night btn btn-default" onClick="ga('send', 'event','time', 'click', 'Night');">Night</button>
                         </div>
                     </div>
                     <div class="class-features t03">
@@ -103,33 +100,33 @@
                             </div>
 
                             <div class="nodes">
-                                <div class="node t02 js-node node-beginner" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Beginner',, false]);">
+                                <div class="node t02 js-node node-beginner" onClick="ga('send', 'event', 'node', 'click','Beginner');">
                                     <span>Beginner</span>
                                 </div>
-                                <div class="node t02 js-node node-heated" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Heated',, false]);">
+                                <div class="node t02 js-node node-heated" onClick="ga('send', 'event','node', 'click','Heated');">
                                     <span>Heated</span>
                                 </div>
-                                <div class="node t02 js-node node-injuries" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Injuries',, false]);">
+                                <div class="node t02 js-node node-injuries" onClick="ga('send', 'event','node', 'click','Injuries');">
                                     <span>Injuries</span>
                                 </div>
 
-                                <div class="node t02 js-node node-spirit" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Spirit',, false]);">
+                                <div class="node t02 js-node node-spirit" onClick="ga('send', 'event','node', 'click', 'Spirit');">
                                     <span>Spirituality</span>
                                 </div>
                                 <div class="detail-nodes">
-                                    <div class="node t02 js-node node-core" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Core',, false]);">
+                                    <div class="node t02 js-node node-core" onClick="ga('send', 'event', 'node', 'click','Core');">
                                         <span>Core</span>
                                     </div>
-                                    <div class="node t02 js-node node-meditation" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Meditate',, false]);">
+                                    <div class="node t02 js-node node-meditation" onClick="ga('send', 'event','node', 'click', 'Meditate');">
                                         <span>Meditation</span>
                                     </div>
-                                    <div class="node t02 js-node node-music" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Live Music',, false]);">
+                                    <div class="node t02 js-node node-music" onClick="ga('send', 'event','node', 'click', 'Live Music');">
                                         <span class="music-label">Live Music</span>
                                     </div>
-                                    <div class="node t02 js-node node-stand" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Inversions',, false]);">
+                                    <div class="node t02 js-node node-stand" onClick="ga('send', 'event','node', 'click', 'Inversions');">
                                         <span>Inversions</span>
                                     </div>
-                                    <div class="node t02 js-node node-chanting" onClick="_gaq.push(['_trackEvent', 'Nodes', 'Filter', 'Chanting',, false]);">
+                                    <div class="node t02 js-node node-chanting" onClick="ga('send', 'event', 'node', 'click', 'Chanting');">
                                         <span>Chanting</span>
                                     </div>
 

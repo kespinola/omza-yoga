@@ -595,7 +595,9 @@ display: none;
 .pane0 {
   padding-top: 0; }
 
-
+.half-width{
+  width: 50%;
+}
 
 .pane1-head {
   margin-bottom: 16px;
@@ -721,16 +723,16 @@ font-weight: bold;
   left: 16px; }
 
 .class-right {
-  padding-left: 80px;
+  padding-left: 61px;
   width: 100%; }
 
 .class-right h3 {
   margin:40px 0 0 9px;
-  font-size: 15px;
-  width: 97%;
+  font-size: 14px;
+  width: 112px;
   font-weight: 300; 
   position: relative;
-  bottom: 240px;
+  bottom: 245px;
 }
 
 .class-icon {
@@ -876,13 +878,13 @@ margin-left: 3px; }
 
 .class-rating {
   background: #f0f0f0;
-  height: 20px;
+  height: 15px;
   width: 90px;
   margin: 12px 0 0 70px;
   position: relative;
   border-radius: 2px; 
-  left: 44px;
-  bottom: 33px;
+  left: 17px;
+  bottom: 40px;
 }
 @media all min-width(500px){
   .class-rating{
@@ -892,19 +894,26 @@ margin-left: 3px; }
 
 
   .class-rating:before {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     content: '';
     display: block;
     background: transparent url(../img/omza-fit.png);
+    background-size: 20px 20px;
     position: absolute;
-    top: -4px;
-    left: -44px; }
+    right: 95px;
+    top: -2px;
+     }
+
 
 .class-rating-i {
-  background: #C7D694;
-  height: 20px; }
+  height: 15px;
+  background-color: #C7D694;
+   }
 
+.class-rating-i-start{
+  background-color: #e4e4e4;
+}
 .btn-class-details {
   padding: 4px 6px;
   position: absolute;
@@ -1267,6 +1276,7 @@ border: 5px solid #fff6ee;
 background-color: #f9f9f9;
 width: 57px;
 height: 57px;
+transition: all .02 ease-in-out;
 
 }
 .class-li .hook-studio:hover > .divide-class{
@@ -1275,6 +1285,7 @@ height: 57px;
 .studio-border:hover{
   border: 5px solid #D5BBA3;
 }
+
 .divide-class{
   display: block;
 height: 1px;
@@ -1284,7 +1295,11 @@ position: relative;
 padding: 0;
 bottom: 80px;
 right: 16px;
-width: 230px;
+width: 199px;
+}
+
+.divide-class-active{
+    border-top: 6px solid #d5bba3;
 }
 
 .hover-divide{

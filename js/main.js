@@ -164,11 +164,11 @@
 			+		'<div class="studio-name"><p>'+this.studio_name+'</p></div>'
 			+	'</div>'
 			+'<hr class="divide-class t02">'
-			+'<div class="btn btn-primary btn-schedule btn-small"><a href="http://sb.divinitree.com/schedule/register/#'+day_node(this.class_day)+'" target="_blank" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
+			+'<div class="btn btn-primary btn-schedule btn-small"><a href="http://sb.divinitree.com/schedule/register/#'+day_node(this.class_day)+'" target="_blank" onClick="ga("send", "event", "schedule", "view", "list view")>Schedule Class</a></div>'
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
-			//+	'<div class="class-rating" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
+			+	'<div class="class-rating"><div class="class-rating-i class-rating-i-'+this.fit_score+'" style="width:'+this.omza_fit+'%"></div></div>'
 			+	'</div>'
 			+	'<div class="class-right">'
 			+		'<h3>'+this.class_name+'</h3>'
@@ -179,7 +179,7 @@
 			+		'<div class="class-time">'+this.class_start+'</div>'
 			+	'</div>'
 			+'</li>';
-			if (i >= 35) {
+			if (i >= 90) {
 				return false;
 			}
 		});
@@ -191,7 +191,7 @@
 			+'</div>';
 		}
 		classList.html(html);
-		classList.find('.class-rating').each(ratings);
+	 
 		$(".filter-btn").removeClass('hidden');
 	}
 
@@ -247,7 +247,7 @@
 		+	node_html(c.node_stand, 'stand', 'Inversions')
 		+'</div>'
 		+'</div>'
-		+'<div class="btn btn-primary btn-large btn-schedule"><a href="http://sb.divinitree.com/schedule/register/#'+day_of_week(c.class_day)+'" target="_blank" onClick="_gaq.push([‘_trackEvent’, ‘link’,’Schedule Class’, ’Clicked’])">Schedule Class</a></div>'
+		+'<div class="btn btn-primary btn-large btn-schedule"><a href="http://sb.divinitree.com/schedule/register/#'+day_of_week(c.class_day)+'" target="_blank" onClick="ga("send", "event", "schedule", "view", "detail view")>Schedule Class</a></div>'
 		+'</div>'
 
 		+'<div class="detail-reg">'
@@ -269,13 +269,13 @@
 	}
 
 	function filterData () {
-		var results = [], attrs = {}, nodes = {}, days ={}, num = 0;
-
+		var results = [], fit_diff = {}, fit_avg = {}, fit_list = {}, attrs = {}, nodes = {}, days ={}, num = 0, attr_length = 0;
 		// Get slider settings
 		$.each(['strength','spirit','flex','balance','tempo'], function(i,e,j){
 			j = $('.pane1 .slider-'+e);
 			if (j.hasClass('on')) {
 				attrs[e] = Math.round(+j.find('.slider-i').data('pct'));
+				attr_length++;
 			}
 		});
 
@@ -290,8 +290,15 @@
 			if (j.hasClass('on')) days[e] = 1;
 		});
 
+
+		//Default Sort to Current Date
+
 		$.each(classes, function(i){
 			this.class_id = i;
+			var attr_sum=0,
+			 	attr_fit = {},
+			 	omza_fit = 0,
+			 	fit_score = "";
 
 			// Filter resutls based on hash
 			if (arg) {
@@ -321,26 +328,58 @@
 			// Filter results based on sliders
 			for (k in attrs) {
 				if (attrs.hasOwnProperty(k)) {
-					var diff = Math.abs((+attrs[k]) - 10*this['attr_'+k]);
+					var diff = Math.abs((+attrs[k]) - 10*this['attr_'+k]),
+						fit_sum = attrs[k] + 10*this['attr_'+k],
+						fit_avg = fit_sum/2;
+						attr_fit[k] = diff/fit_avg;
 					if (diff > 20) {
 						return;
 					}
 				}
 
-			// //Filter by day of week
-			// for (k in days){
-			// 	if (!this)
-			// }
+			 }
+
+			//Determine Omza Fit for Attributes Entered
+			for (k in attr_fit){
+				if(attr_fit.hasOwnProperty(k)){
+					attr_sum = attr_sum + attr_fit[k];
+				}
 			}
 
-			results.push(this);
+		//Set list with fit score for class
+		var avg_attr_fit = attr_sum/attr_length,
+				omza_fit = Math.abs(100*(1 - avg_attr_fit));
+				this['omza_fit'] = omza_fit;
+
+			results.push(this)
 			num++;
-			if (num >= 35) {
+			if (num >= 73) {
+
 				return false;
 			}
+
 		});
+
+		//Order results by fit score
+		results.sort(function(a,b){
+			return b.omza_fit - a.omza_fit;
+		});
+
+		//Normalize fit score
+		$.each(results, function(i){
+			var max = results[(results.length - 1)].omza_fit,
+			min = results[0].omza_fit,
+			norm_diff = max - min,
+			num_diff = this.omza_fit - min;
+
+			this.omza_fit = 100*(1-(num_diff / norm_diff));
+
+			
+		});
+
 		load_classes(results);
 	}
+
 	$doc.on('filter', window.debounce(function(){
 		$body.removeClass('no-fil');
 		filterData();
@@ -441,6 +480,8 @@
 
 	});
 
+
+
 	$("#contact-submit").on('click',function() {
 		$contact_form = $('#contact-form');
 		
@@ -464,13 +505,7 @@
 		return false;
 	});
 
-	function ratings() {
-		var 
-		$this = $(this),
-		rating = $this.data('rating'),
-		bar = $this.find('.class-rating-i');
-		bar.css('width', (100*rating/5)+'%');
-	}
+	
 
 	$win.resize(function(){
 		var 
@@ -488,14 +523,6 @@
 		$('.content-inner').addClass('t10');
 	},200);
 
-	/*$.each(window.classes, function(){
-		var self = this;
-		$.each(['strength','spirit','flex','balance','tempo'], function(i,e){
-			self['attr_'+e] = Math.floor((Math.random()*11));
-		});
-		$.each(['meditation','chanting','heated','healing','stand'], function(i,e){
-			self['node_'+e] = Math.floor((Math.random()*2));
-		});
-	});*/
+
 
 })(window, jQuery);

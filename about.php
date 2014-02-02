@@ -33,55 +33,6 @@
 
 		<div class="value-section row">
 
-
-			<div class="how-section">
-				<h2 >How it Works</h2>
-				<hr>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="attr-list">
-							<h3>Class Attributes</h3>
-							<div class="row">
-								<div class="col-md-2 pull-left">
-									<img src="./img/attr-strength.png" alt="strength pic"></img>
-								</div>
-								<div class="col-md-9 col-md-offset-1 pull-right">
-									<h4 class="semi-bold">Strength</h4>
-									<p>Ask yourself, <em>“How strong would I like my practice to be today?”</em></p>
-									<p>For a class that will challenge and build strength, slide the bar up. For a more restorative and gentle class lower the bar.</p>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-2 pull-left">
-									<img src="./img/attr-flex.png" alt="flexibility pic"></img>
-								</div>
-								<div class="col-md-9 col-md-offset-1 pull-right">
-									<h4 class="semi-bold">Flexibility</h4>
-									<p>Ask yourself, <em>“How much would I like to stretch my muscles today?”</em></p>
-									<p>All yoga challenges our flexibility, be it mind or body. The lower the bar the less strain on the muscles.</p>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-2 pull-left">
-									<img src="./img/attr-tempo.png" alt="tempo pic"></img>
-								</div>
-								<div class="col-md-9 col-md-offset-1 pull-right">
-									<h4 class="semi-bold">Tempo</h4>
-									<p>Ask yourself, <em>“What pace sounds good today?”</em></p>
-									<p>For a fast paced class, move the bar up. Smooth and easy, move it down.</p>
-								</div>
-							</div>
-						
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-					</div>
-				</div>
-			</div>
 			<div class="our-team">
 				<h2>Our Team</h2>
 				<hr>
@@ -98,7 +49,7 @@
 					<img src="img/chyla-walsh-pic.png" class="img-responsive img-circle founder-pic" alt="Chyla Omza founder picture"></img>
 					<h3>Chyla Walsh</h3>
 					<h4 class="semi-bold">CEO & Co-Founder</h4>
-					<p>I've been teaching yoga across the US for the last 3 years. A year ago I moved to Santa Barbara. My curiosity created great conversation with Carlen Young, Divinitree studio owner. Carlen expressed frustration with helping new students find their class. During Santa Barbara Start Up Weekend, OMZA was born to help yoga.</p>
+					<p>I've been teaching yoga across the US for the last 3 years. A year ago I moved to Santa Barbara. </p>
 					<p> I am so excited to be starting this venture in beautiful Santa Barbara community. I truly believe OMZA will help so many new yogis find a class that will connect deeper to their practice.</p>
 					<p>I am manifesting OMZA to be a way for students to connect to their practice, their teachers and their Self.</p>
 				</div>
@@ -114,6 +65,7 @@
 </div> <!-- Close Container Div -->
 
 </div> <!--close wrapper -->
+
  <?php include_once('script.php') ?>
     </body>
 </html>

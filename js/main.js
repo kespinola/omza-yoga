@@ -220,7 +220,7 @@
 		+		'<h1 class="detail-title">'+c.class_name+'</h1>'
 		+		'<div class="hook-teacher" data-id="'+c.class_id+'"><div class="teacher-img t02" style="background-image:url('+image+')"></div></div>'
 		+		'<div class="teacher-name"><span class="sub-title">with </span><h3 class="hook-teacher" data-id="'+c.class_id+'">'+c.teacher_name+'</h3></div>'
-		//+		'<div class="class-rating omza-fit-detail" data-rating="'+((Math.random()*2)+3)+'"><div class="class-rating-i"></div></div>'
+		// +	'<div class="class-rating"><div class="class-rating-i class-rating-i-'+this.fit_score+'" style="width:'+this.omza_fit+'%"></div></div>'
 
 		+	'</div>'
 				+	'<div class="class-date day-'+c.class_day+'">'
@@ -332,7 +332,7 @@
 						fit_sum = attrs[k] + 10*this['attr_'+k],
 						fit_avg = fit_sum/2;
 						attr_fit[k] = diff/fit_avg;
-					if (diff > 20) {
+					if (diff > 10) {
 						return;
 					}
 				}
@@ -480,6 +480,17 @@
 
 	});
 
+	$doc.on('click touchend', '.help-tab', function(){
+		if($('.help-section').is(":hidden")){
+			$('.help-section').slideDown("slow");
+		}else{
+			$('.help-section').slideUp("slow");
+		}
+	});
+
+		$doc.on('click touchend', '.feedback-btn', function(){
+			$(this).toggleClass('visible');
+	});
 
 
 	$("#contact-submit").on('click',function() {
@@ -507,13 +518,13 @@
 
 	
 
-	$win.resize(function(){
-		var 
-		$panes = $('.pane, .sub-pane'),
-		top = $panes.first().offset().top;
+	// $win.resize(function(){
+	// 	var 
+	// 	$panes = $('.pane, .sub-pane'),
+	// 	top = $panes.first().offset().top;
 
-		$panes.css('height', $win.height() - top);
-	}).resize();
+	// 	$panes.css('height', $win.height() - top);
+	// }).resize();
 
 	window.onhashchange = switch_mode;
 

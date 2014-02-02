@@ -15,10 +15,11 @@
 left: 85px;
 position: relative;
 bottom: 23px;
+margin-left: 0px;
 }
 
 .mode-1 .logo{
-	left: 80px;
+	left: 87px;
 	margin-left: 0px;
 }
 .span-text{

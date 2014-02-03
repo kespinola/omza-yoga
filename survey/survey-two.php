@@ -1,5 +1,5 @@
 <?php
-	include_once('nav-header.php');
+	include_once('header.php');
 ?>
 
            	<div class="content">
@@ -7,4 +7,7 @@
 			</div>
 
  			</div>
+<?php
+ 	include_once('script.php') 
+ ?>
 </body>

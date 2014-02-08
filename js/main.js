@@ -108,12 +108,12 @@
 
 	function reset_filter(){
 		$('.nodes, .week').css('width','100%');
-		$('.sliders').css('width','75%');
+		$('.sliders').css('width','90%');
 		$('.filter-btn').css('display','none').removeClass('left-shift-filter');
 		$('.sub-pane1').removeClass('hide-filter');
-		$('.sliders, .nodes, .class-features, .calendar-wrapper, .time-btns, .calendar-btn').removeClass('hidden');
+		$('.sliders, .nodes, .top-panel, .sliding-panel, .time-btns, .sliding-btn').removeClass('hidden');
 		$('.time-btns').removeClass('inline-block');
-		$('.detail-nodes').addClass('hidden');
+		
 
 	};
 	function node_html (on, type, label) {
@@ -168,7 +168,7 @@
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
-			+	'<div class="class-rating"><div class="class-rating-i class-rating-i-'+this.fit_score+'" style="width:'+this.omza_fit+'%"></div></div>'
+			+	'<div class="class-rating"><div class="class-rating-i" style="width:'+this.omza_fit+'%"></div></div>'
 			+	'</div>'
 			+	'<div class="class-right">'
 			+		'<h3>'+this.class_name+'</h3>'
@@ -269,6 +269,7 @@
 	}
 
 	function filterData () {
+
 		var results = [], fit_diff = {}, fit_avg = {}, fit_list = {}, attrs = {}, nodes = {}, days ={}, num = 0, attr_length = 0;
 		// Get slider settings
 		$.each(['strength','spirit','flex','balance','tempo'], function(i,e,j){
@@ -405,13 +406,13 @@
 		})
 	});
 
-	$doc.on('click', '.calendar-btn', function(){
-		$('.class-features').toggleClass('shift-down')
+	$doc.on('click', '.sliding-btn', function(){
+		$('.top-panel').toggleClass('shift-down')
 	});
 
 
-	$doc.on('mouseleave', '.calendar-wrapper', function(){
-		$('.class-features').removeClass('shift-down')
+	$doc.on('mouseleave', '.sliding-panel', function(){
+		$('.top-panel').removeClass('shift-down')
 	});	
 
 	$doc.on('click', '.day-btn', function(){
@@ -473,7 +474,7 @@
 
 	$doc.on('click touchend', '.filter-btn, .hook-class',function(){
 		$('.sub-pane1').toggleClass('hide-filter');
-		$('.sliders, .nodes, .time-btns, .calendar-wrapper, .calendar-btn, .class-features').toggleClass('hidden');
+		$('.sliders, .nodes, .time-btns, .sliding-panel, .sliding-btn, .top-panel').toggleClass('hidden');
 		$('.filter-btn').toggleClass('left-shift-filter');
 		$('.sub-pane2').toggleClass('no-shift-right');
 

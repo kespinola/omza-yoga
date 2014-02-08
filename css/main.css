@@ -174,7 +174,7 @@ textarea {
   Shift up for Show Hide Calander
 */
 .shift-down{
-  bottom: 0px !important;
+  bottom: 100px !important;
 }
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
@@ -366,9 +366,12 @@ h2{
   }
 
 .time-btns{
-  margin: 8px 0px 8px 0px;
-width: 275px;
-bottom: 15px;
+  width: 85%;
+  top: 3px;
+  margin-left: 10%;
+  margin-right: auto;
+  display: block;
+  position: relative;
 }
 .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default.on{
   color: #D5BBA3;
@@ -732,22 +735,21 @@ display: none;
   vertical-align: top; }
 
 .pane1 {
-  height: 650px;
+  height: 750px;
   overflow: visible;
   margin-top: 20px;
  }
 
 .sub-pane1 {
   display: none;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   width: 100%;
   border-radius: 10px;
   text-align: center;
   padding-bottom: 5px;
   width: 330px;
   background-color: #f3f3f3;
-  height: 585px;
+  height: 665px;
    }
 @media (min-width:500px){
   .mode-1 .sub-pane1{
@@ -755,8 +757,8 @@ display: none;
   }
 }
   .day-btn{
-    width: 60px;
-  height: 60px;
+    width: 55px;
+  height: 55px;
   display: inline-block;
   border-radius: 100px;
   border: 3px solid #dddddd;
@@ -764,29 +766,29 @@ display: none;
   cursor: pointer;
   }
   .day-btn span{
- margin-top: 14px;
+ margin-top: 11px;
 display: block;
 font-size: 18px;
 font-weight: bold;
   }
-.class-features{
+.top-panel{
   background-color: #f3f3f3;
   position:relative;
-  bottom:255px;
+  bottom: 410px;
   width: 290px;
   height: 260px;
-  padding-left: 4%;
 }
-.mode-1 .class-features{
+
+.mode-1 .top-panel{
   width: 100%;
 }
-@media all and (min-width:492px){
-  .mode-1 .class-features{
-    bottom: 190px;
+@media all and (min-width:525px){
+  .mode-1 .top-panel{
+    bottom: 287px;
   }
 }
 @media all and (min-width:965px){
-    .mode-1 .class-features{
+    .mode-1 .top-panel{
 
   }
 }
@@ -1194,7 +1196,7 @@ margin-left: 3px; }
 
 .mode-1 .sub-pane1 {
   display: block;
-  width: 100%;
+  width: 90%;
   margin: auto; 
    }
 
@@ -1230,7 +1232,7 @@ transition: all .02s ease-in;
       padding-left: 30px;
     }
    }
-   @media (min-width: 800px){
+   @media (min-width: 1000px){
       .mode-1 .sub-pane1{
         width: 50%;
       }
@@ -1261,7 +1263,8 @@ transition: all .02s ease-in;
   position: relative;
   margin-right: auto;
   margin-left: auto;
-  width: 75%; }
+  margin-top: 70px;
+  width: 90%; }
 
 .sliders{
   margin-top: 10px;
@@ -1270,8 +1273,13 @@ transition: all .02s ease-in;
 .mode-1 .week{
   margin-left: auto;
   margin-right: auto;
-  bottom: 31px;
+  top: 15px;
+  height: 400px
   position: relative;
+  background-color: #f3f3f3;
+}
+.mode-4 .sub-pane1{
+  height: 590px;
 }
 .week{
   width: 260px;
@@ -1280,7 +1288,21 @@ transition: all .02s ease-in;
   position: relative;
   bottom: 30px;
 }
-/*Show and Hide Calendar*/
+.mode-4 .week{
+  top: 17px;
+}
+.class-rating-i-undefined{
+  background-color: #e4e4e4;
+}
+
+.mode-4 .time-btns{
+  width: 97%;
+  margin-left: 0px;
+}
+.mode-4 .sliders h5{
+  font-size: 12px;
+}
+/*Show and Hide Sliding Panel*/
 
 .large-round-btn{
   height: 75px;
@@ -1289,51 +1311,71 @@ transition: all .02s ease-in;
   border-radius: 100px;
 
 }
-.calendar-btn{
+.sliding-btn{
   
   margin-bottom: 15px;
 
 }
-.mode-1 .calendar-btn{
+.mode-1 .sliding-btn{
   right: 0px;
 }
-.calendar-btn:focus, .calendar-btn:active{
+.sliding-btn:focus, .sliding-btn:active{
   outline: none;
 
 }
-.calendar-btn .fa-calendar{
+.sliding-btn .fa{
   font-size: 40px;
 }
-.calendar-wrapper{
+.sliding-panel{
   background-color: #fafafa;
   position: relative;
   width: 290px;
   text-align: center;
-  padding: 10px;
   float: center;
 }
-.mode-1 .calendar-wrapper{
+
+.sliding-panel-inner{
+  width: 100%;
+  margin-left: 4%;
+  margin-right: auto;
+  position: relative;
+  bottom: 65px;
+}
+.mode-4 .sliding-panel-inner{
+  height: 367px;
+}
+.mode-4 .top-panel{
+  height: 450px;
+}
+.mode-1 .sliding-panel{
   width: 100%;
 }
 
-.sub-pane1{
-  width:282px;
-}
 .calander-caret{
 position: relative;
-bottom: 42px;
+bottom: 30px;
 font-size: 53px;
 color: #fafafa;
-z-index: 100;
+
 }
 /**
  * SLIDERS
  */
+
+.top-panel .pull-left h5{
+  position: relative;
+  left: 169%;
+
+ }
+ .top-panel h5{
+   color: #a2a2a2;
+ }
+ .flex-header h5{
+  left: 100% !important;
+ }
 .slider {
   position: relative;
-  height: 51px;
-  padding-top: 12px;
-  margin-top: 5px;
+  height: 50px;
    }
 
 .slider-img {
@@ -1373,6 +1415,7 @@ z-index: 100;
 .slider-bg {
   background-color: #fff;
   border-radius: 3px;
+  top: 12px;
   font-family: 'Allerta', sans-serif;
   height: 28px;
   margin-left: 85px;
@@ -1490,9 +1533,6 @@ width: 199px;
 .slider-i .slider-l {
   color: #f0f0f0; }
 
-.slider-flex{
-  margin-left: 2%;
-}
 
 
 .node {
@@ -1511,7 +1551,6 @@ width: 199px;
   cursor: pointer;
    }
 .detail-nodes{
-  display:none;
 }
   .node span {
     margin-top: 70px;
@@ -1689,6 +1728,7 @@ margin:0px;
   position:relative;
   margin-right: auto;
   margin-left: auto;
+  padding-left: 8px;
   bottom: 28px;
 }
 .room-name{
@@ -1952,17 +1992,15 @@ margin-bottom: 15px;
 /**
  * Media Queries
  */
- @media screen and (max-width: 720px){
-  .nodes{
-    margin-left: 10%;
-  }
- }
+
  @media only screen and (min-width: 500px){
   .detail-title{
     font-size: 1em;
     margin-top: 6px;
   }
-
+.time-btns{
+  margin-left: 25%
+}
  }
  @media screen and (max-width:400px){
     .description-head{
@@ -1976,6 +2014,10 @@ margin-bottom: 15px;
       font-size: 18px;
     }
  }
+
+ @media all and (min-width: 496px){
+
+ }
 @media only screen and (min-width: 720px) {
   .content {
     max-width: none; }
@@ -1988,7 +2030,9 @@ margin-bottom: 15px;
 
   .no-fil.mode-1 .slider-bg, .no-fil.mode-1 .node {
     opacity: 1; }
-
+.time-btns{
+  margin-left: 32%
+}
 
   .mode-1 .sub-pane1 h1 {
     font-size: 2.75em;

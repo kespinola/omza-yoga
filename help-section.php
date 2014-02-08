@@ -57,7 +57,7 @@
 					<div class="col-sm-12 col-md-8 col-md-offset-2">
 						<h4 class="semi-bold">Flexibility</h4>
 					<div class="row">
-						<div class="pull-left">
+						<div class="pull-left flex-header">
 						<h5>Low Impact</h5>
 					</div>
 					<div class="pull-right">
@@ -80,12 +80,12 @@
 												<h4 class="semi-bold">Tempo</h4>
 					<div class="row">
 						<div class="pull-left">
-						<h5>Motionless</h5>
+							<h5>Seated</h5>
+						</div>
+						<div class="pull-right">
+							<h5>Fast Pace</h5>
+						</div>
 					</div>
-					<div class="pull-right">
-						<h5>Fast Pace</h5>
-					</div>
-				</div>
 						<div class="progress">
 						  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%; background-color:#f97062">
 						    <span class="sr-only"></span>

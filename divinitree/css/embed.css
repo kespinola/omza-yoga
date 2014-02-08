@@ -3,9 +3,7 @@
 	background-color: #fff6ee;
 }
 
-.pane1{
-	padding-top: 50px;
-}
+
 
 .sub-pane2{
 	padding-top: 0px !important;
@@ -28,4 +26,9 @@ margin-left: 0px;
 }
 .mode-4 .sub-pane1{
 	bottom: 42px;
+}
+
+.pane1{
+	margin-top: 0px;
+	padding-top: 0px;
 }

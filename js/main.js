@@ -168,7 +168,7 @@
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
-			+	'<div class="class-rating"><div class="class-rating-i" style="width:'+this.omza_fit+'%"></div></div>'
+			+	'<div class="class-rating hidden-xs"><div class="class-rating-i" style="width:'+this.omza_fit+'%"></div></div>'
 			+	'</div>'
 			+	'<div class="class-right">'
 			+		'<h3>'+this.class_name+'</h3>'
@@ -472,7 +472,7 @@
 		$('.sub-pane2').removeClass('no-shift-right');
 	});
 
-	$doc.on('click touchend', '.filter-btn, .hook-class',function(){
+	$doc.on('click', '.filter-btn, .hook-class',function(){
 		$('.sub-pane1').toggleClass('hide-filter');
 		$('.sliders, .nodes, .time-btns, .sliding-panel, .sliding-btn, .top-panel').toggleClass('hidden');
 		$('.filter-btn').toggleClass('left-shift-filter');
@@ -481,7 +481,7 @@
 
 	});
 
-	$doc.on('click touchend', '.help-tab', function(){
+	$doc.on('click', '.help-tab', function(){
 		if($('.help-section').is(":hidden")){
 			$('.help-section').slideDown("slow");
 		}else{

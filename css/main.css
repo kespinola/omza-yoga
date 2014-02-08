@@ -174,7 +174,7 @@ textarea {
   Shift up for Show Hide Calander
 */
 .shift-down{
-  bottom: 100px !important;
+  bottom: 65px !important;
 }
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
@@ -368,7 +368,7 @@ h2{
 .time-btns{
   width: 85%;
   top: 3px;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-right: auto;
   display: block;
   position: relative;
@@ -774,7 +774,7 @@ font-weight: bold;
 .top-panel{
   background-color: #f3f3f3;
   position:relative;
-  bottom: 410px;
+  bottom: 390px;
   width: 290px;
   height: 260px;
 }
@@ -784,7 +784,7 @@ font-weight: bold;
 }
 @media all and (min-width:525px){
   .mode-1 .top-panel{
-    bottom: 287px;
+    bottom: 267px;
   }
 }
 @media all and (min-width:965px){
@@ -1278,7 +1278,7 @@ transition: all .02s ease-in;
   position: relative;
   background-color: #f3f3f3;
 }
-.mode-4 .sub-pane1{
+.mode-4 .sub-pane1, .mode-3 .sub-pane1{
   height: 590px;
 }
 .week{
@@ -1288,18 +1288,18 @@ transition: all .02s ease-in;
   position: relative;
   bottom: 30px;
 }
-.mode-4 .week{
+.mode-4 .week, .mode-3 .sub-pane1{
   top: 17px;
 }
 .class-rating-i-undefined{
   background-color: #e4e4e4;
 }
 
-.mode-4 .time-btns{
+.mode-4 .time-btns, .mode-3 .time-btns{
   width: 97%;
   margin-left: 0px;
 }
-.mode-4 .sliders h5{
+.mode-4 .sliders h5, .mode-3 .sliders h5{
   font-size: 12px;
 }
 /*Show and Hide Sliding Panel*/
@@ -1339,12 +1339,12 @@ transition: all .02s ease-in;
   margin-left: 4%;
   margin-right: auto;
   position: relative;
-  bottom: 65px;
+  bottom: 50px;
 }
-.mode-4 .sliding-panel-inner{
+.mode-4 .sliding-panel-inner, .mode-3 .sliding-panel-inner{
   height: 367px;
 }
-.mode-4 .top-panel{
+.mode-4 .top-panel, .mode-3 .top-panel{
   height: 450px;
 }
 .mode-1 .sliding-panel{

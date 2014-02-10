@@ -749,7 +749,7 @@ display: none;
   padding-bottom: 5px;
   width: 330px;
   background-color: #f3f3f3;
-  height: 665px;
+  height: 705px;
    }
 @media (min-width:500px){
   .mode-1 .sub-pane1{
@@ -782,7 +782,7 @@ font-weight: bold;
 .mode-1 .top-panel{
   width: 100%;
 }
-@media all and (min-width:525px){
+@media all and (min-width:520px){
   .mode-1 .top-panel{
     bottom: 267px;
   }
@@ -810,7 +810,7 @@ font-weight: bold;
 
 .class-wrap {
   overflow-y: auto;
-  height: 575px;
+  height: 740px;
   padding-left: 2%;
    }
 
@@ -1310,6 +1310,12 @@ transition: all .02s ease-in;
   position: relative;
   border-radius: 100px;
 
+}
+.sliding-btn-desc{
+  display: block;
+  position: relative;
+  bottom: 13px;
+  font-weight: 600;
 }
 .sliding-btn{
   

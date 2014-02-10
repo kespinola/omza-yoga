@@ -168,7 +168,7 @@
 			+	'<div class="class-left hook-teacher" data-id="'+this.class_id+'">'
 			+		'<div class="class-icon" style="background-image:url('+image+')"></div>'
 			+		'<div class="class-sub">'+this.teacher_name+'</div>'
-			+	'<div class="class-rating hidden-xs"><div class="class-rating-i" style="width:'+this.omza_fit+'%"></div></div>'
+			+	'<div class="class-rating hidden-xs hidden-sm"><div class="class-rating-i" style="width:'+this.omza_fit+'%"></div></div>'
 			+	'</div>'
 			+	'<div class="class-right">'
 			+		'<h3>'+this.class_name+'</h3>'

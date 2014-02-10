@@ -10,6 +10,7 @@
                                 <h1>find your yoga class:</h1>
                             </div>
                         <button type="button" class="btn btn-default large-round-btn sliding-btn t03"><i class="fa fa-leaf"></i></button>
+                        <span class="sliding-btn-desc">Class Features</span>
                         <div class="sliding-panel t03">
                             <i class="fa fa-caret-up calander-caret"></i>
                             <div class="sliding-panel-inner">    

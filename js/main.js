@@ -93,8 +93,10 @@
 	function load_filter(){
 		$('.detail-nodes').css("display", "inline").removeClass('hidden');
 		$('.time-btns').addClass('inline-block');
-		$('.sliders').css('width','260px');
+		$('.sliders').css('width','99%');
 		$('.filter-btn').css('display','block');
+		$('.btn-find').addClass('hidden');
+
 
 	};
 	function day_of_week(id){
@@ -111,7 +113,7 @@
 		$('.sliders').css('width','90%');
 		$('.filter-btn').css('display','none').removeClass('left-shift-filter');
 		$('.sub-pane1').removeClass('hide-filter');
-		$('.sliders, .nodes, .top-panel, .sliding-panel, .time-btns, .sliding-btn').removeClass('hidden');
+		$('.sliders, .nodes, .top-panel, .sliding-panel, .time-btns, .sliding-btn, .btn-find').removeClass('hidden');
 		$('.time-btns').removeClass('inline-block');
 		
 
@@ -472,11 +474,15 @@
 		$('.sub-pane2').removeClass('no-shift-right');
 	});
 
-	$doc.on('click', '.filter-btn, .hook-class',function(){
+	$doc.on('click', '.filter-btn',function(){
 		$('.sub-pane1').toggleClass('hide-filter');
-		$('.sliders, .nodes, .time-btns, .sliding-panel, .sliding-btn, .top-panel').toggleClass('hidden');
+		$('.sliders, .nodes, .time-btns, .sliding-panel, .sliding-btn, .top-panel, .sliding-btn-desc').toggleClass('hidden');
 		$('.filter-btn').toggleClass('left-shift-filter');
 		$('.sub-pane2').toggleClass('no-shift-right');
+		
+		if($(window).width() < 768){
+			$('.sub-pane2').toggleClass('mid-size-panel');
+		}
 
 
 	});

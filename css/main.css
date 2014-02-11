@@ -190,7 +190,10 @@ textarea {
   width: auto; }
 
 .no-shift-right{
-  padding-left: 7% !important;
+  padding-left: 3% !important;
+}
+.mid-size-panel{
+  width: 80% !important;
 }
 /*
  * Hide visually and from screenreaders, but maintain layout
@@ -368,11 +371,12 @@ h2{
 .time-btns{
   width: 85%;
   top: 3px;
-  margin-left: 5%;
+  margin-left: 9%;
   margin-right: auto;
   display: block;
   position: relative;
 }
+
 .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default.on{
   color: #D5BBA3;
   border-color:#D8D8D8;
@@ -630,7 +634,6 @@ color: #E4E4E4;
   overflow-y:scroll;
   max-width: 100%;
   margin-top: 60px;
-  height: 675px;
    }
 
 .content-inner {
@@ -716,6 +719,10 @@ display: none;
   width: 56px!important;
 
 }
+.time-btn{
+  width: 33%;
+  font-size: 11px;
+}
 .pane0 {
   padding-top: 0; }
 
@@ -741,16 +748,16 @@ display: none;
  }
 
 .sub-pane1 {
-  display: none;
   overflow: hidden;
   width: 100%;
   border-radius: 10px;
   text-align: center;
   padding-bottom: 5px;
-  width: 330px;
+  width: 300px;
   background-color: #f3f3f3;
   height: 705px;
    }
+
 @media (min-width:500px){
   .mode-1 .sub-pane1{
     overflow-y: hidden;
@@ -775,7 +782,7 @@ font-weight: bold;
   background-color: #f3f3f3;
   position:relative;
   bottom: 390px;
-  width: 290px;
+  width: 245px;
   height: 260px;
 }
 
@@ -795,7 +802,7 @@ font-weight: bold;
 .sub-pane2 {
   padding-left: 365px;
   box-sizing: border-box;
-  width: 100%;
+  width: 80%;
    }
 
    .sub-title{
@@ -803,7 +810,8 @@ font-weight: bold;
    }
    @media screen and (max-width: 719px){
     .sub-pane2{
-      padding-left: 20px;
+     padding-left: 0px;
+     width: 43%;
 
     }
    }
@@ -1264,10 +1272,11 @@ transition: all .02s ease-in;
   margin-right: auto;
   margin-left: auto;
   margin-top: 70px;
-  width: 90%; }
+ }
 
 .sliders{
   margin-top: 10px;
+  width: 90%;
 }
 
 .mode-1 .week{
@@ -1278,28 +1287,30 @@ transition: all .02s ease-in;
   position: relative;
   background-color: #f3f3f3;
 }
-.mode-4 .sub-pane1, .mode-3 .sub-pane1{
-  height: 590px;
+.mode-4 .sub-pane1, .mode-3 .sub-pane1, .mode-2 .sub-pane1{
+  height: 480px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+
 }
 .week{
-  width: 260px;
+  width: 245px;
   margin-right: auto;
   margin-left: auto;
   position: relative;
-  bottom: 30px;
+  bottom: 113px;
+  display: inline-block;
 }
-.mode-4 .week, .mode-3 .sub-pane1{
-  top: 17px;
-}
+
 .class-rating-i-undefined{
   background-color: #e4e4e4;
 }
 
-.mode-4 .time-btns, .mode-3 .time-btns{
+.mode-4 .time-btns, .mode-3 .time-btns, .mode-2 .time-btns{
   width: 97%;
   margin-left: 0px;
 }
-.mode-4 .sliders h5, .mode-3 .sliders h5{
+.mode-4 .sliders h5, .mode-3 .sliders h5, .mode-2 .sliders h5{
   font-size: 12px;
 }
 /*Show and Hide Sliding Panel*/
@@ -1335,7 +1346,7 @@ transition: all .02s ease-in;
 .sliding-panel{
   background-color: #fafafa;
   position: relative;
-  width: 290px;
+  width: 245px;
   text-align: center;
   float: center;
 }
@@ -1347,10 +1358,10 @@ transition: all .02s ease-in;
   position: relative;
   bottom: 50px;
 }
-.mode-4 .sliding-panel-inner, .mode-3 .sliding-panel-inner{
+.mode-4 .sliding-panel-inner, .mode-3 .sliding-panel-inner, .mode-2 .sliding-panel-inner{
   height: 367px;
 }
-.mode-4 .top-panel, .mode-3 .top-panel{
+.mode-4 .top-panel, .mode-3 .top-panel, .mode-2 .top-panel{
   height: 450px;
 }
 .mode-1 .sliding-panel{
@@ -2004,9 +2015,7 @@ margin-bottom: 15px;
     font-size: 1em;
     margin-top: 6px;
   }
-.time-btns{
-  margin-left: 25%
-}
+
  }
  @media screen and (max-width:400px){
     .description-head{
@@ -2036,9 +2045,20 @@ margin-bottom: 15px;
 
   .no-fil.mode-1 .slider-bg, .no-fil.mode-1 .node {
     opacity: 1; }
-.time-btns{
-  margin-left: 32%
+
+.mode-3 .top-panel, .mode-4 .top-panel, .mode-2 .top-panel{
+  width:290px;
 }
+
+.mode-3 .sliding-panel, .mode-4 .sliding-panel, .mode-2 .sliding-panel{
+  width: 290px;
+}
+
+.mode-2 .week, mode-3 .week, .mode-4 .week{
+  top: 17px;
+  bottom: 0px;
+};
+
 
   .mode-1 .sub-pane1 h1 {
     font-size: 2.75em;
@@ -2094,7 +2114,18 @@ margin-top: 1%;
 
   .detail-opt {
     float: none;
-    margin-right: 0; } }
+    margin-right: 0; } 
+  }
+
+@media only screen and (min-width: 768px) {
+  .sub-pane1{
+    height: 580px !important;
+  }
+  .sub-pane2{
+    width: 100%;
+  }
+
+}
 @media only screen and (min-width: 1150px) {
   .class-list li {
     

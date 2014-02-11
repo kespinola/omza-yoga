@@ -501,7 +501,9 @@ background-repeat: no-repeat;
   left: 50%;
   margin-left: -70px; }
 
-
+.mode-1 .sub-pane1{
+  height: 705px;
+}
 @media (max-width: 700px){
   .logo{
   background-image: url('../img/omza-icon.png');
@@ -2120,6 +2122,9 @@ margin-top: 1%;
 @media only screen and (min-width: 768px) {
   .sub-pane1{
     height: 580px !important;
+  }
+  .mode-1 .sub-pane1{
+    height: 705px !important;
   }
   .sub-pane2{
     width: 100%;

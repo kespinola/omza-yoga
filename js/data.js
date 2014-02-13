@@ -40,7 +40,7 @@ window.classes = [
   {
     "class_name":"Gyrokinesis/Yoga for Dancers",
     "class_id":2,
-    "studio_id":null,
+    "studio_id":8,
     "studio_name":"Divinitree",
     "room_name":"Moon Room",
     "teacher_image":"Karen",

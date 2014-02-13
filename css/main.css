@@ -78,6 +78,12 @@ fieldset {
 textarea {
   resize: vertical; }
 
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+
 /* ==========================================================================
    Browse Happy prompt
    ========================================================================== */
@@ -190,7 +196,7 @@ textarea {
   width: auto; }
 
 .no-shift-right{
-  padding-left: 3% !important;
+  padding-left: 8% !important;
 }
 .mid-size-panel{
   width: 80% !important;
@@ -813,7 +819,7 @@ font-weight: bold;
    @media screen and (max-width: 719px){
     .sub-pane2{
      padding-left: 0px;
-     width: 43%;
+     width: 100%;
 
     }
    }
@@ -2131,6 +2137,8 @@ margin-top: 1%;
   }
 
 }
+
+
 @media only screen and (min-width: 1150px) {
   .class-list li {
     
@@ -2147,3 +2155,18 @@ margin-top: 1%;
       margin-left: 0px;
       margin-right: 0px;
      }
+}
+
+@media only screen and (min-width: 160px){
+  .mode-1 .top-panel{
+    bottom: 160px;
+  }
+}
+
+@media only screen and (min-width: 1700px){
+  .mode-1 .top-panel{
+    bottom: 160px !important;
+
+  }
+
+}

@@ -431,6 +431,7 @@
 		var nice_name = cls.class_name.replace(/[^a-zA-Z0-9\-]+/g,'-');
 
 		window.location.hash = '#c/'+id+'/'+nice_name;
+		ga('send', 'event', 'class', 'view', '"'+nice_name+'"');
 		switch_mode();
 	});
 
@@ -446,6 +447,7 @@
 
 		window.location.hash = '#s/'+id+'/'+nice_name;
 		e.stopPropagation();
+		ga('send', 'event', 'studio', 'view', '"'+nice_name+'"');
 		switch_mode();
 	});
 
@@ -459,6 +461,7 @@
 
 		e.stopPropagation();
 		window.location.hash = '#t/'+id+'/'+nice_name;
+		ga('send', 'event', 'teacher', 'view', '"'+nice_name+'"');
 		switch_mode();
 	});
 
@@ -479,6 +482,7 @@
 		$('.sliders, .nodes, .time-btns, .sliding-panel, .sliding-btn, .top-panel, .sliding-btn-desc').toggleClass('hidden');
 		$('.filter-btn').toggleClass('left-shift-filter');
 		$('.sub-pane2').toggleClass('no-shift-right');
+		ga('send','page section', 'click','filter button')
 		
 		if($(window).width() < 768){
 			$('.sub-pane2').toggleClass('mid-size-panel');
@@ -540,6 +544,73 @@
 	setTimeout(function(){
 		$('.content-inner').addClass('t10');
 	},200);
+
+
+	$(function () {
+    'use strict';
+
+    var countriesArray = $.map(countries, function (value, key) { return { value: value, data: key }; });
+
+    // Setup jQuery ajax mock:
+    $.mockjax({
+        url: '*',
+        responseTime: 2000,
+        response: function (settings) {
+            var query = settings.data.query,
+                queryLowerCase = query.toLowerCase(),
+                re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi'),
+                suggestions = $.grep(countriesArray, function (country) {
+                     // return country.value.toLowerCase().indexOf(queryLowerCase) === 0;
+                    return re.test(country.value);
+                }),
+                response = {
+                    query: query,
+                    suggestions: suggestions
+                };
+
+            this.responseText = JSON.stringify(response);
+        }
+    });
+
+    // Initialize ajax autocomplete:
+    $('#autocomplete-ajax').autocomplete({
+        // serviceUrl: '/autosuggest/service/url',
+        lookup: countriesArray,
+        lookupFilter: function(suggestion, originalQuery, queryLowerCase) {
+            var re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi');
+            return re.test(suggestion.value);
+        },
+        onSelect: function(suggestion) {
+            $('#selction-ajax').html('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        },
+        onHint: function (hint) {
+            $('#autocomplete-ajax-x').val(hint);
+        },
+        onInvalidateSelection: function() {
+            $('#selction-ajax').html('You selected: none');
+        }
+    });
+
+    // Initialize autocomplete with local lookup:
+    $('#autocomplete').autocomplete({
+        lookup: countriesArray,
+        minChars: 0,
+        onSelect: function (suggestion) {
+            $('#selection').html('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        }
+    });
+    
+    // Initialize autocomplete with custom appendTo:
+    $('#autocomplete-custom-append').autocomplete({
+        lookup: countriesArray,
+        appendTo: '#suggestions-container'
+    });
+
+    // Initialize autocomplete with custom appendTo:
+    $('#autocomplete-dynamic').autocomplete({
+        lookup: countriesArray
+    });
+});
 
 
 

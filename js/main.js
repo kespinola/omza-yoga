@@ -166,7 +166,7 @@ function autoComp(){
 		"Lunch Break Power Flow",
 		"Yoga",
 		"Conscious Kick Boxing",
-		"All Level Power Vinyasa Yoga",
+		"All Levels Power Vinyasa Yoga",
 		"Vinyasa Flow",
 		"Power Vinyasa Level 2/3",
 		"Restorative Kundalini Yoga and Meditation",
@@ -181,7 +181,6 @@ function autoComp(){
 		"AyurYoga Flow",
 		"Pilates-Yoga Fusion, All Levels",
 		"Partner Yoga & Flying",
-		"Slow Motion",
 		"Hathalini",
 		"Good Morning Power Flow",
 		"Vinyasa/Medical Chi Gong",
@@ -625,7 +624,17 @@ function autoComp(){
 $('#search-btn').click(function(classes){
 	event.preventDefault();
 	var $query = $('.search-bar').val();
+	var split = $query.split(' ');
 
+        //iterate through each of the "words" and capitalize them
+        for (var i = 0, len = split.length; i < len; i++) {
+            split[i] = split[i].charAt(0).toUpperCase() + split[i].slice(1).toLowerCase();
+        }
+
+        //re-join the string and set the value of the element
+        $query = split.join(' ');
+
+    console.log($query);
 
 	ga('send', 'event', 'search', $query);
 
@@ -635,6 +644,7 @@ $('#search-btn').click(function(classes){
 			return item;
 		}
 	});
+
 
 	load_classes(results);
 });

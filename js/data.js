@@ -371,7 +371,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"Restorative Kundalini Yoga and Meditation",
+    "class_name":"Restorative Kundalini Yoga And Meditation",
     "class_id":11,
     "studio_id":8,
     "studio_name":"Divinitree",
@@ -408,7 +408,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"Intro to Contact Improvisation",
+    "class_name":"Intro To Contact Improvisation",
     "class_id":12,
     "studio_id":8,
     "studio_name":"Divinitree",
@@ -1850,7 +1850,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"Vinyasa ",
+    "class_name":"Vinyasa",
     "class_id":52,
     "studio_id":8,
     "studio_name":"Divinitree",
@@ -2035,7 +2035,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"Yoga ",
+    "class_name":"Yoga",
     "class_id":57,
     "studio_id":8,
     "studio_name":"Divinitree",
@@ -2368,7 +2368,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"Liquid Flow with Live Music",
+    "class_name":"Liquid Flow With Live Music",
     "class_id":66,
     "studio_id":8,
     "studio_name":"Divinitree",

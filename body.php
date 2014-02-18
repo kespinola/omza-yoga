@@ -1,4 +1,7 @@
  <div class="content">
+    <?php
+    include_once('search.php');
+    ?> 
     <div class="content-inner">
                 <!-- Wizard -->
                 <div class="pane pane1">   

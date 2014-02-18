@@ -153,6 +153,81 @@
 		reset();
 	});
 
+
+//Autocomplete Search
+
+function autoComp(){
+	var searchArray = [
+		"Divinitree",
+		"Vinyasa",
+		"Gyrokinesis/Yoga for Dancers",
+		"Slow Motion",
+		"Kundalini",
+		"Lunch Break Power Flow",
+		"Yoga",
+		"Conscious Kick Boxing",
+		"All Level Power Vinyasa Yoga",
+		"Vinyasa Flow",
+		"Power Vinyasa Level 2/3",
+		"Restorative Kundalini Yoga and Meditation",
+		"Intro to Contact Improvisation",
+		"Goddess Circle",
+		"Soul Shine Yoga",
+		"Kundalini Yoga",
+		"FREQUENCYasa Yoga",
+		"Yoga Flow",
+		"Prana Flow",
+		"Restorative & Yin Yoga",
+		"AyurYoga Flow",
+		"Pilates-Yoga Fusion, All Levels",
+		"Partner Yoga & Flying",
+		"Slow Motion",
+		"Hathalini",
+		"Good Morning Power Flow",
+		"Vinyasa/Medical Chi Gong",
+		"Gentle Basics",
+		"Eclectic Flow",
+		"Kirtan and Sacred Music",
+		"Tiff",
+		"Chyla",
+		"Karen",
+		"Kirtan",
+		"Sarah",
+		"Rachel Petkus",
+		"Arianna",
+		"Candice",
+		"Aliza",
+		"Rachel Wilkins",
+		"Vikki",
+		"Jenna",
+		"Amanda",
+		"Brettina",
+		"Jennifer",
+		"Asha",
+		"Yoni",
+		"Pixie",
+		"Debora",
+		"Nuria",
+		"Rachel Meisler",
+		"Miltsuko",
+		"Siddhi",
+		"Asha & Sean",
+		"Brett",
+		"Jacob",
+
+
+	];
+ 	$('#search-bar').autocomplete({
+ 		source:searchArray,
+ 		messages: {         
+ 		noResults: '',         
+ 		results: function() {}
+		}
+ 	});
+ }
+ autoComp();
+
+
 	function load_classes (classes) {
 		var classList = $('.class-list').empty();
 		var html = '',image, studio_image;
@@ -431,7 +506,7 @@
 		var nice_name = cls.class_name.replace(/[^a-zA-Z0-9\-]+/g,'-');
 
 		window.location.hash = '#c/'+id+'/'+nice_name;
-		ga('send', 'event', 'class', 'view', '"'+nice_name+'"');
+		ga('send', 'event', 'class', 'view', nice_name);
 		switch_mode();
 	});
 
@@ -447,7 +522,7 @@
 
 		window.location.hash = '#s/'+id+'/'+nice_name;
 		e.stopPropagation();
-		ga('send', 'event', 'studio', 'view', '"'+nice_name+'"');
+		ga('send', 'event', 'studio', 'view', nice_name);
 		switch_mode();
 	});
 
@@ -461,7 +536,7 @@
 
 		e.stopPropagation();
 		window.location.hash = '#t/'+id+'/'+nice_name;
-		ga('send', 'event', 'teacher', 'view', '"'+nice_name+'"');
+		ga('send', 'event', 'teacher', 'view', nice_name);
 		switch_mode();
 	});
 
@@ -545,71 +620,23 @@
 		$('.content-inner').addClass('t10');
 	},200);
 
+// Search and return classes
 
-	$(function () {
-    'use strict';
+$('#search-btn').click(function(classes){
+	event.preventDefault();
+	var $query = $('.search-bar').val();
 
-    var countriesArray = $.map(countries, function (value, key) { return { value: value, data: key }; });
 
-    // Setup jQuery ajax mock:
-    $.mockjax({
-        url: '*',
-        responseTime: 2000,
-        response: function (settings) {
-            var query = settings.data.query,
-                queryLowerCase = query.toLowerCase(),
-                re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi'),
-                suggestions = $.grep(countriesArray, function (country) {
-                     // return country.value.toLowerCase().indexOf(queryLowerCase) === 0;
-                    return re.test(country.value);
-                }),
-                response = {
-                    query: query,
-                    suggestions: suggestions
-                };
+	ga('send', 'event', 'search', $query);
 
-            this.responseText = JSON.stringify(response);
-        }
-    });
+	var results = _.filter(window.classes, function(item){
 
-    // Initialize ajax autocomplete:
-    $('#autocomplete-ajax').autocomplete({
-        // serviceUrl: '/autosuggest/service/url',
-        lookup: countriesArray,
-        lookupFilter: function(suggestion, originalQuery, queryLowerCase) {
-            var re = new RegExp('\\b' + $.Autocomplete.utils.escapeRegExChars(queryLowerCase), 'gi');
-            return re.test(suggestion.value);
-        },
-        onSelect: function(suggestion) {
-            $('#selction-ajax').html('You selected: ' + suggestion.value + ', ' + suggestion.data);
-        },
-        onHint: function (hint) {
-            $('#autocomplete-ajax-x').val(hint);
-        },
-        onInvalidateSelection: function() {
-            $('#selction-ajax').html('You selected: none');
-        }
-    });
+		if(item.class_name == $query || item.teacher_name == $query || item.studio_name == $query){
+			return item;
+		}
+	});
 
-    // Initialize autocomplete with local lookup:
-    $('#autocomplete').autocomplete({
-        lookup: countriesArray,
-        minChars: 0,
-        onSelect: function (suggestion) {
-            $('#selection').html('You selected: ' + suggestion.value + ', ' + suggestion.data);
-        }
-    });
-    
-    // Initialize autocomplete with custom appendTo:
-    $('#autocomplete-custom-append').autocomplete({
-        lookup: countriesArray,
-        appendTo: '#suggestions-container'
-    });
-
-    // Initialize autocomplete with custom appendTo:
-    $('#autocomplete-dynamic').autocomplete({
-        lookup: countriesArray
-    });
+	load_classes(results);
 });
 
 

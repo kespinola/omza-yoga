@@ -77,7 +77,9 @@ fieldset {
  */
 textarea {
   resize: vertical; }
-
+.form-control{
+  color: #d5bba3;
+}
 
 .autocomplete-suggestions { border: 1px solid #999; background: #FFF; cursor: default; overflow: auto; -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64); }
 .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
@@ -241,6 +243,25 @@ textarea {
   .pic-border{
     border: 4px solid #e4e4e4;
     border-radius: 7px;
+  }
+
+  .ui-autocomplete{
+    background: #fdfdfd;
+    width: 45%;
+    z-index: 10000;
+  }
+
+  .ui-menu-item{
+    list-style-type: none;
+  }
+  .ui-menu-item:hover{
+    background: #f9f9f9;
+  }
+  .ui-menu-item a{
+    text-decoration: none;
+    color: #BAA48F;
+    font: 1em;
+    font-weight: 500;
   }
 
 /* ==========================================================================
@@ -754,6 +775,35 @@ display: none;
   overflow: visible;
   margin-top: 20px;
  }
+.mode-1 #search-section, .mode-5 #search-section{
+  display: none;
+}
+
+ #search-bar{
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  background-color: #fff6ee;
+  margin-top: 20px;
+  border-top-left-radius: 3px;
+  border-top-bottom-radius: 3px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: .2s all ease-in-out;
+  -webkit-transition: .2s all ease-in-out;
+  -moz-transition: .2s all ease-in-out;
+  border: 2px solid #E6D1BE;
+
+ } 
+ #search-bar:active, #search-bar:focus{
+  background-color: #fdfdfd;
+ }
+
+#search-section .btn{
+  margin-top: 20px;
+
+}
 
 .sub-pane1 {
   overflow: hidden;

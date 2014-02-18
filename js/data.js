@@ -1037,7 +1037,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"AyurYoga Flow",
+    "class_name":"Ayuryoga Flow",
     "class_id":29,
     "studio_id":8,
     "studio_name":"Divinitree",
@@ -1070,7 +1070,7 @@ window.classes = [
     "node_core":1,
     "node_spirit":1,
     "node_beginner":1,
-    "class_description":"Weaving the healing principles of Ayurveda with the graceful flow of Vinyasa Yoga, Kellen’s AyurYoga classes cultivate strength and flexibility in the body, and inspire peace in the mind. Classes explore the relationship of the poses with the 5 elements, 3 doshas, breath, and Ayurvedic acupressure points. Enjoy balance in the body, mind and senses when you bring your doshas hOMe.",
+    "class_description":"Weaving the healing principles of Ayurveda with the graceful flow of Vinyasa Yoga, Kellen’s Ayuryoga classes cultivate strength and flexibility in the body, and inspire peace in the mind. Classes explore the relationship of the poses with the 5 elements, 3 doshas, breath, and Ayurvedic acupressure points. Enjoy balance in the body, mind and senses when you bring your doshas hOMe.",
     "node_music":""
   },
   {

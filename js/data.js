@@ -667,7 +667,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"FREQUENCYasa Yoga",
+    "class_name":"Frequencyasa Yoga",
     "class_id":19,
     "studio_id":8,
     "studio_name":"Divinitree",
@@ -1628,7 +1628,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"FREQUENCYasa Yoga",
+    "class_name":"Frequencyasa Yoga",
     "class_id":46,
     "studio_id":8,
     "studio_name":"Divinitree",
@@ -2553,7 +2553,7 @@ window.classes = [
     "node_music":""
   },
   {
-    "class_name":"FREQUENCYasa Yoga",
+    "class_name":"Frequencyasa Yoga",
     "class_id":71,
     "studio_id":8,
     "studio_name":"Divinitree",

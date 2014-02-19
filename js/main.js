@@ -634,7 +634,7 @@ $('#search-btn').click(function(classes){
 
     console.log($query);
 
-	ga('send', 'event', 'search', $query);
+	ga('send', 'event', 'search', 'click', $query);
 
 	var results = _.filter(window.classes, function(item){
 

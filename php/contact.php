@@ -17,8 +17,9 @@ class Contact_Form{
 		
 		$this->name = stripslashes($details['name']);
 		$this->email = trim($details['email']);
+		$this->class = stripslashes($details['class']);
 		$this->subject = 'Contact from Your Website'; // Subject 
-		$this->message = stripslashes($details['message']);
+		$this->message = stripslashes($details['message'])." Review for ".$this->class;
 	
 		$this->email_admin = $email_admin;
 		$this->message_min_length = $message_min_length;
@@ -50,18 +51,18 @@ class Contact_Form{
 		}
 
 		// Check email
-		if(!$this->email)
-		{
-			$this->response_html .= '<p>Please enter an e-mail address</p>';
-			$this->response_status = 0;
-		}
-		
-		// Check valid email
-		if($this->email && !$this->validateEmail())
-		{
-			$this->response_html .= '<p>Please enter a valid e-mail address</p>';
-			$this->response_status = 0;
-		}
+//		if(!$this->email)
+//		{
+//			$this->response_html .= '<p>Please enter an e-mail address</p>';
+//			$this->response_status = 0;
+//		}
+//
+//		// Check valid email
+//		if($this->email && !$this->validateEmail())
+//		{
+//			$this->response_html .= '<p>Please enter a valid e-mail address</p>';
+//			$this->response_status = 0;
+//		}
 		
 		// Check message length
 		if(!$this->message || strlen($this->message) < $this->message_min_length)

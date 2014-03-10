@@ -145,7 +145,7 @@ textarea {
 
 .show{
   display: block;
-  })
+  }
 
 /*Visible helper class*/
 .visible{
@@ -869,7 +869,7 @@ font-weight: bold;
    }
 
    .sub-title{
-    color: #e4e4e4;
+    color: #A7A7A7;
    }
    @media screen and (max-width: 719px){
     .sub-pane2{
@@ -1148,6 +1148,11 @@ margin-left: 3px; }
     right: 9.45%;
     top: 55px;
   }
+  .teacher-name{
+      left:120px;
+      bottom:51px;
+      width:300px;
+  }
 }
 @media (min-width:1150px){
   .pane2 .class-date{
@@ -1205,7 +1210,7 @@ margin-left: 3px; }
 
 
 .omza-stats{
-  margin-top: 45px;
+  margin-top: 70px;
 }
 .detail-title{
   font-size: 1em;
@@ -1239,7 +1244,7 @@ margin-left: 3px; }
   margin-bottom: 10px;
   margin-left: 15px;
   cursor: pointer;
-  opacity: .7;
+  opacity: .65;
   transition: all .3s ease-in-out;
 
 }
@@ -1318,7 +1323,7 @@ transition: all .02s ease-in;
   width: auto;
   width: 280px; }
 .mode-1 .slider {
-  
+
   float: center;
   width: 100%;
   float: none;
@@ -1398,7 +1403,7 @@ transition: all .02s ease-in;
 
 }
 .mode-1 .sliding-btn{
-  right: 0px;
+  right: 0;
 }
 .sliding-btn:focus, .sliding-btn:active{
   outline: none;
@@ -1412,7 +1417,6 @@ transition: all .02s ease-in;
   position: relative;
   width: 245px;
   text-align: center;
-  float: center;
 }
 
 .sliding-panel-inner{
@@ -1750,19 +1754,19 @@ border-radius: 7px 7px 0px 0px;
 }
 .detail .btn-schedule{
   top: 10px;
-  bottom: 0px;
+  bottom: 0;
   margin-right: 3%;
 }
   .teacher-img{
-    background-size: 100px 100px;
+    background-size: 125px 125px;
 background-repeat: no-repeat;
-width: 85px;
-height: 85px;
+width: 125px;
+height: 125px;
 border: 6px solid #BAA490;
 border-radius: 100px;
 margin-left: auto;
 margin-right: auto;
-margin-top: 30px;
+margin-top: 15px;
   }
 .teacher-img:hover{
   border: 4px solid #C7D694;
@@ -1770,13 +1774,16 @@ margin-top: 30px;
 .teacher-name{
 display: inline-block;
 position: relative;
+left:81px;
+bottom: 51px;
+width:30px;
 font-size: 1em;
-bottom: 110px;
 }
 .hook-teacher{
   display: inline;
   color:#94887b;
   cursor: pointer;
+  font-size:1.25em;
 }
 .teacher-info .hook-teacher{
   color: #f9f9f9;
@@ -1790,7 +1797,7 @@ position: relative;
 border-radius: 2px;
 bottom: 64px;
 left: 40px;
-margin:0px;
+margin:0;
 }
 .detail-nodes {
   clear: both;
@@ -1814,7 +1821,8 @@ margin:0px;
 }
 .room-name{
   color: #fff;
-  font-size: 1em;
+  font-size: .75em;
+    width:85px;
 }
 .description-head {
 background: #acbd73;
@@ -1975,7 +1983,7 @@ color: #AFAEAE;
 Contact Page Styling
 */
 
-#contact_name, #contact_email, #contact_message{
+#contact_name, #contact_email, #contact_message,#contact_teacher{
   border: none;
 border-radius: 3px;
 width: 100%;
@@ -1983,7 +1991,7 @@ height: 40px;
 transition: all .2s ease-in-out;
 }
 
-#contact_message:focus, #contact_name:focus, #contact_email:focus{
+#contact_message:focus, #contact_name:focus, #contact_email:focus, #contact_teacher:focus{
   outline: none;
   border: 3px solid #C7D694;
 }
@@ -1993,6 +2001,16 @@ border: none;
 border-radius: 3px;
 height: 200px;
 color: #D5BBA3;
+}
+
+.class-view-footer #contact_message, .class-view-footer #contact_teacher{
+    width:250px;
+}
+.class-view-footer .contact-teacher{
+    display:none;
+}
+.class-view-footer #contact_message{
+    margin-top:25px;
 }
 
 .contact-img{
@@ -2020,6 +2038,16 @@ input{
   list-style-type: none;
 }
 
+.left-turn{
+    transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg); /* IE 9 */
+    -webkit-transform:rotate(-45deg);
+}
+.right-turn{
+    transform:rotate(45deg);
+    -ms-transform:rotate(45deg); /* IE 9 */
+    -webkit-transform:rotate(45deg);
+}
 .attr-list img{
   background-color: #f9f9f9;
   border-radius: 100px;
@@ -2065,10 +2093,87 @@ margin-bottom: 15px;
 }
 .feature-list h4{
   font-weight: 700;
-  margin-top: 0px;
+  margin-top: 0;
 }
 #contact-form{
   margin-top: 25px;
+}
+
+
+/*Class Footer Stylings*/
+.class-view-footer{
+    background-color: #d5bba3;
+}
+
+.class-view-footer{
+    text-align:center; font-size:14px; margin-bottom:25px;
+}
+.class-view-footer h2{
+    font-size:1.75em;
+    float:left;
+    margin-left:5%;
+    text-align:left;
+}
+.class-view-footer h4{
+    text-align:left;
+    padding-left:15px;
+}
+
+.class-view-footer p{
+    font-weight:500;
+}
+.review-section{
+    border-radius:7px; background-color:#cfc1b3; margin-bottom:10px;
+}
+.review-img{
+    position:relative;
+    top:40px;
+    padding: 8px;
+    width: 60px;
+    border-radius: 100px;
+    background-color: #f9f9f9;
+    border: 3px solid #CECECE;
+}
+/*Review nobs for class detail page*/
+.review-btn{
+    background-image:url('../img/rating-nob.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    height:115px;
+    transition:all .4s ease-in;
+
+}
+.nob{
+    position:relative;
+    width:20px;
+    height: 20px;
+    background: #f9f9f9;
+    margin: 0 auto;
+    border-radius: 100px;
+    border:2px solid #D1BD98;
+    z-index:500;
+    cursor:pointer;
+}
+
+.reviewed, .active-nob{
+    background-color:#c7d694;
+    border:1px solid #ACBD73;
+}
+
+.class-view-footer .col-xs-4{
+    width:25%;
+    left:13%;
+}
+
+.review-section h3{
+    margin-top:0;
+    text-transform:uppercase;
+    font-size:1.15em;
+}
+
+.review-tag{
+    font-size:11px;
 }
 /**
  * Media Queries

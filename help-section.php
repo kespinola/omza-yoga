@@ -155,10 +155,6 @@
 		</div>
 
 
-
-
-
-
 		<div class="col-xs-12 col-sm-4 col-md-3 message-section">
 			<div class="row">
 				<div class="col-md-12">
@@ -174,22 +170,22 @@
 
 
 
-			<form id="contact-form" class="contact-form" action="#">
-        		<p class="contact-name">
-        			<input id="contact_name" type="text" placeholder="Full Name" value="" name="name" />
-            	</p>
-            	<p class="contact-email">
-            		<input id="contact_email" type="text" placeholder="Email Address" value="" name="email" />
-            	</p>
-            	<p class="contact-message">
-            		<textarea id="contact_message" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
-            	</p>
-            	<p class="contact-submit">
-            		<a id="contact-submit" class="submit btn btn-primary btn-large" href="#"><i class="fa fa-envelope"></i> Send Message</a>
-            	</p>
-            
-            	<div id="response">
-            	</div>
+        <form id="contact-form" class="contact-form" action="#">
+            <p class="contact-name">
+                <input id="contact_name" type="text" placeholder="Full Name" value="" name="name" />
+            </p>
+            <p class="contact-email">
+                <input id="contact_email" type="text" placeholder="Email Address" value="" name="email" />
+            </p>
+            <p class="contact-message">
+                <textarea id="contact_message" placeholder="Your Message" name="message" rows="15" cols="40"></textarea>
+            </p>
+            <p class="contact-submit">
+                <a id="contact-submit" class="submit btn btn-primary btn-large" href="#"><i class="fa fa-envelope"></i> Send Message</a>
+            </p>
+
+            <div id="response">
+            </div>
 		</form>
 		<hr>
 		<h4>Did Omza help you find a class today?</h4>

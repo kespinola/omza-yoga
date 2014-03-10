@@ -90,6 +90,31 @@
 		+'</div>';
 	}
 
+    function review_attr_html(type, id){
+        return ''
+        +'<div class="row review-section review-'+type+'">'
+            +'<div class="row">'
+                +'<div class="col-xs-4">'
+                    +'<p class="review-tag">More</p>'
+                    +'<div data-id="'+id+'" data-review="2" class="nob 2-'+type+'"></div>'
+                +'</div>'
+                +'<div class="col-xs-4">'
+                    +'<p class="review-tag">Accurate</p>'
+                    +'<div data-id="'+id+'" data-review="1" class="nob 1-'+type+'"></div>'
+                +'</div>'
+                +'<div class="col-xs-4">'
+                    +'<p class="review-tag">Less</p>'
+                    +'<div data-id="'+id+'" data-review="0" class="nob 0-'+type+'"></div>'
+                +'</div>'
+            +'</div>'
+
+            +'<div class="row">'
+                +'<div class="review-btn button-'+type+'"><img class="review-img" src="./img/attr-'+type+'.png"></div>'
+            +'</div>'
+          +'<h3>'+type+'</h3>'
+        +'</div>';
+    }
+
 	function load_filter(){
 		$('.detail-nodes').css("display", "inline").removeClass('hidden');
 		$('.time-btns').addClass('inline-block');
@@ -97,8 +122,19 @@
 		$('.filter-btn').css('display','block');
 		$('.btn-find').addClass('hidden');
 
-
 	};
+
+    function reset_filter(){
+        $('.nodes, .week').css('width','100%');
+        $('.sliders').css('width','90%');
+        $('.filter-btn').css('display','none').removeClass('left-shift-filter');
+        $('.sub-pane1').removeClass('hide-filter');
+        $('.sliders, .nodes, .top-panel, .sliding-panel, .time-btns, .sliding-btn, .btn-find').removeClass('hidden');
+        $('.time-btns').removeClass('inline-block');
+
+
+    };
+
 	function day_of_week(id){
 		var days = [ "Monday","Tuesday","Wednesday","Thursday", "Friday","Saturday", "Sunday"];
 		return days[id];
@@ -108,16 +144,7 @@
 		return days[id];
 	};
 
-	function reset_filter(){
-		$('.nodes, .week').css('width','100%');
-		$('.sliders').css('width','90%');
-		$('.filter-btn').css('display','none').removeClass('left-shift-filter');
-		$('.sub-pane1').removeClass('hide-filter');
-		$('.sliders, .nodes, .top-panel, .sliding-panel, .time-btns, .sliding-btn, .btn-find').removeClass('hidden');
-		$('.time-btns').removeClass('inline-block');
-		
 
-	};
 	function node_html (on, type, label) {
 		return ''
 		+'<div class="node node-'+ type + (on ? ' on' : ' off') + '">'
@@ -149,9 +176,83 @@
 		$sliders.removeClass('on');
 		filterData();
 	}
+
 	$doc.on('click', '.reset', function(){
 		reset();
 	});
+
+
+
+
+
+
+
+  $doc.on('click','.nob',function(){
+
+
+    var $this = $(this),
+    id = $this.data('id'),
+    nob = $this.data('review'),
+    cls = window.classes[id],
+    nice_name = cls.class_name.replace(/[^a-zA-Z0-9\-]+/g,'-');
+
+
+
+    $this.addClass('reviewed');
+
+    var scores =[0,1,2];
+    $.each(scores,function(w){
+      var attr = ['flex','strength','tempo'],
+        j = scores[w];
+
+
+      $.each(attr, function(i,v){
+        var k = $('.'+j+'-'+v);
+
+        if(k.hasClass('reviewed')){
+
+  //          ga('send','event',v,nice_name,j);
+              k.addClass('active-nob');
+              k.removeClass('reviewed');
+
+
+          switch(j){
+            case 1:
+              $('.0-'+v).removeClass('nob');
+              $('.2-'+v).removeClass('nob');
+              break;
+            case 2:
+              $('.1-'+v).removeClass('nob');
+              $('.0-'+v).removeClass('nob');
+              break;
+            default:
+              $('.1-'+v).removeClass('nob');
+              $('.2-'+v).removeClass('nob');
+
+          }
+
+          var $button = $('.button-'+v);
+
+
+          switch(nob){
+            case 0:
+              $button.addClass('right-turn');
+              $button.removeClass('button-'+v);
+              break;
+
+            case 2:
+              $button.addClass('left-turn');
+              $button.removeClass('button-'+v);
+              break;
+            default:
+          }
+        }
+      });
+    });
+
+
+
+  });
 
 
 //Autocomplete Search
@@ -222,8 +323,11 @@ function autoComp(){
 		}
  	});
  }
+
+//Initialize Autocomplete
  autoComp();
 
+//    Template for classes in list view
 
 	function load_classes (classes) {
 		var classList = $('.class-list').empty();
@@ -276,63 +380,103 @@ function autoComp(){
 		return val ? '<div class="detail-opt">' + val + '<span>' + sub + '</span></div>' : '';
 	}
 
+    //Detailed view for classes
 	function load_class(c) {
 		var classList = $('.class-list').empty();
 		var $detail = $('.detail').empty();
-	
+	    var classID= c.class_id;
+
 		image = c.teacher_image ? 'img/t/'+c.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
 		class_header = c.class_description ? '<h3 class="description-head"><i class="fa fa-book"></i><span class="description-title">Class Description</span><i class="fa fa-caret-left label-end"></i></h3>' : '';
 		var html = ''
-	
+
 		+'<div class="detail-wrap">'
 		+'<div class="detail-clear">'
 
 		+'<div class="detail-top">'
 		+	'<div class="header-info">'
-
 		+		'<i class="fa fa-chevron-left back-btn" onCLick="history.back()"></i>'
 		+		'<h1 class="detail-title">'+c.class_name+'</h1>'
 		+		'<div class="hook-teacher" data-id="'+c.class_id+'"><div class="teacher-img t02" style="background-image:url('+image+')"></div></div>'
 		+		'<div class="teacher-name"><span class="sub-title">with </span><h3 class="hook-teacher" data-id="'+c.class_id+'">'+c.teacher_name+'</h3></div>'
-		// +	'<div class="class-rating"><div class="class-rating-i class-rating-i-'+this.fit_score+'" style="width:'+this.omza_fit+'%"></div></div>'
-
 		+	'</div>'
-				+	'<div class="class-date day-'+c.class_day+'">'
-		+		'<div class="class-day">'+day_of_week(c.class_day)+'</div>'
-		+		'<div class="class-time">'+c.class_start+' - '+c.class_end+'</div>'
-		+		'<p class="room-name">'+c.room_name+'</p>'
+		+   '<div class="class-date day-'+c.class_day+'">'
+		+		 '<div class="class-day">'+day_of_week(c.class_day)+'</div>'
+		+		 '<div class="class-time">'+c.class_start+' - '+c.class_end+'</div>'
+		+		 '<p class="room-name">'+c.room_name+'</p>'
 		+	'</div>'
 		+'</div>'
 		+'<div class="omza-stats">'
-		+'<div class="detail-left">'
-		+	slider_html(c.attr_flex*10, 'flex', 'Flexibility')
-		+	slider_html(c.attr_strength*10, 'strength', 'Strength')
-		+	slider_html(c.attr_tempo*10, 'tempo', 'Tempo')
-		+'</div>'
-		+'<div class="nodes">'
-		+	node_html(c.node_stand, 'beginner', 'Beginner')
-		+	node_html(c.node_heated, 'heated', 'Heated')
-		+	node_html(c.node_injuries, 'injuries', 'Injuries')
-		+	node_html(c.node_spirit, 'spirit', 'Spirituality')
-		+	node_html(c.node_meditation, 'meditation', 'Meditation')
-		+	node_html(c.node_chanting, 'chanting', 'Chanting')
-		+	node_html(c.node_music, 'music', 'Live Music')
-		+	node_html(c.node_core, 'core', 'Core')
-		+	node_html(c.node_stand, 'stand', 'Inversions')
-		+'</div>'
+            +'<div class="detail-left">'
+            +	slider_html(c.attr_flex*10, 'flex', 'Flexibility')
+            +	slider_html(c.attr_strength*10, 'strength', 'Strength')
+            +	slider_html(c.attr_tempo*10, 'tempo', 'Tempo')
+            +'</div>'
+            +'<div class="nodes">'
+            +	node_html(c.node_stand, 'beginner', 'Beginner')
+            +	node_html(c.node_heated, 'heated', 'Heated')
+            +	node_html(c.node_injuries, 'injuries', 'Injuries')
+            +	node_html(c.node_spirit, 'spirit', 'Spirituality')
+            +	node_html(c.node_meditation, 'meditation', 'Meditation')
+            +	node_html(c.node_chanting, 'chanting', 'Chanting')
+            +	node_html(c.node_music, 'music', 'Live Music')
+            +	node_html(c.node_core, 'core', 'Core')
+            +	node_html(c.node_stand, 'stand', 'Inversions')
+            +'</div>'
 		+'</div>'
 		+'<div class="btn btn-primary btn-large btn-schedule"><a href="http://sb.divinitree.com/schedule/register/#'+day_of_week(c.class_day)+'" target="_blank" onClick="ga("send", "event", "schedule", "view", "detail view")>Schedule Class</a></div>'
 		+'</div>'
 
-		+'<div class="detail-reg">'
-		// +	'<button type="button" class="btn btn-primary btn-detail-reg btn-large t02">'
-		// +		'<span class="glyphicon glyphicon-ok t02"></span><span class="text">Register for class</span>'
-		// +	'</button>'
-		+'</div>'
 		+'<div class="class-info">'+class_header+'</div>'
-		+'<p class="class-describe">'+c.class_description+'</p>';
-		+'<i class="fa fa-chevron-left"></i>'
-		+'</div>'
+		+'<p class="class-describe">'+c.class_description+'</p>'
+
+        +'<div class="row class-view-footer">'
+        +'<div id="review-header">'
+          +'<h2>Have you taken '+ c.class_name+' with '+ c.teacher_name+' before?</h2>'
+          +'<h3>Help your fellow yogis by adjusting our attribute scale.</h3>'
+        +'</div>'
+          +'<div class="col-sm-7">'
+
+            +'<div class="row">'
+               +'<div class="col-xs-6">'
+                   +review_attr_html("flex",classID)
+               +'</div>'
+               +'<div class="col-xs-6">'
+                  +review_attr_html("strength",classID)
+               +'</div>'
+            +'</div>'
+
+            +'<div class="row">'
+               +'<div class="col-xs-6">'
+                  +review_attr_html("tempo",classID)
+               +'</div>'
+               +'<div class="col-sm-6">'
+                  +'<h4>Is the Omza Fit accurate for this class?</h4>'
+                  +'<div class="btns feedback-btn yes col-xs-5" onClick="ga("send", "event", "review" ,"yes", "'+c.class_name+'");">'
+                    +'<i class="fa fa-thumbs-up"></i>'
+                  +'</div>'
+                  +'<div class="btns feedback-btn no col-xs-5" onClick="ga("send", "event", "review" ,"no", "'+c.class_name+'");">'
+                    +'<i class="fa fa-thumbs-down"></i>'
+                  +'</div>'
+               +'</div>'
+            +'</div>'
+          +'</div>'
+
+          +'<div class="col-sm-3>'
+            +'<form id="contact-form" class="contact-form">'
+              +'<p class="contact-teacher">'
+                +'<textarea id="contact_teacher" placeholder="'+c.class_name+'" name="class" rows="1" cols="15"></textarea>'
+              +'</p>'
+              +'<p class="contact-message">'
+                +'<textarea id="contact_message" placeholder="Your Message" name="message" rows="10" cols="20"></textarea>'
+              +'</p>'
+              +'<p class="contact-submit">'
+                +'<a id="contact-submit" class="submit btn btn-primary btn-large" href="#"><i class="fa fa-envelope"></i> Send Message</a>'
+              +'</p>'
+              +'<div id="response"></div>'
+            +'</form>'
+          +'</div>'
+        +'</div>'
 		;
 		$('.studio-head h3').css('display','none');
 		$(".teacher-img").css('background-image','url('+image+')');
@@ -455,6 +599,8 @@ function autoComp(){
 		load_classes(results);
 	}
 
+
+//    App event listeners
 	$doc.on('filter', window.debounce(function(){
 		$body.removeClass('no-fil');
 		filterData();
@@ -504,6 +650,10 @@ function autoComp(){
 
 		window.location.hash = '#c/'+id+'/'+nice_name;
 		ga('send', 'event', 'class', 'view', nice_name);
+    ga('send','pageview',{
+      'title':nice_name,
+      'page': window.location
+    });
 		switch_mode();
 	});
 
@@ -517,9 +667,13 @@ function autoComp(){
 
 		var nice_name = cls.studio_name.replace(/[^a-zA-Z0-9\-]+/g,'-');
 
+        e.stopPropagation();
 		window.location.hash = '#s/'+id+'/'+nice_name;
-		e.stopPropagation();
 		ga('send', 'event', 'studio', 'view', nice_name);
+    ga('send','pageview',{
+      'title':nice_name,
+      'page': window.location
+    });
 		switch_mode();
 	});
 
@@ -534,6 +688,11 @@ function autoComp(){
 		e.stopPropagation();
 		window.location.hash = '#t/'+id+'/'+nice_name;
 		ga('send', 'event', 'teacher', 'view', nice_name);
+    ga('send','pageview',{
+      'title':nice_name,
+      'page': window.location
+    });
+
 		switch_mode();
 	});
 
@@ -542,6 +701,16 @@ function autoComp(){
 		$(this).toggleClass('btn-primary btn-success').find('.text').text(s ? 'Register for class' : 'Registered');
 	});
 
+  $doc.on('click','.feedback-btn',function(){
+      var $this = $(this);
+
+    if($this.hasClass('yes')){
+      $('.no').remove();
+    }else{
+      $('.yes').remove();
+    }
+
+  });
 	
 
 	$doc.on('click', '.btn-find', function () {
@@ -601,13 +770,13 @@ function autoComp(){
 
 	
 
-	// $win.resize(function(){
-	// 	var 
-	// 	$panes = $('.pane, .sub-pane'),
-	// 	top = $panes.first().offset().top;
+	$win.resize(function(){
+		var
+		$panes = $('.pane, .sub-pane'),
+		top = $panes.first().offset().top;
 
-	// 	$panes.css('height', $win.height() - top);
-	// }).resize();
+		$panes.css('height', $win.height() - top);
+	}).resize();
 
 	window.onhashchange = switch_mode;
 
@@ -632,7 +801,6 @@ $('#search-btn').click(function(classes){
         //re-join the string and set the value of the element
         $query = split.join(' ');
 
-    console.log($query);
 
 	ga('send', 'event', 'search', 'click', $query);
 

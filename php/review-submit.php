@@ -1,6 +1,6 @@
 <?php
 /*
-* Contact Form Class
+Review Submit Form
 */
 
 
@@ -9,18 +9,19 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Content-type: application/json');
 
 $admin_email = 'chylawalshyoga@gmail.com'; // Your Email
-$message_min_length = 5; // Min Message Length
+$message_min_length = 10; // Min Message Length
 
 
 class Contact_Form{
 	function __construct($details, $email_admin, $message_min_length){
 		
-		$this->name = stripslashes($details['name']);
-		$this->email = trim($details['email']);
+		$this->name = 'Omza User Review';
+		$this->email = 'omzayoga@gmail.com';
+		$this->class = stripslashes($details['class']);
+		$this->teacher = stripslashes($details['teacher']);
+		$this->subject = 'Class Review'; // Subject
+		$this->message = stripslashes($details['message'])." Review for ".$this->class." ".$this->teacher ;
 
-		$this->subject = 'Contact from Your Website'; // Subject 
-		$this->message = stripslashes($details['message'])." Review for ".$this->class;
-	
 		$this->email_admin = $email_admin;
 		$this->message_min_length = $message_min_length;
 		
@@ -50,7 +51,7 @@ class Contact_Form{
 			$this->response_status = 0;
 		}
 
-		// Check email
+
 		if(!$this->email)
 		{
 			$this->response_html .= '<p>Please enter an e-mail address</p>';
@@ -74,6 +75,7 @@ class Contact_Form{
 
 
 	private function sendEmail(){
+
 		$mail = mail($this->email_admin, $this->subject, $this->message,
 			 "From: ".$this->name." <".$this->email.">\r\n"
 			."Reply-To: ".$this->email."\r\n"

@@ -211,7 +211,7 @@
 
         if(k.hasClass('reviewed')){
 
-  //          ga('send','event',v,nice_name,j);
+              ga('send','event',v,nice_name,j);
               k.addClass('active-nob');
               k.removeClass('reviewed');
 
@@ -431,10 +431,13 @@ function autoComp(){
 		+'<p class="class-describe">'+c.class_description+'</p>'
 
         +'<div class="row class-view-footer">'
-        +'<div id="review-header">'
-          +'<h2>Have you taken '+ c.class_name+' with '+ c.teacher_name+' before?</h2>'
-          +'<h3>Help your fellow yogis by adjusting our attribute scale.</h3>'
-        +'</div>'
+          +'<div id="review-header" class="row">'
+            +'<div class="col-sm-12">'
+              +'<h2>Have you taken '+ c.class_name+' with '+ c.teacher_name+'?</h2></br></br>'
+              +'<h3>Help your fellow yogis by adjusting our attribute scale.</h3>'
+            +'</div>'
+          +'</div>'
+
           +'<div class="col-sm-7">'
 
             +'<div class="row">'
@@ -462,20 +465,17 @@ function autoComp(){
             +'</div>'
           +'</div>'
 
-          +'<div class="col-sm-3>'
-            +'<form id="contact-form" class="contact-form">'
-              +'<p class="contact-teacher">'
-                +'<textarea id="contact_teacher" placeholder="'+c.class_name+'" name="class" rows="1" cols="15"></textarea>'
-              +'</p>'
-              +'<p class="contact-message">'
+            +'<form id="review-form" class="contact-form">'
+
+                +'<p class="contact-message">'
                 +'<textarea id="contact_message" placeholder="Your Message" name="message" rows="10" cols="20"></textarea>'
-              +'</p>'
-              +'<p class="contact-submit">'
-                +'<a id="contact-submit" class="submit btn btn-primary btn-large" href="#"><i class="fa fa-envelope"></i> Send Message</a>'
-              +'</p>'
-              +'<div id="response"></div>'
+                +'</p>'
+                +'<p class="contact-submit">'
+                +'<a id="submit-review" data-id="'+classID+'"class="submit btn btn-primary btn-large"><i class="fa fa-envelope"></i> Send Message</a>'
+                +'</p>'
+                +'<div id="review-response"></div>'
             +'</form>'
-          +'</div>'
+
         +'</div>'
 		;
 		$('.studio-head h3').css('display','none');
@@ -768,7 +768,47 @@ function autoComp(){
 		return false;
 	});
 
-	
+$doc.on('click','#submit-review',function(){
+  $review_form = $('#review-form');
+
+  var fields = $review_form.serialize(),
+    $this = $(this),
+    classId = $this.data('id'),
+    reviewed = window.classes[classId];
+
+console.log(fields);
+  var info = {
+    teacher: reviewed.teacher_name,
+    class: reviewed.class_name
+  };
+
+
+  var serialInfo = $.param(info),
+    amp = '&';
+
+  amp = amp.concat(serialInfo);
+
+  fields = fields.concat(amp);
+  console.log(fields);
+
+  $.ajax({
+    type: "POST",
+    url: "./php/review-submit.php",
+    data: fields,
+    dataType: 'json',
+    success: function(response) {
+
+      if(response.status){
+        $('#contact-form input').val('');
+        $('#contact-form textarea').val('');
+      }
+
+      $('#review-response').empty().html(response.html);
+    }
+  });
+  return false;
+});
+
 
 	$win.resize(function(){
 		var
@@ -776,7 +816,7 @@ function autoComp(){
 		top = $panes.first().offset().top;
 
 		$panes.css('height', $win.height() - top);
-	}).resize();
+	});
 
 	window.onhashchange = switch_mode;
 

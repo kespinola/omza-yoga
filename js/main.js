@@ -99,7 +99,7 @@
                     +'<div data-id="'+id+'" data-review="2" class="nob 2-'+type+'"></div>'
                 +'</div>'
                 +'<div class="col-xs-4">'
-                    +'<p class="review-tag">Accurate</p>'
+                    +'<p class="review-tag middle-tag">Accurate</p>'
                     +'<div data-id="'+id+'" data-review="1" class="nob 1-'+type+'"></div>'
                 +'</div>'
                 +'<div class="col-xs-4">'

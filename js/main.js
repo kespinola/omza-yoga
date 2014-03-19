@@ -39,6 +39,7 @@
 			var cls = classes[+arg];
 			$('.studio-img').css('backgroundImage', 'url(./img/studio-'+cls.studio_id+'.png)');
 			$('.studio-head h3').text(cls.studio_name+' Yoga Studio');
+      $('.pane2').hide();
 			load_filter();
 			filterData();
 			
@@ -50,6 +51,7 @@
 			var img = cls.teacher_image ? './img/t/'+cls.teacher_image+'.jpg' : 'img/omza-thumbnail.png';
 			$('.studio-img').css('backgroundImage', 'url('+img+')');
 			$('.studio-head h3').text(cls.teacher_name);
+      $('.pane2').hide();
 			load_filter();
 			filterData();
 		}
@@ -59,10 +61,12 @@
 			$('.studio-head h3').text('Santa Barbara Yoga');
 			load_filter();
 			filterData();
+      $('.pane2').hide();
 			$('.studio-img').css('backgroundImage', 'url(img/omza-icon.png)');
 		}
 		// Class
 		else if (/c\//.test(path)) {
+      $('.pane2').show();
 			mode = ROUTE_CLASS;
 			var c = classes[+arg];
 			load_class(c);
@@ -299,7 +303,7 @@ function autoComp(){
 		"Vikki",
 		"Jenna",
 		"Amanda",
-		"Brettina",
+		"Bettina",
 		"Jennifer",
 		"Asha",
 		"Yoni",
@@ -814,6 +818,7 @@ console.log(fields);
 		var
 		$panes = $('.pane, .sub-pane'),
 		top = $panes.first().offset().top;
+    console.log("window resize fired");
 
 		$panes.css('height', $win.height() - top);
 	});
